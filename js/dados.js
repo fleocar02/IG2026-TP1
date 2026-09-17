@@ -56,7 +56,11 @@ function nuevaPartida(){
 
         for (let i = 0; i < cantJugadores; i++){
 
-            let nombre = prompt(`Nombre para Jugador ${i + 1}`);
+            let nombre = prompt(`Nombre para Jugador ${i + 1}: `);
+
+            while (nombre === "" || nombre === null) {
+            nombre = prompt(`El nombre no puede estar vacío: `);
+            }
 
             jugadores.push({
                 nombre: nombre,
