@@ -50,9 +50,12 @@ function nuevaPartida(){
 
     calcularPuntaje();
 
+    let formJugadores = document.querySelector('#form-jugadores');
     let btnComenzar = document.querySelector('#boton-comenzar');
 
-    btnComenzar.addEventListener('click', (e) => {
+    let turnoActual = 0;
+
+    formJugadores.addEventListener('submit', (e) => {
 
         e.preventDefault();
 
@@ -70,21 +73,23 @@ function nuevaPartida(){
                 nombre: nombre,
                 puntaje: 0
             });
-
         };
-
+        
         calcularPuntaje();
 
         btnComenzar.disabled = true;
 
-// ─── ¡¡¡A Jugar!!! ────────────────────────────────────────────────
-
-        let turnoActual = 0;
+        turnoActual = 0;        
         let turnoDiv = document.querySelector('#turno-actual');
         turnoDiv.innerHTML =`Turno actual: ${jugadores[turnoActual].nombre}`;
 
         let btnTirar = document.querySelector('#tirar-dado');
         btnTirar.disabled = false;
+
+
+    });
+
+
 
         btnTirar.addEventListener('click', (e) => {
 
@@ -126,8 +131,6 @@ function nuevaPartida(){
             }
 
         });
-
-    });
 
 // ─── Calcular Puntaje ────────────────────────────────────────────────
 
