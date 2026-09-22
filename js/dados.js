@@ -44,7 +44,11 @@ activarDados();
 
 let jugadores = [];
 
+let tablaPuntajes = document.querySelector('#tabla-puntajes');
+
 function nuevaPartida(){
+
+    calcularPuntaje();
 
     let btnComenzar = document.querySelector('#boton-comenzar');
 
@@ -69,11 +73,13 @@ function nuevaPartida(){
 
         };
 
+        calcularPuntaje();
+
         btnComenzar.disabled = true;
 
-        // ─── ¡¡¡A Jugar!!! ────────────────────────────────────────────────
+// ─── ¡¡¡A Jugar!!! ────────────────────────────────────────────────
 
-        turnoActual = 0;
+        let turnoActual = 0;
         let turnoDiv = document.querySelector('#turno-actual');
         turnoDiv.innerHTML =`Turno actual: ${jugadores[turnoActual].nombre}`;
 
@@ -89,27 +95,33 @@ function nuevaPartida(){
                 //console.log(`Los dados son iguales`);
 
                 if((dado1 == 3) && (dado2 == 3)){
-                    jugadores[turnoActual].puntaje = 0
+                    jugadores[turnoActual].puntaje = 0;
 
                 } else if ((dado1 == 6) && (dado2 == 6)){
-                    jugadores[turnoActual].puntaje += 25
+                    jugadores[turnoActual].puntaje += 25;
 
                 } else {
-                    jugadores[turnoActual].puntaje += 5
-
+                    jugadores[turnoActual].puntaje += 5;
                 }
 
-            } else {
+            calcularPuntaje();
 
-                    //console.log(`Los dados no son iguales`);
+                if(jugadores[turnoActual].puntaje >= 50){
+                    tablaPuntajes.innerHTML +=`<p>¡${jugadores[turnoActual].nombre} llegó a los 50 puntos y ganó la partida!</p>`
+                    btnTirar.disabled = true;
+                }
 
-                    turnoActual++
+        } else {
 
-                    if(turnoActual == jugadores.length){
-                        turnoActual = 0;
-                    }
+                //console.log(`Los dados no son iguales`);
 
-                    turnoDiv.innerHTML =`Turno actual: ${jugadores[turnoActual].nombre}`;
+                turnoActual++
+
+                if(turnoActual == jugadores.length){
+                    turnoActual = 0;
+                }
+
+                turnoDiv.innerHTML =`<p>Turno actual: ${jugadores[turnoActual].nombre}</p>`;
 
             }
 
@@ -117,14 +129,20 @@ function nuevaPartida(){
 
     });
 
+// ─── Calcular Puntaje ────────────────────────────────────────────────
+
+        function calcularPuntaje(){
+
+        tablaPuntajes.innerHTML =``;
+
+        jugadores.forEach(jugador => {
+            tablaPuntajes.innerHTML +=`<p>${jugador.nombre} tiene ${jugador.puntaje} punto/s.</p>`;
+        });
+    }
+
 };
 
 nuevaPartida();
 
 
-// ─── Calcular Puntajes ────────────────────────────────────────────────
 
-function calcularPuntaje(){
-    let tablaPuntajes = document.querySelector('#tabla-puntajes');
-
-}
