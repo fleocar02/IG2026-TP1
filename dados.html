@@ -1,34 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/estilos.css" />
     <title>Dados Locos</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>Dados Locos</h1>
 
-        <h1>Dados Locos</h1>
+    <div class="container">
+      <form action="#" method="get" id="form-jugadores">
+        <label for="cantidad-jugadores">Cantidad de jugadores</label>
+        <input
+          type="number"
+          name="cantidad-jugadores"
+          id="cantidad-jugadores"
+          min="1"
+          max="6"
+          required
+        />
+        <button type="submit" id="boton-comenzar">Comenzar Juego</button>
+      </form>
 
-        <div class="container">
-            <form action="#" method="get" id="form-jugadores">
-                <label for="cantidad-jugadores">Cantidad de jugadores</label>
-                <input type="number" name="cantidad-jugadores" id="cantidad-jugadores" min="1" max="6" required>
-                <button type="submit" id="boton-comenzar">Comenzar Juego</button>
-            </form>
+      <div id="img-dado-1"></div>
+      <div id="img-dado-2"></div>
 
-            <div id="img-dado-1"></div>
-            <div id="img-dado-2"></div>
+      <button type="button" id="tirar-dado" disabled>Tirar dado</button>
+      <div id="turno-actual"></div>
 
-            <button type="button" id="tirar-dado" disabled>Tirar dado</button>
-            <div id="turno-actual"></div>
+      <div id="tabla-puntajes"></div>
 
-            <div id="tabla-puntajes"></div>
-
-            <a href="index.html" class="volver">Volver al Inicio</a>
-    
-         </div>
+      <a href="index.html" class="volver">Volver al Inicio</a>
+    </div>
 
     <script src="js/dados.js"></script>
-</body>
+  </body>
 </html>
