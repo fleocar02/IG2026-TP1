@@ -22,3 +22,9 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 * ⚙️ **`refactor:`** Limpieza y orden del código para que sea más fácil de leer, sin cambiar cómo funciona el sitio. *Ejemplo:* `refactor: ordeno las funciones del juego para que no estén duplicadas`
 
 ---
+
+AVANCES HOY:
+(Clara)
+Creé un bosquejo del HTML para la trivia (puede que luego lo altere al terminar el JS)
+Creé las preguntas y las posicioné en el documento JS en una función cargarPreguntas
+Agregué una imagen a la carpeta img para su uso en las preguntas
