@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PokeTrivia</title>
+    </head>
+
+    <body>
+        <div class="contenedor">
+            <h1>PokeTrivia</h1>
+
+            <p id="estado" class="gris">Iniciando...</p>
+
+            <section id="seleccion" class="oculto">
+                <h2>¡Elegí tu Pokémon!</h2>
+                <div id="lista-pokemon"></div>
+            </section>
+
+            <main id="juego" class="oculto">
+                <small id="progreso"></small>
+                <h3 id="pregunta"></h3>
+
+                <div id="opciones"></div>
+
+                <div id="resultado"></div>
+                <button id="siguiente" hidden>Siguiente pregunta</button>
+            </main>
+
+            <section id="final" class="oculto">
+                <h2>¡Trivia terminada!</h2>
+                <p id="puntaje"></p>
+                <button id="reiniciar" hidden>Elegir otro Pokémon</button>
+            </section>
+        </div>
+        <script src="prueba.js"></script>
+    </body>
+</html>
