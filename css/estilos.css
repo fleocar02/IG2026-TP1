@@ -20,6 +20,7 @@ body {
   flex-direction: column;
 }
 
+/*Titulo principal*/
 .encabezado {
   display: flex;
   flex-direction: column;
@@ -38,6 +39,8 @@ body {
   margin: 0;
   color: #555;
 }
+
+/*Nav de juegos*/
 
 .columnas {
   display: flex;
@@ -71,9 +74,9 @@ body {
 .card h2 {
   margin-top: 0;
   background-color: rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    color: black;
-    width: 100%;
+  padding: 10px;
+  color: #333;
+  width: 100%;
 }
 
 .btn {
@@ -86,4 +89,25 @@ body {
 
 .btn:hover {
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*Nav de Inicio*/
+
+.menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.menu a {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+
+.menu a:hover{
+    background-color:rgba(0, 0, 0, 0.2);
 }
