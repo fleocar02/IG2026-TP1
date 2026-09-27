@@ -1,4 +1,4 @@
-# 🎮 NOMBRE DE PROYECTO
+# 🕹️ JUEGAZOS
 
 ## 👥 Integrantes del Grupo
 * [Marcolini, Marcela](https://github.com/Marce-Marcolini)
@@ -7,7 +7,7 @@
 
 ## 📚 Datos de la Materia
 * **Materia:** Informática General
-* **Año / Cuatrimestre:** 2026 - Segundo Cuatrimestre
+* **Año / Cuatrimestre:** 2026 / Segundo Cuatrimestre
 * **Institución:** UNA Artes Multimediales
 * **Cátedra:** Valeria Drelichman | Pedro Paleo | Leonardo Nadel | Norma Morales
 
