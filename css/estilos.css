@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: lightgray;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -32,7 +32,6 @@ body {
 .encabezado h1 {
   font-size: 13em;
     font-family: "Notable", sans-serif;
-
   text-transform: uppercase;
   margin: 0;
 }
@@ -106,12 +105,12 @@ body {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.1);
   text-decoration: none;
-  font-weight: bold;
   color: #333;
 }
 
 .menu a:hover{
     background-color:rgba(0, 0, 0, 0.2);
+    
 }
 
 /* footer */
