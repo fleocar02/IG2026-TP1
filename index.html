@@ -1,22 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
-    <title>Document</title>
+    <title>Juegazos - Inicio</title>
 </head>
 <body>
-     <div class="container">
 
-        <nav class="menu-principal">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="dados.html">Juego de Dados</a></li>
+    <div class="container">
+
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a> </li>
+                <li><a href="dados.html">Dados</a></li>
+                <li><a href="trivia.html">Preguntas</a></li>
+
+            </ul>
         </nav>
-        
+
+        <!--Titulo principal-->
+        <header class="encabezado">
+            <h1>Juegazos</h1>
+            <h2>Hola! (tu nombre)</h2> <!--placeholder para js-->
+            <p>Elegí tu juego favorito y demostrá tus habilidades.</p>
+        </header>
+
+        <nav class="columnas">
+            <div class="card rojo">
+                <h2>Dados</h2>
+                <p>1</p> <!--poner texto-->
+                <a href="dados.html" class="btn">Jugar</a>
+            </div>
+
+            <div class="card verde">
+                <h2>Preguntas</h2>
+                <p>2</p>
+                <a href="trivia.html" class="btn">Jugar</a>
+            </div>
+
+            <div class="card azul">
+                <h2>Cartas</h2>
+                <p>3</p>
+                <a href="uno.html" class="btn">Jugar</a>
+            </div>
+        </nav>
 
     </div>
-
 
     <script src="js/main.js"></script>
 </body>

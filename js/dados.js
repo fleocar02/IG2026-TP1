@@ -49,8 +49,7 @@ let mensajePuntos = document.querySelector("#mensaje-puntos");
 
 function nuevaPartida() {
   calcularPuntaje();// Limpieza de contenedor de puntajes 
-
-  jugadroes = []; // reiniciar array para cada nueva partida
+  jugadores = []; // reiniciar array para cada nueva partida
 
   let turnoActual = 0;// Inicializar contador de turno para saber a que i del array sumarle los puntos
 
@@ -103,19 +102,20 @@ function nuevaPartida() {
 
       //Si los dados son doble 3, se castiga
       if (dado1 == 3 && dado2 == 3) {
-        mensajePuntos.innerHTML=`<h3>-${jugadores[turnoActual].puntaje}</h3>`;
+        mensajePuntos.innerHTML=`<h2>-${jugadores[turnoActual].puntaje}</h2>`;
         jugadores[turnoActual].puntaje = 0;
 
       //Si los dados son doble 6, se premia
       } else if (dado1 == 6 && dado2 == 6) {
         jugadores[turnoActual].puntaje += 25;
-        mensajePuntos.innerHTML=`<h3>+25</h3>`;
+        mensajePuntos.innerHTML=`<h2>+25</h2> <p>¡Doble seis!</p>`;
           
 
       //Se suman puntos
       } else {
         jugadores[turnoActual].puntaje += 5;
-        mensajePuntos.innerHTML=`<h3>+5</h3>`;
+        mensajePuntos.innerHTML=`<h2>+5</h2> 
+        <p>¡Doble!</p>`;
 
       }
 
@@ -123,7 +123,7 @@ function nuevaPartida() {
 
 
       if (jugadores[turnoActual].puntaje >= 50) {
-        tablaPuntajes.innerHTML += `<p>¡${jugadores[turnoActual].nombre} llegó a los 50 puntos y ganó la partida!</p>`;
+        tablaPuntajes.innerHTML += `<h1>¡${jugadores[turnoActual].nombre} llegó a los 50 puntos y ganó la partida!</h1>`;
         btnTirar.disabled = true; // Deshabilitar boton de tirar
         btnComenzar.disabled = false // Habilitar boton para volver a jugar
       }
