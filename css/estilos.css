@@ -31,6 +31,8 @@ body {
 
 .encabezado h1 {
   font-size: 13em;
+    font-family: "Notable", sans-serif;
+
   text-transform: uppercase;
   margin: 0;
 }
@@ -110,4 +112,15 @@ body {
 
 .menu a:hover{
     background-color:rgba(0, 0, 0, 0.2);
+}
+
+/* footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
 }

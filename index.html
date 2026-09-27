@@ -1,56 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Notable&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
     <title>Juegazos - Inicio</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="container">
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="dados.html">Dados</a></li>
+          <li><a href="trivia.html">Preguntas</a></li>
+          <!-- link a juego de cartas-->
+          <li><a href="puntajes.html">Puntajes</a></li>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+        </ul>
+      </nav>
 
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Inicio</a> </li>
-                <li><a href="dados.html">Dados</a></li>
-                <li><a href="trivia.html">Preguntas</a></li>
-                <!-- link a juego de cartas-->
-                <li><a href="puntajes.html">Puntajes</a></li>
-                <li><a href="nosotros.html">Sobre nosotros</a></li>
+      <!--Titulo principal-->
+      <header class="encabezado">
+        <h1>Juegazos</h1>
+        <h2>Hola! (tu nombre)</h2>
+        <!--placeholder para js-->
+        <p>Elegí tu juego favorito y demostrá tus habilidades.</p>
+      </header>
 
-            </ul>
-        </nav>
+      <nav class="columnas">
+        <div class="card rojo">
+          <h2>Dados</h2>
+          <p>1</p>
+          <!--poner texto-->
+          <a href="dados.html" class="btn">Jugar</a>
+        </div>
 
-        <!--Titulo principal-->
-        <header class="encabezado">
-            <h1>Juegazos</h1>
-            <h2>Hola! (tu nombre)</h2> <!--placeholder para js-->
-            <p>Elegí tu juego favorito y demostrá tus habilidades.</p>
-        </header>
+        <div class="card verde">
+          <h2>Preguntas</h2>
+          <p>2</p>
+          <a href="trivia.html" class="btn">Jugar</a>
+        </div>
 
-        <nav class="columnas">
-            <div class="card rojo">
-                <h2>Dados</h2>
-                <p>1</p> <!--poner texto-->
-                <a href="dados.html" class="btn">Jugar</a>
-            </div>
+        <div class="card azul">
+          <h2>Cartas</h2>
+          <p>3</p>
+          <a href="uno.html" class="btn">Jugar</a>
+        </div>
+      </nav>
 
-            <div class="card verde">
-                <h2>Preguntas</h2>
-                <p>2</p>
-                <a href="trivia.html" class="btn">Jugar</a>
-            </div>
-
-            <div class="card azul">
-                <h2>Cartas</h2>
-                <p>3</p>
-                <a href="uno.html" class="btn">Jugar</a>
-            </div>
-        </nav>
-
+      <footer>
+        <address>Informatica General 2026</address>
+      </footer>
     </div>
 
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
