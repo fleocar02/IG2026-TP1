@@ -1,16 +1,16 @@
 /*
    🎲 CINCUENTA
  
-   Puede jugar desde una persona hasta seis personas por turnos. Todos los jugadores empiezan con 0 puntos.
+   Puede jugar desde una hasta seis personas por turnos. Todos los jugadores empiezan con 0 puntos.
    Cada jugador debe lanzar los dados en su turno y automáticamente sumar a
    la puntuación. Solo se suma cuando sale un doble.
  
    Tipos de doble:
-   - Diferentes (ej: 3 y 4) : Tira el próximo jugador sin sumar nada.
-   - Dobles 1, 2, 4 o 5     : Se suman 5 puntos.
-   - Doble 6                : Se suman 25 puntos.
-   - Doble 3                : Se castiga reiniciando la puntuación a cero.
-   - Doble válido (puntos)  : El jugador repite el tiro.
+   - Diferentes (ej: 3 y 4): Tira el próximo jugador sin sumar nada.
+   - Dobles 1, 2, 4 o 5: Se suman 5 puntos.
+   - Doble 6: Se suman 25 puntos.
+   - Doble 3: Se castiga reiniciando la puntuación a cero.
+   - Doble válido (puntos): El jugador repite el tiro.
  
    🏆 Gana el primer jugador que logre llegar a los 50 puntos.
  */

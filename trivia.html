@@ -1,38 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PokeTrivia</title>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <!--Fuente Roboto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juegazos 🕹️ PokeTrivia</title>
+  </head>
 
-    <body>
-        <div class="contenedor">
-            <h1>PokeTrivia</h1>
+  <body>
+    <div class="container">
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="dados.html">Dados</a></li>
+          <li><a href="trivia.html">Preguntas</a></li>
+          <!-- link a juego de cartas-->
+          <li><a href="puntajes.html">Puntajes</a></li>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+        </ul>
+      </nav>
+      <h1>PokeTrivia</h1>
 
-            <p id="estado" class="gris">Iniciando...</p>
+      <p id="estado" class="gris">Iniciando...</p>
 
-            <section id="seleccion" class="oculto">
-                <h2>¡Elegí tu Pokémon!</h2>
-                <div id="lista-pokemon"></div>
-            </section>
+      <section id="seleccion" class="oculto">
+        <h2>¡Elegí tu Pokémon!</h2>
+        <div id="lista-pokemon"></div>
+      </section>
 
-            <main id="juego" class="oculto">
-                <small id="progreso"></small>
-                <h3 id="pregunta"></h3>
+      <main id="juego" class="oculto">
+        <small id="progreso"></small>
+        <h3 id="pregunta"></h3>
 
-                <div id="opciones"></div>
+        <div id="opciones"></div>
 
-                <div id="resultado"></div>
-                <button id="siguiente" hidden>Siguiente pregunta</button>
-            </main>
+        <div id="resultado"></div>
+        <button id="siguiente" hidden>Siguiente pregunta</button>
+      </main>
 
-            <section id="final" class="oculto">
-                <h2>¡Trivia terminada!</h2>
-                <p id="puntaje"></p>
-                <button id="reiniciar" hidden>Elegir otro Pokémon</button>
-            </section>
-        </div>
-        <script src="prueba.js"></script>
-    </body>
+      <section id="final" class="oculto">
+        <h2>¡Trivia terminada!</h2>
+        <p id="puntaje"></p>
+        <button id="reiniciar" hidden>Elegir otro Pokémon</button>
+      </section>
+      
+      <footer>
+        <address>Informatica General 2026</address>
+      </footer>
+    </div>
+
+    </div>
+    <script src="trivia.js"></script>
+  </body>
 </html>
