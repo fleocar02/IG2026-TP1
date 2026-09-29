@@ -25,6 +25,5 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 
 AVANCES HOY:
 (Clara)
-Creé un bosquejo del HTML para la trivia (puede que luego lo altere al terminar el JS)
-Creé las preguntas y las posicioné en el documento JS en una función cargarPreguntas
-Agregué una imagen a la carpeta img para su uso en las preguntas
+Finalicé el JS y comenté el código
+Agregué el botón reintentar al HTML que antes no lo había implementado
