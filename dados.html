@@ -37,24 +37,28 @@
 
       <header class="encabezado">
         <h1>Cincuenta</h1>
-        <h2>🎲 Juego de Dados</h2>
-        <small>¿Cómo se juega? <br>
-        Puede jugar desde una hasta seis personas por turnos. Todos los jugadores empiezan con 0 puntos.
-        Cada jugador debe lanzar los dados en su turno y automáticamente sumar a
-        la puntuación. Solo se suma cuando sale un doble. <br>
-        Tipos de doble:
+        <h2>🎲 Cómo jugar:</h2>
+        <small class="instrucciones">
+          Pueden jugar desde una hasta seis personas. Todos los jugadores empiezan con 0 puntos.
+          Cada jugador debe lanzar los dados en su turno y automáticamente sumar a
+          la puntuación cuando sale un doble (dos dados iguales)<br>
+            <ul>
+            <li>Si son diferentes (ej: 3 y 4): Tira el próximo jugador sin sumar nada.</li>
+            <li>Si son dobles 1, 2, 4 o 5: Se suman 5 puntos.</li>
+            <li>Si son doble 6: Se suman 25 puntos.</li>
+            <li>Si son doble 3: Se castiga reiniciando la puntuación a cero.</li>
+            <li>Cuando el doble es válido, suma puntos y el jugador repite el tiro.</li>
+          </ul>
 
-        <ul>
-          <li>Diferentes (ej: 3 y 4): Tira el próximo jugador sin sumar nada.</li>
-          <li>Dobles 1, 2, 4 o 5: Se suman 5 puntos.</li>
-          <li>Doble 6: Se suman 25 puntos.</li>
-          <li>Doble 3: Se castiga reiniciando la puntuación a cero.</li>
-          <li>Doble válido (puntos): El jugador repite el tiro.</li>
-        </ul> <br>
+                                        <strong>🏆 Gana el primer jugador que logre llegar a los 50 puntos.</strong>
 
-           🏆 Gana el primer jugador que logre llegar a los 50 puntos.
+
+                  </small>
+
+
+
+          
         
-        </small>
       </header>
 
       <main class="juego-container">
