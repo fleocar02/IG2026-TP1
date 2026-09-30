@@ -26,24 +26,18 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 ## 💻 Testing & Debugging 
 
 ### 2.
-* Comportamiento esperado: 
-  
 * **`Condición inicial:`**
 * **`Acción:`**
 * **`Resultado esperado:`**
 * **`Resultado observado:`**
-
-* Solución:
+* **`Solución:**`
 
 ### 1. 29/9
-* Comportamiento esperado: En el juego de dados, cuando se termina una partida y se quiere comenzar una nueva, el programa debe guardar el puntaje anterior y limpiar el contenedor para el próximo juego.
-  
 * **`Condición inicial:`** El juego se termina y todos los jugadores tienen su puntaje final
 * **`Acción:`** Presionar el botón "comenzar juego" después de finalizar una ronda
 * **`Resultado esperado:`** Vuelve a comenzar la partida desde 0 y el puntaje anterior se guarda en el localStorage.
 * **`Resultado observado:`** El programa reescribe los datos anteriores, acumulando a los jugadores. Sin posibilidad de volver a jugar porque el boton se encuentra deshabilitado.
-
-* Solución:
+* **`Solución:**`
 
 ---
 
