@@ -28,7 +28,6 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 ### 2.
 * Comportamiento esperado: 
   
-* Caso de prueba:
 * **`Condición inicial:`**
 * **`Acción:`**
 * **`Resultado esperado:`**
@@ -39,7 +38,6 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 ### 1. 29/9
 * Comportamiento esperado: En el juego de dados, cuando se termina una partida y se quiere comenzar una nueva, el programa debe guardar el puntaje anterior y limpiar el contenedor para el próximo juego.
   
-* Caso de prueba:
 * **`Condición inicial:`** El juego se termina y todos los jugadores tienen su puntaje final
 * **`Acción:`** Presionar el botón "comenzar juego" después de finalizar una ronda
 * **`Resultado esperado:`** Vuelve a comenzar la partida desde 0 y el puntaje anterior se guarda en el localStorage.
