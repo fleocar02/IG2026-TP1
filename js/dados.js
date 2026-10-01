@@ -67,7 +67,7 @@ function nuevaPartida() {
       let nombre = prompt(`Nombre para Jugador ${i + 1}: `);
 
       // Validación del input
-      while (nombre === "" || nombre === null) {
+      while (nombre === "" || nombre === " " || nombre === null) {
         nombre = prompt(`El nombre no puede estar vacío: `);
       }
 

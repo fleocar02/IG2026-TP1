@@ -85,16 +85,18 @@ body {
 .columnas {
   display: flex;
   justify-content: center;
+  align-items: stretch;
   gap: 20px;
   flex-wrap: wrap;
-  padding-left: 10em;
-  padding-right: 10em;
+  padding-left: 5em;
+  padding-right: 5em;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   padding: 2em;
   width: 30%;
 }
@@ -115,11 +117,18 @@ body {
   margin-top: 0;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 10px;
-  color: #333;
+  color: #222;
   width: 100%;
+  box-sizing: border-box;
+  text-align: justify;
+}
+
+.card p {
+  color: #333;
 }
 
 .btn {
+  margin-top: auto;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
@@ -169,6 +178,10 @@ footer {
 }
 
 /* Cincuenta */
+
+body.body-dados {
+  background-color: #ff6b6b;
+}
 
 .juego-container {
   display: flex;
@@ -443,4 +456,10 @@ body.body-trivia h1 {
   font-size: 1.4em;
   font-weight: bold;
   color: #51cf66;
+}
+
+/* Cartas */
+
+body.body-cartas {
+  background-color: #339af0;
 }
