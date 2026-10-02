@@ -1,22 +1,16 @@
-/*
-   🎲 CINCUENTA
- 
-   Puede jugar desde una hasta seis personas por turnos. Todos los jugadores empiezan con 0 puntos.
-   Cada jugador debe lanzar los dados en su turno y automáticamente sumar a
-   la puntuación. Solo se suma cuando sale un doble.
- 
-   Tipos de doble:
-   - Diferentes (ej: 3 y 4): Tira el próximo jugador sin sumar nada.
-   - Dobles 1, 2, 4 o 5: Se suman 5 puntos.
-   - Doble 6: Se suman 25 puntos.
-   - Doble 3: Se castiga reiniciando la puntuación a cero.
-   - Doble válido (puntos): El jugador repite el tiro.
- 
-   🏆 Gana el primer jugador que logre llegar a los 50 puntos.
- */
+// ─── Variables y Selección del DOM ─────────────────────────────────────
+
+let jugadores = [];
+
+let formJugadores = document.querySelector("#form-jugadores");
+let turnoDiv = document.querySelector("#turno-actual");
+let btnComenzar = document.querySelector("#boton-comenzar");
+let btnTirar = document.querySelector("#tirar-dado");
+let tablaPuntajes = document.querySelector("#tabla-puntajes");
+let mensajePuntos = document.querySelector("#mensaje-puntos");
 
 function activarDados() {
-  const tirarDado = () => Math.floor(Math.random() * 6) + 1;// Función flecha anónima para generar un número al azar entre 1 y 6
+  const tirarDado = () => Math.floor(Math.random() * 6) + 1;// Función flecha anónima para generar un número entre 1 y 6
 
   // Primer dado
   const valorDado1 = tirarDado();
@@ -30,21 +24,10 @@ function activarDados() {
   imgDado2.innerHTML = `<img src="./img/dado-imagen-${valorDado2}.png" alt="Dado ${valorDado2}" />`;
   //console.log(`Dado 2: ${valorDado2}`);
 
-  return [valorDado1, valorDado2];// Uso de array para que devuelva múltiples valores al tiempo, sino devuelve uno solo
+  return [valorDado1, valorDado2]; // Uso de array para que devuelva dos valores al tiempo, sino devuelve uno solo
 }
 
 activarDados();
-
-// ─── Variables y Selección del DOM ─────────────────────────────────────
-
-let jugadores = [];
-
-let formJugadores = document.querySelector("#form-jugadores");// Capturar los elementos del DOM
-let turnoDiv = document.querySelector("#turno-actual");
-let btnComenzar = document.querySelector("#boton-comenzar");
-let btnTirar = document.querySelector("#tirar-dado");
-let tablaPuntajes = document.querySelector("#tabla-puntajes");
-let mensajePuntos = document.querySelector("#mensaje-puntos");
 
 
 function nuevaPartida() {
@@ -84,7 +67,7 @@ function nuevaPartida() {
 
     // Mostrar el jugador que debe tirar los dados con la ayuda del contador
     turnoActual = 0;
-    turnoDiv.innerHTML = `Turno actual: ${jugadores[turnoActual].nombre}`;
+    turnoDiv.innerHTML = `<div>Turno actual: ${jugadores[turnoActual].nombre}</div>`;
 
     btnTirar.disabled = false;// Activar botón para tirar
   });
@@ -102,19 +85,19 @@ function nuevaPartida() {
 
       //Si los dados son doble 3, se castiga
       if (dado1 == 3 && dado2 == 3) {
-        mensajePuntos.innerHTML=`<h2>-${jugadores[turnoActual].puntaje}</h2>`;
+        mensajePuntos.innerHTML=`<span>-${jugadores[turnoActual].puntaje}</span>`;
         jugadores[turnoActual].puntaje = 0;
 
       //Si los dados son doble 6, se premia
       } else if (dado1 == 6 && dado2 == 6) {
         jugadores[turnoActual].puntaje += 25;
-        mensajePuntos.innerHTML=`<h2>+25</h2> <p>¡Doble seis!</p>`;
+        mensajePuntos.innerHTML=`<span>+25 <br> ¡Doble seis!</span>`;
           
 
       //Se suman puntos
       } else {
         jugadores[turnoActual].puntaje += 5;
-        mensajePuntos.innerHTML=`<h2>+5</h2> 
+        mensajePuntos.innerHTML=`<span>+5</span> 
         <p>¡Doble!</p>`;
 
       }
@@ -123,7 +106,7 @@ function nuevaPartida() {
 
 
       if (jugadores[turnoActual].puntaje >= 50) {
-        tablaPuntajes.innerHTML += `<h1>¡${jugadores[turnoActual].nombre} llegó a los 50 puntos y ganó la partida!</h1>`;
+        tablaPuntajes.innerHTML += `<p>¡${jugadores[turnoActual].nombre} llegó a los 50 puntos y ganó la partida!</p>`;
         btnTirar.disabled = true; // Deshabilitar boton de tirar
         btnComenzar.disabled = false // Habilitar boton para volver a jugar
       }
