@@ -81,6 +81,7 @@ body {
   color: #555;
   font-family: "Bungee Inline", sans-serif;
 }
+
 /*Nav de juegos (tarjetas)*/
 
 .columnas {
@@ -177,6 +178,7 @@ footer {
   justify-content: center;
   padding: 0;
 }
+
 /* ===================================================
    ESTILOS ESPECÍFICOS: PAGINA DADOS- CINCUENTA
    =================================================== */
@@ -248,6 +250,7 @@ body.body-dados {
   width: 60%;
   text-align: center;
 }
+
 #tabla-puntajes p {
   margin: 8px;
   font-size: 1em;
@@ -298,7 +301,41 @@ body.contenedor-infiltrado {
   box-sizing: border-box;
 }
 
-.contenedor-infiltrado .instrucciones-infiltrado {
+.pagina-infiltrado h1 {
+  color: #f1c40f;
+  margin-bottom: 20px;
+}
+
+.pagina-infiltrado .contenedor-botones-infiltrado {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pagina-infiltrado button {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pagina-infiltrado .contenedor-bienvenida-infiltrado {
+  background-color: #34495e;
+  max-width: 700px;
+  margin: 20px auto 0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pagina-infiltrado .instrucciones-infiltrado {
   text-align: left;
   background-color: #ffffff;
   padding: 15px;
@@ -309,7 +346,26 @@ body.contenedor-infiltrado {
 
 .contenedor-infiltrado .instrucciones-infiltrado ul {
   padding-left: 20px;
-  list-style-type: square;
+}
+
+.pagina-infiltrado .instrucciones-infiltrado li {
+  padding: 5px 0;
+}
+
+.pagina-infiltrado #btn-comprobar {
+  background-color: #27ae60;
+}
+
+.pagina-infiltrado #btn-comprobar:hover {
+  background-color: #2ecc71;
+}
+
+.pagina-infiltrado #btn-huir {
+  background-color: #7f8c8d;
+}
+
+.pagina-infiltrado #btn-huir:hover {
+  background-color: #95a5a6;
 }
 
 .contenedor-infiltrado .instrucciones-infiltrado li {
@@ -459,9 +515,10 @@ body.contenedor-infiltrado {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* ============================================================
-   ESTILOS DE LA POKETRIVIA (Coherentes con el diseño grupal)
-   ============================================================ */
+/* ========================
+   ESTILOS DE LA POKETRIVIA
+   ======================== */
+
 body.body-trivia {
   background-color: #51cf66;
 }
@@ -476,6 +533,17 @@ body.body-trivia h1 {
   line-height: 0.85;
   margin-top: 0.5em;
   margin-bottom: 0.2em;
+}
+
+body.body-trivia h2,
+body.body-trivia h3,
+body.body-trivia h5,
+body.body-trivia h6 {
+  font-family: "Bungee Inline", sans-serif;
+  font-size: 1.2em;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 /* Clase oculto */
@@ -531,7 +599,8 @@ body.body-trivia h1 {
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
-  text-transform: capitalize; /* Uso de IA: Me mostró esta propiedad para capitalizar la primera letra de un string */
+  text-transform: capitalize;
+  /* Uso de IA: Me mostró esta propiedad para capitalizar la primera letra de un string */
   color: #333;
 }
 
@@ -612,7 +681,8 @@ body.body-trivia h1 {
 }
 
 #opciones button:disabled {
-  cursor: not-allowed; /* Uso de IA: Me enseñó la propiedad cursor: not-allowed para que el cursor sea un prohibido en botones inhabilitados */
+  cursor: not-allowed;
+  /* Uso de IA: Me enseñó la propiedad cursor: not-allowed para que el cursor sea un prohibido en botones inhabilitados */
   opacity: 0.6;
 }
 
