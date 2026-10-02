@@ -13,13 +13,17 @@ const opciones = document.querySelector("#opciones"); //Opciones de respuesta
 const resultado = document.querySelector("#resultado"); //Resultado de la respuesta
 const siguiente = document.querySelector("#siguiente"); //Botón para pasar a la siguiente pregunta o ver el resultado final
 const puntaje = document.querySelector("#puntaje"); //Puntaje final del usuario
+const entrenador = document.querySelector("#entrenador"); //Sección para ingresar nombre de entrenador
+const inputEntrenador = document.querySelector("#nombre-entrenador"); //Input para ingresar nombre de entrenador
 const reiniciar = document.querySelector("#reiniciar"); //Botón para reiniciar el juego
 const reintentar = document.querySelector("#reintentar"); //Botón para reintentar cargar los datos en caso de error
+const comenzar = document.querySelector("#comenzar"); //Botón para comenzar luego de ingresar nombre de entrenador
 
 // --Declaración de variables para el estado del juego y otras variables globales--
 let todasPreguntas = []; //Almacena el conjunto en su totalidad de preguntas
 let pokePreguntas = []; //Almacena las preguntas filtradas según el pokemon seleccionado
 let pokeInfo = []; //Almacena la información recibida del endpoint de los 5 pokemones
+let nombreEntrenador = ""; //Almacena el nombre del entrenador ingresado
 let indice = 0; //Controla la pregunta actual en pantalla
 let correctas = 0; //Contador de aciertos del usuario
 
@@ -243,6 +247,18 @@ function cargarPreguntas() {
 
 // --Lógica del juego--
 
+function comenzarConNombre() {
+    const nombre = inputEntrenador.value;
+    if (nombre === "") {
+        alert("No ingresaste un nombre de entrenador. Ingresá un nombre para continuar.");
+        return;
+    }
+
+    nombreEntrenador = nombre;
+    entrenador.classList.add("oculto");
+    seleccion.classList.remove("oculto");
+}
+
 function mostrarSeleccionPokemon() {
     estado.textContent = "";
     final.classList.add("oculto");
@@ -337,6 +353,26 @@ function responder(eleccion) {
     siguiente.hidden = false;
 }
 
+function guardarPuntajeTrivia() {
+    let tablaPuntajes = JSON.parse(localStorage.getItem("puntajesTrivia")) || [];
+
+    let encontrado = false;
+    for (let i = 0; i < tablaPuntajes.length && !encontrado; i++) {
+        if (tablaPuntajes[i].nombre === nombreEntrenador) {
+            tablaPuntajes[i].puntos += correctas;
+            encontrado = true;
+        }
+    }
+
+    if (!encontrado) {
+        tablaPuntajes.push({
+            nombre: nombreEntrenador,
+            puntos: correctas
+        });
+    }
+    localStorage.setItem("puntajesTrivia", JSON.stringify(tablaPuntajes));
+}
+
 function avanzar() {
     indice += 1;
 
@@ -355,7 +391,7 @@ function avanzar() {
 siguiente.addEventListener("click", avanzar);
 reintentar.addEventListener("click", cargarDatosPokemon);
 reiniciar.addEventListener("click", mostrarSeleccionPokemon);
-
+comenzar.addEventListener("click", comenzarConNombre);
 
 // --Primera llamada--
 cargarDatosPokemon();

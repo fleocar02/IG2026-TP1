@@ -78,6 +78,7 @@ body {
   color: #555;
   font-family: "Bungee Inline", sans-serif;
 }
+
 /*Nav de juegos (tarjetas)*/
 
 .columnas {
@@ -174,6 +175,7 @@ footer {
   justify-content: center;
   padding: 0;
 }
+
 /* ===================================================
    ESTILOS ESPECÍFICOS: PAGINA DADOS
    =================================================== */
@@ -246,6 +248,7 @@ body.body-dados {
   width: 60%;
   text-align: center;
 }
+
 #tabla-puntajes p {
   margin: 8px;
   font-size: 1em;
@@ -297,6 +300,7 @@ body.body-dados {
   border-radius: 8px;
   cursor: pointer;
 }
+
 .pagina-infiltrado .contenedor-bienvenida-infiltrado {
   background-color: #34495e;
   max-width: 700px;
@@ -317,18 +321,23 @@ body.body-dados {
 .pagina-infiltrado .instrucciones-infiltrado ul {
   padding-left: 20px;
 }
+
 .pagina-infiltrado .instrucciones-infiltrado li {
   padding: 5px 0;
 }
+
 .pagina-infiltrado #btn-comprobar {
   background-color: #27ae60;
 }
+
 .pagina-infiltrado #btn-comprobar:hover {
   background-color: #2ecc71;
 }
+
 .pagina-infiltrado #btn-huir {
   background-color: #7f8c8d;
 }
+
 .pagina-infiltrado #btn-huir:hover {
   background-color: #95a5a6;
 }
@@ -412,9 +421,10 @@ body.body-dados {
   border: 2px solid #f1c40f;
 }
 
-/* ============================================================
-   ESTILOS DE LA POKETRIVIA (Coherentes con el diseño grupal)
-   ============================================================ */
+/* ========================
+   ESTILOS DE LA POKETRIVIA
+   ======================== */
+   
 body.body-trivia {
   background-color: #51cf66;
 }
@@ -429,6 +439,17 @@ body.body-trivia h1 {
   line-height: 0.85;
   margin-top: 0.5em;
   margin-bottom: 0.2em;
+}
+
+body.body-trivia h2,
+body.body-trivia h3,
+body.body-trivia h5,
+body.body-trivia h6 {
+  font-family: "Bungee Inline", sans-serif;
+  font-size: 1.2em;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 /* Clase oculto */
@@ -484,7 +505,8 @@ body.body-trivia h1 {
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
-  text-transform: capitalize; /* Uso de IA: Me mostró esta propiedad para capitalizar la primera letra de un string */
+  text-transform: capitalize;
+  /* Uso de IA: Me mostró esta propiedad para capitalizar la primera letra de un string */
   color: #333;
 }
 
@@ -565,7 +587,8 @@ body.body-trivia h1 {
 }
 
 #opciones button:disabled {
-  cursor: not-allowed; /* Uso de IA: Me enseñó la propiedad cursor: not-allowed para que el cursor sea un prohibido en botones inhabilitados */
+  cursor: not-allowed;
+  /* Uso de IA: Me enseñó la propiedad cursor: not-allowed para que el cursor sea un prohibido en botones inhabilitados */
   opacity: 0.6;
 }
 

@@ -27,32 +27,42 @@
         </nav>
       </header>
       
-      <h1>PokeTrivia</h1>
+      <main>
+        <h1>PokeTrivia</h1>
+        <p id="estado" class="gris">Iniciando...</p>
 
-      <p id="estado" class="gris">Iniciando...</p>
+        <section id="entrenador" class="oculto">
+          <h2>¡Bienvenido a tu aventura Pokemon!</h2>
+          <p>Ingresá tu nombre de entrenador para jugar la trivia</p>
+          <div>
+            <input type="text" id="nombre-entrenador" placeholder="Nombre de entrenador"/>
+            <button id="comenzar" type="button">Comenzar</button>
+          </div>
+        </section>
 
-      <section id="seleccion" class="oculto">
-        <h2>¡Elegí tu Pokémon!</h2>
-        <div id="lista-pokemon"></div>
-      </section>
+        <section id="seleccion" class="oculto">
+          <h3>¡Elegí tu Pokémon!</h3>
+          <div id="lista-pokemon"></div>
+        </section>
 
-      <main id="juego" class="oculto">
-        <small id="progreso"></small>
-        <h3 id="pregunta"></h3>
+        <section id="juego" class="oculto">
+          <small id="progreso"></small>
+          <h4 id="pregunta"></h4>
 
-        <div id="opciones"></div>
+          <div id="opciones"></div>
 
-        <div id="resultado"></div>
-        <button id="siguiente" hidden>Siguiente pregunta</button>
+          <div id="resultado"></div>
+          <button id="siguiente" hidden>Siguiente pregunta</button>
+        </section>
+
+        <section id="final" class="oculto">
+          <h5>¡Trivia terminada!</h5>
+          <p id="puntaje"></p>
+          <button id="reiniciar" hidden>Elegir otro Pokémon</button>
+        </section>
+        <button id="reintentar" type="button" hidden>Intentar nuevamente</button>
       </main>
 
-      <section id="final" class="oculto">
-        <h2>¡Trivia terminada!</h2>
-        <p id="puntaje"></p>
-        <button id="reiniciar" hidden>Elegir otro Pokémon</button>
-      </section>
-      <button id="reintentar" type="button" hidden>Intentar nuevamente</button>
-      
       <footer>
         <address>Informatica General 2026</address>
       </footer>
