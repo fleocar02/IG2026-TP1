@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { nombre: "Gatito Ladrón", valor: 1, icono: "😼" },
     { nombre: "Gatito Guardián", valor: 1, icono: "👁️" },
     { nombre: "Gatito Infiltrado", valor: 2, icono: "🕵🏻‍♂️🐾" },
-    { nombre: "Pescadito Dorado", valor: 3, icono: "🐟" },
+    { nombre: "Pececito Dorado", valor: 3, icono: "🐟" },
   ];
 
   let mazo = [];
