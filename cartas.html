@@ -10,7 +10,6 @@
       href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap"
       rel="stylesheet"
     />
-
     <!--Fuente Roboto-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,5 +33,82 @@
         </ul>
       </nav>
     </div>
+    <div class="pagina-infiltrado">
+      <h1>🐱 El Infiltrado</h1>
+
+      <!-- Bienvenida e Instrucciones del juego-->
+      <div id="seleccion-modo">
+        <div class="contenedor-botones-infiltrado">
+          <button id="btn-iniciar">🐾 Iniciar Misión</button>
+        </div>
+
+        <div class="contenedor-bienvenida-infiltrado">
+          <h2>🐾 Misión Pecera. ¡Bienvenido a la Casa de Mascotas! 🐾</h2>
+
+          <div class="instrucciones-infiltrado">
+            <h3>📜 Reglas de la Misión</h3>
+            <ul>
+              <li>
+                👉 <strong>Objetivo:</strong> Sumar entre 8 y 12 puntos para
+                abrir la pecera.
+              </li>
+              <li>
+                ⏱️ <strong>Timer de 10s:</strong> El contador se reinicia con
+                cada decisión. Si llega a 0, suena la alarma.
+              </li>
+              <li>
+                🎴 <strong>Acciones de Tirada:</strong> Puedes pedir 1 carta,
+                pedir 2 cartas, repetir la tirada de 3 o abrir la pecera.
+              </li>
+              <li>
+                🚨 <strong>Alarma:</strong> Si te pasas de 12 puntos, pierdes.
+              </li>
+              <li>
+                🏃‍♂️ <strong>Abandonar:</strong> Huye a tiempo si presientes que
+                vas a fallar.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tablero de Juego -->
+      <div id="tablero-juego" class="oculto-infiltrado">
+        <div class="panel-estado-infiltrado">
+          <div class="temporizador-infiltrado">
+            ⏳ Tiempo: <span id="contador-timer">10</span>s
+          </div>
+          <h2 id="mensaje-estado">Misión en marcha</h2>
+          <p id="texto-puntaje">Puntos en mesa: 0 / 12 pts</p>
+          <p>Cartas en mazo: <span id="contador-mazo">16</span></p>
+        </div>
+
+        <div class="area-jugada-infiltrado">
+          <div class="titulo-seccion-infiltrado">Cartas en Mesa</div>
+          <div
+            id="contenedor-tirada"
+            class="contenedor-cartas-infiltrado"
+          ></div>
+        </div>
+
+        <div class="contenedor-botones-infiltrado">
+          <button id="btn-robar-1">➕ Robar 1 Carta</button>
+          <button id="btn-robar-2">➕➕ Robar 2 Cartas</button>
+          <button id="btn-relanzar">🎲 Tirar de Nuevo (3 Cartas)</button>
+          <button id="btn-comprobar">🐠 Abrir Pecera</button>
+          <button id="btn-huir">🏃‍♂️ Abandonar</button>
+        </div>
+      </div>
+
+      <!-- Banner Final -->
+      <div id="banner-fin-juego" class="oculto-infiltrado">
+        <div class="contenido-banner-infiltrado">
+          <p id="mensaje-resultado"></p>
+          <button id="btn-reiniciar">🔄 Volver al Menú</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/cartas.js"></script>
   </body>
 </html>
