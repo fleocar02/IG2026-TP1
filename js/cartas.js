@@ -91,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
   }
-
   function reiniciarTimer() {
     clearInterval(intervaloTimer);
     tiempoRestante = 10;
@@ -110,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 1000);
   }
-
   function comprobarObjetivo() {
     if (juegoTerminado) return;
     if (puntosMesa >= 8 && puntosMesa <= 12) {
@@ -129,7 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (juegoTerminado) return;
     finalizarJuego(false, "🏃‍♂️ Huiste a tiempo sin hacer ruido.");
   }
-
   function actualizarInterfaz() {
     document.querySelector(
       "#texto-puntaje"
