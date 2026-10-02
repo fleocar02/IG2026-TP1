@@ -6,10 +6,10 @@
 * [Cárdenas, Fabrizio](https://github.com/fleocar02)
 
 ## 📚 Datos de la Materia
-* **Materia:** Informática General
-* **Año / Cuatrimestre:** 2026 / Segundo Cuatrimestre
-* **Institución:** UNA Artes Multimediales
-* **Cátedra:** Valeria Drelichman | Pedro Paleo | Leonardo Nadel | Norma Morales
+* Informática General
+* 2026 / Segundo Cuatrimestre
+* UNA Artes Multimediales
+* Valeria Drelichman | Pedro Paleo | Leonardo Nadel | Norma Morales
 
  ---
  
@@ -22,6 +22,26 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 * ⚙️ **`refactor:`** Limpieza y orden del código para que sea más fácil de leer, sin cambiar cómo funciona el sitio. *Ejemplo:* `refactor: ordeno las funciones del juego para que no estén duplicadas`
 
 ---
+
+## 💻 Testing & Debugging 
+
+### 2.
+* **`Condición inicial:`**
+* **`Acción:`**
+* **`Resultado esperado:`**
+* **`Resultado observado:`**
+* **`Solución:**`
+
+### 1. 29/9
+* **`Condición inicial:`** El juego se termina y todos los jugadores tienen su puntaje final
+* **`Acción:`** Presionar el botón "comenzar juego" después de finalizar una ronda
+* **`Resultado esperado:`** Vuelve a comenzar la partida desde 0 y el puntaje anterior se guarda en el localStorage.
+* **`Resultado observado:`** El programa reescribe los datos anteriores, acumulando a los jugadores. Sin posibilidad de volver a jugar porque el boton se encuentra deshabilitado.
+* **`Solución:**`
+
+---
+
+## 📜 Proceso
 
 AVANCES HOY:
 (Clara)
