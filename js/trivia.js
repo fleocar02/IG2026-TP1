@@ -252,7 +252,8 @@ function mostrarSeleccionPokemon() {
     reiniciar.hidden = true;
 
     pokeInfo.forEach((poke) => { //Uso de función flecha enseñada en clase con forEach para recorrer cada objeto correspondiente a cada pokemon (dentro del array pokeInfo)
-        const divPoke = document.createElement("div"); //Uso de IA: Me sugirió crear un div para cada pokemon para poder mostrar la imagen y el nombre del pokemon en la pantalla de selección
+        const divPoke = document.createElement("button");//Finalmente terminé yendo con un botón más clásico, no me sirvió el div sugerido por la IA
+        divPoke.type = "button";
         divPoke.className = "tarjeta-pokemon";
         divPoke.innerHTML = `<img src="${poke.imagen}" alt="${poke.nombre}"> <span>${poke.nombre}</span>`; //Uso de IA: No me salía la inserción de la imagen y me sugirió la misma idea de concatenar como hice con la URL de la API, y me dio la idea de usar un span para mostrar el nombre del pokemon abajo de la imagen
         divPoke.addEventListener("click", () => iniciarJuego(poke.nombre)); //Cuando clickeo, inicio el juego con el pokemon elegido
@@ -291,7 +292,7 @@ function mostrarPregunta() {
         urlImagen = actual.imagen; //Esta parte del if es en el caso de mi pregunta sobre Jolteon, donde uso una imagen local
     } else if (actual.pokemon) {//Luego en esta parte, busca la imagen del pokemon en el array pokeInfo
         let encontrado = false;//Inicio con una variable booleana
-    
+
         for (let i = 0; i < pokeInfo.length && !encontrado; i++) {
             if (pokeInfo[i].nombre === actual.pokemon) { //Busca la imagen dentro de pokeInfo para el pokemon correspondiente
                 urlImagen = pokeInfo[i].imagen;
@@ -337,17 +338,17 @@ function responder(eleccion) {
 }
 
 function avanzar() {
-  indice += 1;
+    indice += 1;
 
-  if (indice < pokePreguntas.length) {
-    mostrarPregunta();
-  } else {
-    // Fin del juego: oculta la pantalla de juego y muestra el puntaje final
-    juego.classList.add("oculto");
-    puntaje.textContent = `Respuestas correctas: ${correctas} de ${pokePreguntas.length}`;
-    final.classList.remove("oculto");
-    reiniciar.hidden = false;
-  }
+    if (indice < pokePreguntas.length) {
+        mostrarPregunta();
+    } else {
+        // Fin del juego: oculta la pantalla de juego y muestra el puntaje final
+        juego.classList.add("oculto");
+        puntaje.textContent = `Respuestas correctas: ${correctas} de ${pokePreguntas.length}`;
+        final.classList.remove("oculto");
+        reiniciar.hidden = false;
+    }
 }
 
 // --Inicialización--
