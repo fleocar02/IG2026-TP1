@@ -535,7 +535,7 @@ body.body-trivia h6 {
   font-size: 1.2em;
   color: #333;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 /* Clase oculto */
@@ -547,7 +547,7 @@ body.body-trivia h6 {
 #estado {
   text-align: center;
   font-weight: bold;
-  padding: 10px;
+  padding: 0.6rem;
   margin: 1em auto;
   width: fit-content;
 }
@@ -572,7 +572,7 @@ body.body-trivia h6 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 1rem;
 }
 
 /* Elegir Pokémon */
@@ -581,13 +581,13 @@ body.body-trivia h6 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 140px;
+  width: 8.75rem;
+  height: 8.75rem;
   box-sizing: border-box;
-  border-radius: 16px;
+  border-radius: 1rem;
   background-color: rgba(0, 0, 0, 0.05);
-  border: 2px solid transparent;
-  padding: 10px;
+  border: 0.125rem solid transparent;
+  padding: 0.625rem;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
@@ -602,14 +602,14 @@ body.body-trivia h6 {
 }
 
 .tarjeta-pokemon img {
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  height: 5rem;
   display: block;
 }
 
 .tarjeta-pokemon span {
-  margin-top: 6px;
-  font-size: 0.95em;
+  margin-top: 0.4rem;
+  font-size: 1em;
   text-align: center;
 }
 
@@ -621,7 +621,7 @@ body.body-trivia h6 {
   background-color: rgba(0, 0, 0, 0.03);
   padding: 2em;
   margin: 1.5em auto;
-  max-width: 650px;
+  max-width: 40rem;
   width: 100%;
 }
 
@@ -641,8 +641,8 @@ body.body-trivia h6 {
 
 #pregunta img {
   display: block;
-  margin: 0 auto 12px auto;
-  border-radius: 8px;
+  margin: 0 auto 0.75rem auto;
+  border-radius: 0.5rem;
 }
 
 /* Opciones de respuesta */
@@ -650,12 +650,12 @@ body.body-trivia h6 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 10px;
-  max-width: 450px;
+  gap: 0.6rem;
+  max-width: 28rem;
 }
 
 #opciones button {
-  padding: 14px 20px;
+  padding: 0.9rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.1);
   border: none;
   font-family: "Roboto", sans-serif;
@@ -680,7 +680,7 @@ body.body-trivia h6 {
 
 /* Resultado de la pregunta */
 #resultado {
-  margin-top: 15px;
+  margin-top: 1rem;
   font-weight: bold;
   font-size: 1.1em;
   text-align: center;
@@ -692,7 +692,7 @@ body.body-trivia h6 {
 #reintentar,
 #cambiar-usuario {
   margin-top: 1.5em;
-  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
   background-color: #339af0;
   border: none;
   color: white;
@@ -713,7 +713,7 @@ body.body-trivia h6 {
 /* Pantalla final */
 #final {
   text-align: center;
-  padding: 2em;
+  padding: 2rem;
 }
 
 #puntaje {
@@ -728,42 +728,108 @@ body.body-trivia h6 {
   width: 100%;
   background-color: #f2f2f2;
   border-collapse: collapse; /* Sugerencia de la IA: Border collapse para que el encabezado de la tabla quede sin bordes y más lindo */
-  margin-top: 15px;
+  margin-top: 1rem;
   font-family: 'Roboto', sans-serif;
-  border-radius: 6px;
+  border-radius: 0.4rem;
   overflow: hidden;
 }
 
 .card table th {
   color: #222;
   font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  padding: 8px 10px;
-  border-bottom: 1px solid #ddd;
+  font-size: 0.8em;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 0.06rem solid #ddd;
 }
 
 .card.verde table th {
   background-color: #348141;
   color: white;
 }
+
 .card.rojo table th {
   background-color: #863838;
   color: white;
 }
+
 .card.azul table th {
   background-color: #1b5381;
   color: white;
 }
 
 .card table td {
-  padding: 8px 10px;
+  padding: 0.5rem 0.6rem;
   color: #333;
-  font-size: 14px;
-  border-bottom: 1px solid #ddd;
-  height: 20px;
+  font-size: 0.875em;
+  border-bottom: 0.06rem solid #ddd;
+  line-height: 1.25rem;
   width: 20%;
   font-weight: 500;
   text-align: center;
   font-weight: bold;
+}
+
+/* Estilos para la página Nosotros */
+
+.encabezado.sobre-nosotros h1 {
+  display: inline-block;
+  font-family: "Bungee Inline", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 10em;
+  color: black;
+  line-height: 1;
+  margin-top: 0.5em;
+
+}
+
+.sobre-nosotros {
+  width: 90%;
+  max-width: 55rem;
+  margin: 1.25rem auto 2.5rem auto;
+  text-align: center;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+}
+
+.sobre-nosotros h2 {
+  font-size: 1.75em;
+  margin-bottom: 1rem;
+}
+
+.miembros-grupo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 90%;
+  max-width: 70rem;
+  margin: 0 auto 3.125rem auto;
+}
+
+.miembro {
+  max-width: 21rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+}
+
+.foto-grupo {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 0.2rem solid #fff;
+}
+
+.miembro p {
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
 }
