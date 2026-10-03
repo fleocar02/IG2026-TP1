@@ -721,3 +721,49 @@ body.body-trivia h6 {
   font-weight: bold;
   color: #51cf66;
 }
+
+/* Estilos para las tablas de puntajes */
+
+.card table {
+  width: 100%;
+  background-color: #f2f2f2;
+  border-collapse: collapse; /* Sugerencia de la IA: Border collapse para que el encabezado de la tabla quede sin bordes y más lindo */
+  margin-top: 15px;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card table th {
+  color: #222;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 8px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.card.verde table th {
+  background-color: #348141;
+  color: white;
+}
+.card.rojo table th {
+  background-color: #863838;
+  color: white;
+}
+.card.azul table th {
+  background-color: #1b5381;
+  color: white;
+}
+
+.card table td {
+  padding: 8px 10px;
+  color: #333;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  height: 20px;
+  width: 20%;
+  font-weight: 500;
+  text-align: center;
+  font-weight: bold;
+}
