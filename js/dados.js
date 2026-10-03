@@ -27,28 +27,33 @@ function activarDados() {
 
 // Renderizar tabla de puntajes en el DOM
 function calcularPuntaje() {
-  let contenidoHTML = "";
+  let contenidoHTML = ""; // Limpieza de datos
   jugadores.forEach((jugador) => {
     contenidoHTML += `<p>${jugador.nombre} tiene ${jugador.puntaje} punto/s.</p>`;
   });
   tablaPuntajes.innerHTML = contenidoHTML;
 }
 
-// Listener de cantidad de jugadores
+// Listener de form cantidad de jugadores
 formJugadores.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  jugadores = [];
+  jugadores = []; // Limpieza de datos
   turnoActual = 0;
   mensajePuntos.innerHTML = "";
 
-  const cantJugadores = Number(document.querySelector("#cantidad-jugadores").value);
+  const cantJugadores = Number(
+    document.querySelector("#cantidad-jugadores").value,
+  );
 
   for (let i = 0; i < cantJugadores; i++) {
     let nombre = prompt(`Nombre para Jugador ${i + 1}:`);
 
+    // Validar nombre de usuario
     while (!nombre || nombre.trim() === "") {
-      nombre = prompt(`El nombre no puede estar vacío. Nombre para Jugador ${i + 1}:`);
+      nombre = prompt(
+        `El nombre no puede estar vacío. Nombre para Jugador ${i + 1}:`,
+      );
     }
 
     jugadores.push({

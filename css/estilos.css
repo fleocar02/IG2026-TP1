@@ -23,7 +23,7 @@ body {
   flex-direction: column;
 }
 
-/*Encabezado*/
+/*Encabezado página principal*/
 .encabezado {
   display: flex;
   flex-direction: column;
@@ -32,58 +32,21 @@ body {
   margin: 1em;
 }
 
-.encabezado h1 {
+h1 {
   font-size: 13em;
   font-family: "Bungee Inline", sans-serif;
   text-transform: uppercase;
   margin: 0;
 }
 
-/* Reglas de juego */
-
-.encabezado h2 {
+h2 {
   font-family: "Bungee Inline", sans-serif;
   color: #555;
   text-align: center;
   margin-bottom: 15px;
 }
 
-.instrucciones {
-  max-width: 600px;
-  line-height: 1.6;
-  font-family: "Roboto", sans-serif;
-  color: #333;
-}
-
-.instrucciones ul {
-  list-style: none;
-  padding-left: 0;
-  text-align: left;
-}
-
-.instrucciones li {
-  margin-bottom: 8px;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.instrucciones li::before {
-  content: "✱";
-  color: #ff6b6b;
-  display: inline-block;
-  width: 1em;
-  margin-right: 1rem;
-}
-
-.instrucciones strong {
-  font-size: 20px;
-  color: #555;
-  font-family: "Bungee Inline", sans-serif;
-}
-
 /*Nav de juegos (tarjetas)*/
-
 .columnas {
   display: flex;
   justify-content: center;
@@ -180,11 +143,48 @@ footer {
 }
 
 /* ===================================================
-   ESTILOS ESPECÍFICOS: PAGINA DADOS- CINCUENTA
+   ESTILOS ESPECÍFICOS: PAGINA DADOS - CINCUENTA
    =================================================== */
 
 body.body-dados {
   background-color: #ff6b6b;
+}
+
+/* Reglas de juego */
+.instrucciones-cincuenta {
+  max-width: 600px;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  display: block;
+  margin: auto;
+}
+
+.instrucciones-cincuenta ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+.instrucciones-cincuenta li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.instrucciones-cincuenta li::before {
+  content: "✱";
+  color: #ff6b6b;
+  display: inline-block;
+  width: 1em;
+  margin-right: 1rem;
+}
+
+.instrucciones-cincuenta strong {
+  font-size: 20px;
+  color: #555;
+  font-family: "Bungee Inline", sans-serif;
 }
 
 .juego-container {
