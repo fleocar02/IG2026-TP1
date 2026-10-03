@@ -1,19 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/estilos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-           <!--Fuente Roboto-->
+    <!--Fuente Roboto-->
 
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
 
-       <!--Fuente Bungee-->
+    <!--Fuente Bungee-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -35,71 +35,76 @@
             <li><a href="nosotros.html">Sobre nosotros</a></li>
           </ul>
         </nav>
+
+        <section class="encabezado">
+          <h1>Cincuenta</h1>
+          <h2>🎲 Cómo jugar:</h2>
+          <article class="instrucciones">
+            <p>
+              Pueden jugar desde una hasta seis personas. Todos los jugadores
+              empiezan con 0 puntos. Cada jugador debe lanzar los dados en su
+              turno y automáticamente sumar a la puntuación cuando sale un doble
+              (dos dados iguales)
+            </p>
+            <br />
+            <ul>
+              <li>
+                Si son diferentes (ej: 3 y 4): Tira el próximo jugador sin sumar
+                nada.
+              </li>
+              <li>Si son dobles 1, 2, 4 o 5: Se suman 5 puntos.</li>
+              <li>Si son doble 6: Se suman 25 puntos.</li>
+              <li>
+                Si son doble 3: Se castiga reiniciando la puntuación a cero.
+              </li>
+              <li>
+                Cuando el doble es válido, suma puntos y el jugador repite el
+                tiro.
+              </li>
+            </ul>
+            <strong
+              >🏆 Gana el primer jugador que logre llegar a los 50
+              puntos.</strong
+            >
+          </article>
+        </section>
       </header>
 
-      <section class="encabezado">
-        <h1>Cincuenta</h1>
-        <h2>🎲 Cómo jugar:</h2>
-        <small class="instrucciones">
-          Pueden jugar desde una hasta seis personas. Todos los jugadores empiezan con 0 puntos.
-          Cada jugador debe lanzar los dados en su turno y automáticamente sumar a
-          la puntuación cuando sale un doble (dos dados iguales)<br>
-            <ul>
-            <li>Si son diferentes (ej: 3 y 4): Tira el próximo jugador sin sumar nada.</li>
-            <li>Si son dobles 1, 2, 4 o 5: Se suman 5 puntos.</li>
-            <li>Si son doble 6: Se suman 25 puntos.</li>
-            <li>Si son doble 3: Se castiga reiniciando la puntuación a cero.</li>
-            <li>Cuando el doble es válido, suma puntos y el jugador repite el tiro.</li>
-          </ul>
-
-          <strong>🏆 Gana el primer jugador que logre llegar a los 50 puntos.</strong>
-
-
-                  </small>
-
-
-
-          
-        
-      </section>
-
       <main class="juego-container">
+        <form action="#" method="get" id="form-jugadores" class="form-juego">
+          <label for="cantidad-jugadores">Cantidad de jugadores (1-6):</label>
+          <input
+            type="number"
+            name="cantidad-jugadores"
+            id="cantidad-jugadores"
+            min="1"
+            max="6"
+            required
+          />
+          <button type="submit" id="boton-comenzar" class="btn-comenzar">
+            Comenzar Juego
+          </button>
+        </form>
 
+        <div id="turno-actual" class="turno-box"></div>
+        <!--Indicador de turno-->
 
-      <form action="#" method="get" id="form-jugadores" class="form-juego">
-        <label for="cantidad-jugadores">Cantidad de jugadores (1-6):</label>
-        <input
-          type="number"
-          name="cantidad-jugadores"
-          id="cantidad-jugadores"
-          min="1"
-          max="6"
-          required
-        />
-        <button type="submit" id="boton-comenzar" class="btn-accion">Comenzar Juego</button>
-      </form>
+        <div class="area-dados">
+          <!--Dados area visual-->
+          <div id="img-dado-1" class="dado-box"></div>
+          <div id="img-dado-2" class="dado-box"></div>
+        </div>
 
-      <div id="turno-actual" class="turno-box"></div> <!--Indicador de turno-->
+        <button type="button" id="tirar-dado" disabled>Tirar dado</button>
+        <!--Boton para tirar-->
 
-      <div class="area-dados"> <!--Dados area visual-->
-        <div id="img-dado-1" class="dado-box"></div>
-        <div id="img-dado-2" class="dado-box"></div>
-      </div>
-   
-
-      <button type="button" id="tirar-dado" disabled>Tirar dado</button> <!--Boton para tirar-->
-
-      <div id="mensaje-puntos"></div> 
-      <div id="tabla-puntajes"></div>
-
+        <div id="mensaje-puntos"></div>
+        <div id="tabla-puntajes"></div>
       </main>
 
-      
       <footer>
         <address>Informatica General 2026</address>
       </footer>
-    </div>
-
     </div>
 
     <script src="js/dados.js"></script>
