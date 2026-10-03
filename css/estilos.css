@@ -265,14 +265,15 @@ body.body-dados {
 }
 
 /* ===================================================
-   ESTILOS ESPECÍFICOS: PAGINA INFILTRADO CARTAS (UNIFICADO)
+   ESTILOS ESPECÍFICOS: PAGINA INFILTRADO CARTAS 
    =================================================== */
 
 body.body-cartas {
   background-color: #339af0;
 }
 
-body.contenedor-infiltrado {
+.contenedor-infiltrado {
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -294,19 +295,14 @@ body.contenedor-infiltrado {
 }
 
 /* Contenedor de bienvenida e instrucciones */
-.contenedor-infiltrado .contenedor-bienvenida-infiltrado {
+.contenedor-bienvenida-infiltrado {
   width: 100%;
   max-width: 700px;
   margin: 20px auto;
   box-sizing: border-box;
 }
 
-.pagina-infiltrado h1 {
-  color: #f1c40f;
-  margin-bottom: 20px;
-}
-
-.pagina-infiltrado .contenedor-botones-infiltrado {
+.contenedor-botones-infiltrado {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -315,8 +311,8 @@ body.contenedor-infiltrado {
   margin: 0 auto;
 }
 
-.pagina-infiltrado button {
-  background-color: #e67e22;
+.contenedor-infiltrado button {
+  background-color: #e3581d;
   color: white;
   border: none;
   padding: 10px 16px;
@@ -326,8 +322,8 @@ body.contenedor-infiltrado {
   cursor: pointer;
 }
 
-.pagina-infiltrado .contenedor-bienvenida-infiltrado {
-  background-color: #34495e;
+.contenedor-bienvenida-infiltrado {
+  background-color: #24f299;
   max-width: 700px;
   margin: 20px auto 0;
   padding: 20px;
@@ -335,9 +331,9 @@ body.contenedor-infiltrado {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.pagina-infiltrado .instrucciones-infiltrado {
+.instrucciones-infiltrado {
   text-align: left;
-  background-color: #ffffff;
+  background-color: #ffffffca;
   padding: 15px;
   border-radius: 6px;
   border: 1px solid #dee2e6;
@@ -348,27 +344,23 @@ body.contenedor-infiltrado {
   padding-left: 20px;
 }
 
-.pagina-infiltrado .instrucciones-infiltrado li {
-  padding: 5px 0;
-}
-
-.pagina-infiltrado #btn-comprobar {
+#btn-comprobar {
   background-color: #27ae60;
 }
 
-.pagina-infiltrado #btn-comprobar:hover {
+#btn-comprobar:hover {
   background-color: #2ecc71;
 }
 
-.pagina-infiltrado #btn-huir {
+#btn-huir {
   background-color: #7f8c8d;
 }
 
-.pagina-infiltrado #btn-huir:hover {
+#btn-huir:hover {
   background-color: #95a5a6;
 }
 
-.contenedor-infiltrado .instrucciones-infiltrado li {
+.instrucciones-infiltrado li {
   padding: 4px 0;
   color: #495057;
 }
@@ -726,10 +718,4 @@ body.body-trivia h6 {
   font-size: 1.4em;
   font-weight: bold;
   color: #51cf66;
-}
-
-/* Cartas */
-
-body.body-cartas {
-  background-color: #339af0;
 }
