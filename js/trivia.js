@@ -247,6 +247,7 @@ function cargarPreguntas() {
 
 // --Lógica del juego--
 
+//Función para cambiar de entrenador luego de terminar una trivia
 function cambiarEntrenador() {
     inputEntrenador.value = "";
     entrenador.classList.remove("oculto");
@@ -259,7 +260,7 @@ function cambiarEntrenador() {
 
 function comenzarConNombre() {
     const nombre = inputEntrenador.value;
-    if (nombre === "") {
+    if (nombre === "") {//Alerta en caso de que el usuario no haya ingresado un nombre
         alert("No ingresaste un nombre de entrenador. Ingresá un nombre para continuar.");
         return;
     }
@@ -365,23 +366,23 @@ function responder(eleccion) {
 }
 
 function guardarPuntajeTrivia() {
-    let tablaPuntajes = JSON.parse(localStorage.getItem("puntajesTrivia")) || [];
+    let tablaPuntajes = JSON.parse(localStorage.getItem("puntajesTrivia")) || [];//Si el jugador ya jugó, obtengo sus puntos, si no, creo un array vacío para guardarlos
 
     let encontrado = false;
-    for (let i = 0; i < tablaPuntajes.length && !encontrado; i++) {
+    for (let i = 0; i < tablaPuntajes.length && !encontrado; i++) {//Recorro el array de puntajes para ver si el usuario ya jugó
         if (tablaPuntajes[i].nombre === nombreEntrenador) {
-            tablaPuntajes[i].puntos += correctas;
+            tablaPuntajes[i].puntos += correctas;//Si es así, sumo sus puntos a los que ya tenía
             encontrado = true;
         }
     }
 
-    if (!encontrado) {
+    if (!encontrado) {//Si no, lo agrego a mi array de puntajes
         tablaPuntajes.push({
             nombre: nombreEntrenador,
             puntos: correctas
         });
     }
-    localStorage.setItem("puntajesTrivia", JSON.stringify(tablaPuntajes));
+    localStorage.setItem("puntajesTrivia", JSON.stringify(tablaPuntajes));//Guardo los datos en el localStorage
 }
 
 function avanzar() {
@@ -395,6 +396,7 @@ function avanzar() {
         puntaje.textContent = `Respuestas correctas: ${correctas} de ${pokePreguntas.length}`;
         final.classList.remove("oculto");
         reiniciar.hidden = false;
+        guardarPuntajeTrivia();//Guarda el puntaje del usuario para la tabla
     }
 }
 
