@@ -1,4 +1,4 @@
-// Crear arrays y contadores
+// Arrays y contadores
 let jugadores = [];
 let turnoActual = 0;
 
@@ -12,7 +12,7 @@ const mensajePuntos = document.querySelector("#mensaje-puntos");
 const imgDado1 = document.querySelector("#img-dado-1");
 const imgDado2 = document.querySelector("#img-dado-2");
 
-// Generar tirada de dado (1 a 6) y actualizar la interfaz
+// Generar tirada de dado (1 a 6)
 function activarDados() {
   const tirarDado = () => Math.floor(Math.random() * 6) + 1;
 
@@ -25,20 +25,20 @@ function activarDados() {
   return [valorDado1, valorDado2];
 }
 
-// Renderizar tabla de puntajes en el DOM
+// Tabla de puntajes 
 function calcularPuntaje() {
-  let contenidoHTML = ""; // Limpieza de datos
+  let contenidoHTML = ""; // Limpiar datos
   jugadores.forEach((jugador) => {
     contenidoHTML += `<p>${jugador.nombre} tiene ${jugador.puntaje} punto/s.</p>`;
   });
   tablaPuntajes.innerHTML = contenidoHTML;
 }
 
-// Listener de form cantidad de jugadores
+// Form para obtener la cantidad de jugadores
 formJugadores.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  jugadores = []; // Limpieza de datos
+  jugadores = []; // Limpiar datos
   turnoActual = 0;
   mensajePuntos.innerHTML = "";
 
@@ -93,6 +93,9 @@ btnTirar.addEventListener("click", () => {
       tablaPuntajes.innerHTML += `<h1>¡${jugadores[turnoActual].nombre} llegó a los 50 puntos y ganó la partida!</h1>`;
       btnTirar.disabled = true;
       btnComenzar.disabled = false;
+
+      //Guardar puntajes en localStorage y mostrar en html de puntaje
+      guardarPuntajesDados();
     }
   } else {
     // Si los dados son distintos, pasa el turno
@@ -101,3 +104,33 @@ btnTirar.addEventListener("click", () => {
     mensajePuntos.innerHTML = `<p>Dados distintos. Cambio de turno.</p>`;
   }
 });
+
+// Enviar datos a puntajes.html
+function guardarPuntajesDados() {
+
+  let tablaPuntajes = JSON.parse(localStorage.getItem("puntajesDados")) || []; // Busca tabla existente o crea un array vacio
+
+  //Recorrer cada jugador en el array de la ultima partida 
+  jugadores.forEach((jugador) => {
+    let encontrado = false; 
+
+    for(let i = 0; i < tablaPuntajes.length && !encontrado; i++){ //El jugador existe en el local storage?
+      if (tablaPuntajes[i].nombre === jugador.nombre){ 
+        tablaPuntajes[i].puntos += jugador.puntaje; 
+        encontrado = true; // Si lo encuentra, le suma puntos de esta partida
+      }
+    }
+
+    // Agregar jugador nuevo al array si no lo encontró
+    if (!encontrado){
+      tablaPuntajes.push({
+        nombre: jugador.nombre,
+        puntos: jugador.puntaje
+      });
+    }
+  });
+
+  //Guardar en localstorage con la clave que pide puntajes.js
+  localStorage.setItem("puntajesDados", JSON.stringify(tablaPuntajes));
+
+}
