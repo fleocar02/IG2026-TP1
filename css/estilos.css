@@ -540,7 +540,7 @@ body.body-trivia h6 {
 
 /* Clase oculto */
 .oculto {
-  display: none;
+  display: none !important;
 }
 
 /* Mensajes de estado */
@@ -689,7 +689,8 @@ body.body-trivia h6 {
 /* Botones de estado */
 #siguiente,
 #reiniciar,
-#reintentar {
+#reintentar,
+#cambiar-usuario {
   margin-top: 1.5em;
   padding: 12px 24px;
   background-color: #339af0;
@@ -704,7 +705,8 @@ body.body-trivia h6 {
 
 #siguiente:hover,
 #reiniciar:hover,
-#reintentar:hover {
+#reintentar:hover,
+#cambiar-usuario:hover {
   background-color: #1c7ed6;
 }
 
