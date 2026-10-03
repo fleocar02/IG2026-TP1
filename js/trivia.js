@@ -19,6 +19,7 @@ const reiniciar = document.querySelector("#reiniciar"); //Botón para reiniciar 
 const reintentar = document.querySelector("#reintentar"); //Botón para reintentar cargar los datos en caso de error
 const comenzar = document.querySelector("#comenzar"); //Botón para comenzar luego de ingresar nombre de entrenador
 const cambiarUsuario = document.querySelector("#cambiar-usuario"); //Botón para cambiar nombre de entrenador
+const instrucciones = document.querySelector("#instrucciones"); //Sección de instrucciones de la trivia
 
 // --Declaración de variables para el estado del juego y otras variables globales--
 let todasPreguntas = []; //Almacena el conjunto en su totalidad de preguntas
@@ -251,6 +252,7 @@ function cargarPreguntas() {
 function cambiarEntrenador() {
     inputEntrenador.value = "";
     entrenador.classList.remove("oculto");
+    instrucciones.classList.remove("oculto");
     estado.textContent = "";
     final.classList.add("oculto");
     juego.classList.add("oculto");
@@ -267,6 +269,7 @@ function comenzarConNombre() {
 
     nombreEntrenador = nombre;
     entrenador.classList.add("oculto");
+    instrucciones.classList.add("oculto");
     seleccion.classList.remove("oculto");
     mostrarSeleccionPokemon();
 }
