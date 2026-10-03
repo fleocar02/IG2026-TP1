@@ -18,6 +18,7 @@ const inputEntrenador = document.querySelector("#nombre-entrenador"); //Input pa
 const reiniciar = document.querySelector("#reiniciar"); //Botón para reiniciar el juego
 const reintentar = document.querySelector("#reintentar"); //Botón para reintentar cargar los datos en caso de error
 const comenzar = document.querySelector("#comenzar"); //Botón para comenzar luego de ingresar nombre de entrenador
+const cambiarUsuario = document.querySelector("#cambiar-usuario"); //Botón para cambiar nombre de entrenador
 
 // --Declaración de variables para el estado del juego y otras variables globales--
 let todasPreguntas = []; //Almacena el conjunto en su totalidad de preguntas
@@ -77,7 +78,6 @@ async function cargarDatosPokemon() {
         }
 
         pokeInfo = resultados;
-        mostrarSeleccionPokemon();
 
     } catch (error) {
         mostrarError(`No se pudo cargar los Pokémon: ${error.message}`);
@@ -247,6 +247,16 @@ function cargarPreguntas() {
 
 // --Lógica del juego--
 
+function cambiarEntrenador() {
+    inputEntrenador.value = "";
+    entrenador.classList.remove("oculto");
+    estado.textContent = "";
+    final.classList.add("oculto");
+    juego.classList.add("oculto");
+    reiniciar.hidden = true;
+}
+
+
 function comenzarConNombre() {
     const nombre = inputEntrenador.value;
     if (nombre === "") {
@@ -257,6 +267,7 @@ function comenzarConNombre() {
     nombreEntrenador = nombre;
     entrenador.classList.add("oculto");
     seleccion.classList.remove("oculto");
+    mostrarSeleccionPokemon();
 }
 
 function mostrarSeleccionPokemon() {
@@ -392,6 +403,7 @@ siguiente.addEventListener("click", avanzar);
 reintentar.addEventListener("click", cargarDatosPokemon);
 reiniciar.addEventListener("click", mostrarSeleccionPokemon);
 comenzar.addEventListener("click", comenzarConNombre);
+cambiarUsuario.addEventListener("click", cambiarEntrenador);
 
 // --Primera llamada--
 cargarDatosPokemon();
