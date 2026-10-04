@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Asignar Event Listeners con querySelector
   document.querySelector("#btn-iniciar").onclick = iniciarJuego;
   document.querySelector("#btn-robar-1").onclick = () => pedirCartas(1);
-  document.querySelector("#btn-robar-2").onclick = () => pedirCartas(2);
   document.querySelector("#btn-relanzar").onclick = relanzarTirada;
   document.querySelector("#btn-comprobar").onclick = comprobarObjetivo;
   document.querySelector("#btn-huir").onclick = abandonarMision;
