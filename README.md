@@ -182,6 +182,8 @@ Utilicé ayuda de la IA Ecosia y la IA Gemini para ayudarme a optimizar el códi
 
 #### Fabrizio Cárdenas
 
+Utilicé la IA Gemini como asistente durante el desarrollo del proyecto. En el código JavaScript, la empleé para identificar y corregir errores críticos (como listeners de eventos duplicados al reiniciar la partida y el manejo de sincronización con el DOM), así como para mejorar la lógica del cambio de turnos. En cuanto a HTML y CSS, me ayudó a detectar fallas de semántica y anidamiento, y a diseñar un sistema visual más claro para el contenedor del turno actual (agregando resaltado tipográfico, clases dinámicas para el jugador activo en la tabla de puntajes y animaciones con @keyframes para dinamizar la interfaz).
+
 #### Marcela Marcolini
 
 Utilicé la IA Gemini para optimizar la funcionalidad del java script del juego de cartas, me brindó una serie de propuestas que tuve que simplificar, generalmente sugiere el uso de GetElementById para lo que le pido que me proponga las funciones con document.querySelector, también sugiere algunas otras funciones que no hemos visto y no conozco, así que debo repreguntar varias veces y ser muy específica en lo que quiero que use. También la utilicé para trabajar un poco los estilos y para arreglar código css al momento de unificar los estilos de las páginas de dados y poketrivia.
