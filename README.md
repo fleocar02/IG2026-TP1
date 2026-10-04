@@ -13,8 +13,8 @@
 
  ---
  
-INSTRUCCIONES DE JUEGO:
-DADOS
+## 📜 Instrucciones de Juego
+### 🎲 DADOS
 El Cincuenta, juego clásico de dados que todos hemos jugado con amigos o familia.
 Pueden jugar desde una hasta seis personas. Todos los jugadores empiezan con 0 puntos. Cada jugador debe lanzar los dados en su turno y automáticamente sumar a la puntuación cuando sale un doble (dos dados iguales)
 
@@ -24,7 +24,7 @@ Si son doble 6: Se suman 25 puntos.
 Si son doble 3: Se castiga reiniciando la puntuación a cero.
 Cuando el doble es válido, suma puntos y el jugador repite el tiro.
 
-CARTAS
+### 🃏 CARTAS
 El Infiltrado, un juego innovador y súper divertido en el que sos un gatito travieso queriendo acceder a una pecera en casa para agarrar un delicioso pescado dorado, pero te encontrarás con varios obstáculos.
 Objetivo: Sumar entre 8 y 12 puntos para abrir la pecera.
 Timer de 10s: El contador se reinicia con cada decisión. Si llega a 0, suena la alarma.
@@ -32,7 +32,7 @@ Acciones de Tirada: Puedes pedir 1 carta, pedir 2 cartas, repetir la tirada de 3
 Alarma: Si te pasas de 12 puntos, pierdes.
 Abandonar: Huye a tiempo si presientes que vas a fallar.
 
-PREGUNTAS
+### ❓ PREGUNTAS
 Una trivia divertida de Pokemon, la cual cuenta con 5 preguntas particulares segun el Pokemon que más te guste y elijas al principio.
 Ingresá tu nombre: Escribí tu apodo de entrenador Pokémon para registrar tu partida.
 Elegí tu compañero: Selecciona el Pokémon que más te guste.
@@ -40,14 +40,16 @@ Respondé las preguntas: Lee las preguntas tematizadas de tu Pokemon y seleccion
 Sumá puntos: Cada acierto cuenta como 1 punto.
 
 
-ORGANIZACIÓN DE ARCHIVOS Y CARPETAS
+## 📁 Organización de Archivos y Carpetas
 Nuestros 6 archivos HTML (index,dados,cartas,preguntas,puntajes,index) están en el root del repositorio, junto con el README. Luego contamos con 3 carpetas: css (contiene un único archivo estilos.css con los estilos de la página), js (con 4 archivos js que manejan la lógica y el procesamiento de datos de nuestros juegos (cartas,dados,puntajes,trivia)) y por último la carpeta img (contiene las imágenes usadas para el juego de dados, el de trivia y las que usamos para la página nosotros).
 
-TECNOLOGÍAS Y FUNCIONALIDADES USADAS EN DADOS
+## 🛠️ Tecnologías y Funcionalidades
 
-TECNOLOGÍAS Y FUNCIONALIDADES USADAS EN CARTAS
+### Usadas en Dados
 
-TECNOLOGÍAS Y FUNCIONALIDADES USADAS EN TRIVIA
+### Usadas en Cartas
+
+### Usadas en Trivia
 Mi proceso de hacer la trivia fue así: Primero creé las preguntas y fui pensando cómo iba a hacer un juego de preguntas más divertido, y se me ocurrió la idea de dar a elegir 5 pokemones que tengan cada uno 5 preguntas específicas. Me ayudé bastante con los ejemplos vistos en clase sobre APIs y los ejemplos del repo de la cátedra también.
 Mi juego cuenta con 4 estados:
 1. Ingreso de nombre de entrenador e instrucciones.
@@ -56,12 +58,13 @@ Mi juego cuenta con 4 estados:
 4. Puntaje final con opciones de jugar de nuevo (mismo usuario) o cambiar de usuario.
 
 Mi archivo JS tiene las siguientes funciones:
-Funciones de utilidad
+#### Funciones de utilidad
 mezclar : mezcla las opciones de las preguntas
 mostrarError : en caso de que haya un problema en la solicitud a la API
 cargarDatosPokemon : hace la solicitud a la API con try y devuelve un array (pokeInfo) con nombre e imagen del pokemon, en caso de que no haya ningún error
 cargarPreguntas : carga las 25 preguntas
-Funciones para el juego principal
+
+#### Funciones para el juego principal
 cambiarEntrenador : oculta y muestra ciertos estados y permite ingresar un nombre de usuario nuevo
 comenzarConNombre : procesa el input del nombre y en caso de que no se ingrese ninguno, tira una alerta
 mostrarSeleccionPokemon : crea dinámicamente un botón con el sprite extraído de la API para cada pokemon, el cual ejecuta la función iniciarJuego
@@ -71,7 +74,7 @@ responder : deshabilita el resto de botones y evalúa si la elección es correct
 guardarPuntajeTrivia : busca si el jugador ya tiene un puntaje guardado dentro del localStorage (puntajesTrivia), si es así, lo guarda en una variable tablaPuntajes, si no, crea un array vacío en esta. Luego, sumo sus puntajes con un bucle for. Si no lo encontró, pushea sus resultados nuevos a un array con claves nombre y puntos; luego los guarda en el localStorage
 avanzar : evalúa si es la última pregunta o no, si es así, muestra la pantalla final con puntaje y guarda los puntajes de la trivia ejecutando la función anteriormente mencionada
 
-TECNOLOGÍAS Y FUNCIONALIDADES USADAS EN PUNTAJES
+### Usadas en Puntajes
 Generamos la tabla en HTML y la llenamos con JS, usando dos funciones:
 cargarTabla : a esta función le dimos muchas vueltas, intentamos con un solo for y solo 3 resultados, luego con un for dentro de un while, pero después de mucho pensar y ayuda de la IA para optimizar, llegamos a esta función.
 Esta recibe el id de la tabla y la clave del localStorage (por ejemplo, puntajesTrivia), luego recibe los valores para las celdas y los almacena en dos constantes. Luego crea una copia de los puntajes existentes en un array con forEach, para luego ir comparándolos en otro for, con una variable por fuera (indiceMayor), que va almacenando el índice del array original que tenga mayor puntaje; a medida que lo va encontrando, lo va sacando del array de copia, así no vuelve a iterar sobre ese puntaje.
@@ -109,12 +112,19 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 
 ## 📜 Proceso
 
-API utilizada:
+## 🗃️ API utilizada
 PokeApi "Todos los datos de Pokémon que necesitarás en un solo lugar, fácilmente accesible a través de una moderna API RESTful gratuita de código abierto."
 Esta API conserva toda la data de Pokemon, siendo actualizada por cada lanzamiento nuevo en la franquicia.
 De ella extraigo el name (nombre del pokemon) y el sprites.front_default (sprite, imagen del pokemon) para utilizar en la trivia. Elegí esta API porque es una de las más completas, y me gustó la temática Pokemon para la trivia.
 
-Declaración de uso de IA:
-Clara Fernandez Rolon: Utilicé ayuda de la IA Ecosia y la IA Gemini para ayudarme a optimizar el código en algunas funciones y mejoras en el estilo. La usé teniendo en cuenta de que muchas veces ofrece cosas que no vimos, por eso para la lógica prefiero no usarla tanto. Para los estilos si admití algunas características de por ejemplo cursor, que no vimos específicamente, pero me parecieron adecuadas para que el sitio quede más dinámico.
+## 🤖 Declaración de uso de IA
+#### Clara Fernandez Rolon
+Utilicé ayuda de la IA Ecosia y la IA Gemini para ayudarme a optimizar el código en algunas funciones y mejoras en el estilo. La usé teniendo en cuenta de que muchas veces ofrece cosas que no vimos, por eso para la lógica prefiero no usarla tanto. Para los estilos si admití algunas características de por ejemplo cursor, que no vimos específicamente, pero me parecieron adecuadas para que el sitio quede más dinámico.
+
+#### Fabrizio Cárdenas
+
+
+#### Marcela Marcolini
+
 
 
