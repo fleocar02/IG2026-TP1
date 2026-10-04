@@ -62,7 +62,7 @@
    
         <!--Contenedor del juego-->
         <div class="juego-container">
-          <form action="#" method="get" id="form-jugadores" class="form-juego">
+          <form action="#" method="get" id="form-cantidad" class="form-juego">
             <label for="cantidad-jugadores">Cantidad de jugadores (1-6):</label>
             <input
               type="number"
@@ -71,7 +71,13 @@
               min="1"
               max="6"
               required/>
-            <button type="submit" id="boton-comenzar" class="btn-comenzar">Comenzar Juego</button>
+            <button type="submit" id="btn-ingresar-cantidad" class="btn-comenzar">Siguiente</button>
+          </form>
+
+          <form id="form-nombres" class="form-juego oculto">
+            <h2>Ingrese los nombres de los jugadores</h2>
+            <div id="contenedor-inputs-nombres"></div>
+            <button type="submit" id="btn-comenzar-juego" class="btn-comenzar">Comenzar juego</button>
           </form>
 
           <div id="seccion-juego" class="oculto">
@@ -91,6 +97,7 @@
             <div id="mensaje-puntos"></div>
             <div id="tabla-puntajes"></div>
             <div id="mensaje-ganador"></div>
+          </div>
         </div>
       </main>
 

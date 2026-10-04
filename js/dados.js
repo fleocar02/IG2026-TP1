@@ -3,15 +3,17 @@ let jugadores = [];
 let turnoActual = 0;
 
 // Seleccionar elementos del DOM
-const formJugadores = document.querySelector("#form-jugadores");
-const turnoDiv = document.querySelector("#turno-actual");
+const formCantidad = document.querySelector("#form-cantidad");
+const formNombres = document.querySelector("#form-nombres");
+const contenedorInputs = document.querySelector("#contenedor-inputs-nombres");
 const btnComenzar = document.querySelector("#boton-comenzar");
+const turnoDiv = document.querySelector("#turno-actual");
 const btnTirar = document.querySelector("#tirar-dado");
+const imgDado1 = document.querySelector("#img-dado-1");
+const imgDado2 = document.querySelector("#img-dado-2");
 const tablaPuntajes = document.querySelector("#tabla-puntajes");
 const mensajePuntos = document.querySelector("#mensaje-puntos");
 const mensajeGanador = document.querySelector("#mensaje-ganador");
-const imgDado1 = document.querySelector("#img-dado-1");
-const imgDado2 = document.querySelector("#img-dado-2");
 const instrucciones = document.querySelector("#instrucciones");
 const seccionJuego = document.querySelector("#seccion-juego");
 
@@ -37,8 +39,26 @@ function calcularPuntaje() {
   tablaPuntajes.innerHTML = contenidoHTML;
 }
 
-// Form para obtener la cantidad de jugadores
-formJugadores.addEventListener("submit", (e) => {
+// Crear input para nombres segun la cantidad de jugadores
+formCantidad.addEventListener("submit", (e) => {
+  e.preventDefault();
+  contenedorInputs.innerHTML = "";
+
+  const cantJugadores = Number(document.querySelector("#cantidad-jugadores").value);
+
+  for (let i = 1; i < cantJugadores + 1; i++) {
+    contenedorInputs.innerHTML += `<div class="input">
+    <label for="jugador-${i}">Jugador ${i}: </label>
+    <input type="text" id="jugador-${i}" class="input-nombre" placeholder="Nombre" required/>
+    </div>`;
+    }
+    formCantidad.classList.add("oculto");
+    formNombres.classList.remove("oculto");
+
+});
+
+//Guardar nombres de inputs e iniciar partida
+formNombres.addEventListener("submit", (e) => {
   e.preventDefault();
 
   jugadores = []; // Resetear variables del juego
@@ -49,34 +69,23 @@ formJugadores.addEventListener("submit", (e) => {
   imgDado1.innerHTML = "";
   imgDado2.innerHTML = "";
 
-  const cantJugadores = Number(
-    document.querySelector("#cantidad-jugadores").value,
-  );
-
-  for (let i = 0; i < cantJugadores; i++) {
-    let nombre = prompt(`Nombre para Jugador ${i + 1}:`);
-
-    // Validar nombre de usuario
-    while (!nombre || nombre.trim() === "") {
-      nombre = prompt(
-        `El nombre no puede estar vacío. Nombre para Jugador ${i + 1}:`,
-      );
-    }
-
-    jugadores.push({
-      nombre: nombre.trim(),
+  const inputs = document.querySelectorAll(".input-nombre");
+  inputs.forEach((input) => {
+      jugadores.push({
+      nombre: input.value.trim(),
       puntaje: 0,
+      });
     });
-  }
 
   instrucciones.classList.add("oculto"); //Ocultar instrucciones
+  formNombres.classList.remove("oculto");
   seccionJuego.classList.remove("oculto"); // Mostrar juego de dados
-
+  
   calcularPuntaje();
 
-  btnComenzar.disabled = true;
   btnTirar.disabled = false;
   turnoDiv.innerHTML = `<span>Turno actual: <strong>${jugadores[turnoActual].nombre}</strong></span>`;
+
 });
 
 // Listener de boton para tirar los dados
@@ -105,7 +114,6 @@ btnTirar.addEventListener("click", () => {
 
       mensajeGanador.innerHTML += `<h2>¡${jugadores[turnoActual].nombre} llegó a los 50 puntos y ganó la partida!</h2>`;
       btnTirar.disabled = true;
-      btnComenzar.disabled = false;
 
       //Guardar puntajes en localStorage y mostrar en html de puntaje
       guardarPuntajesDados();
@@ -118,25 +126,25 @@ btnTirar.addEventListener("click", () => {
   }
 });
 
-// Enviar datos a puntajes.html
+// Enviar puntaje del localStorage a puntajes.html
 function guardarPuntajesDados() {
 
-  let tablaPuntajes = JSON.parse(localStorage.getItem("puntajesDados")) || []; // Busca tabla existente o crea un array vacio
+  let tablaPuntajesLS = JSON.parse(localStorage.getItem("puntajesDados")) || []; // Busca tabla existente o crea un array vacio
 
   //Recorrer cada jugador en el array de la ultima partida 
   jugadores.forEach((jugador) => {
     let encontrado = false; 
 
-    for(let i = 0; i < tablaPuntajes.length && !encontrado; i++){ //El jugador existe en el local storage?
-      if (tablaPuntajes[i].nombre === jugador.nombre){ 
-        tablaPuntajes[i].puntos += jugador.puntaje; 
+    for(let i = 0; i < tablaPuntajesLS.length && !encontrado; i++){ //El jugador existe en el local storage?
+      if (tablaPuntajesLS[i].nombre === jugador.nombre){ 
+        tablaPuntajesLS[i].puntos += jugador.puntaje; 
         encontrado = true; // Si lo encuentra, le suma puntos de esta partida
       }
     }
 
     // Agregar jugador nuevo al array si no lo encontró
     if (!encontrado){
-      tablaPuntajes.push({
+      tablaPuntajesLS.push({
         nombre: jugador.nombre,
         puntos: jugador.puntaje
       });
@@ -144,6 +152,6 @@ function guardarPuntajesDados() {
   });
 
   //Guardar en localstorage con la clave que pide puntajes.js
-  localStorage.setItem("puntajesDados", JSON.stringify(tablaPuntajes));
+  localStorage.setItem("puntajesDados", JSON.stringify(tablaPuntajesLS));
 
 }
