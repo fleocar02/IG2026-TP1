@@ -873,7 +873,7 @@ body.body-trivia h6 {
   margin-bottom: 0.4em;
 }
 
-.card {
+.body-puntajes .card {
   flex-shrink: 0; /* Sugerencia de la IA: No podía ensanchar las tarjetas y no sabía por qué, y era por el flex-shrink que es 1 por default en este caso. */
   width: 100%;
   max-width: 20rem;
@@ -882,7 +882,7 @@ body.body-trivia h6 {
   box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.08);
 }
 
-.card table {
+.body-puntajes .card table {
   width: 100%;
   background-color: #f2f2f2;
   border-collapse: collapse; /* Sugerencia de la IA: Border collapse para que el encabezado de la tabla quede sin bordes y más lindo */
@@ -892,7 +892,7 @@ body.body-trivia h6 {
   overflow: hidden;
 }
 
-.card table th {
+.body-puntajes .card table th {
   color: #222;
   font-weight: 700;
   font-size: 0.8em;
@@ -900,22 +900,22 @@ body.body-trivia h6 {
   border-bottom: 0.06rem solid #ddd;
 }
 
-.card.verde table th {
+.body-puntajes .card.verde table th {
   background-color: #348141;
   color: white;
 }
 
-.card.rojo table th {
+.body-puntajes .card.rojo table th {
   background-color: #863838;
   color: white;
 }
 
-.card.azul table th {
+.body-puntajes .card.azul table th {
   background-color: #1b5381;
   color: white;
 }
 
-.card table td {
+.body-puntajes .card table td {
   padding: 0.5rem 0.6rem;
   color: #333;
   font-size: 0.875em;
