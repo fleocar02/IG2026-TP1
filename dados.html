@@ -63,7 +63,7 @@
         <!--Contenedor del juego-->
         <div class="juego-container">
           <form action="#" method="get" id="form-cantidad" class="form-juego">
-            <label for="cantidad-jugadores">Cantidad de jugadores (1-6):</label>
+            <h2>Cantidad de jugadores (1-6): </h2>
             <input
               type="number"
               name="cantidad-jugadores"
@@ -74,20 +74,26 @@
             <button type="submit" id="btn-ingresar-cantidad" class="btn-comenzar">Siguiente</button>
           </form>
 
-          <form id="form-nombres" class="form-juego oculto">
-            <h2>Ingrese los nombres de los jugadores</h2>
+          <form id="form-nombres" class="form-juego oculto"> <!--Pedir el input de nombre-->
+            <h2>Ingrese los nombres de los jugadores: </h2>
             <div id="contenedor-inputs-nombres"></div>
             <button type="submit" id="btn-comenzar-juego" class="btn-comenzar">Comenzar juego</button>
           </form>
 
-          <div id="seccion-juego" class="oculto">
+          <div id="seccion-juego" class="oculto"> <!--Div que separa el juego de las instrucciones-->
             <!--Indicador de turno-->
             <div id="turno-actual" class="turno-box"></div>
 
             <!--Dados area visual-->
             <div class="area-dados">
-              <div id="img-dado-1" class="dado-box"></div>
-              <div id="img-dado-2" class="dado-box"></div>
+
+              <div id="img-dado-1" class="dado-box">
+                <img src="./img/dado-imagen-1.png" alt="Dado 1">
+              </div>
+
+              <div id="img-dado-2" class="dado-box">
+                <img src="./img/dado-imagen-1.png" alt="Dado 1">
+              </div>
             </div>
 
             <!--Boton para tirar-->
