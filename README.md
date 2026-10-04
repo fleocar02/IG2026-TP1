@@ -54,6 +54,7 @@ Mi juego cuenta con 4 estados:
 2. Selección de Pokemon.
 3. Juego principal de preguntas.
 4. Puntaje final con opciones de jugar de nuevo (mismo usuario) o cambiar de usuario.
+
 Mi archivo JS tiene las siguientes funciones:
 Funciones de utilidad
 mezclar : mezcla las opciones de las preguntas
@@ -113,6 +114,7 @@ PokeApi "Todos los datos de Pokémon que necesitarás en un solo lugar, fácilme
 Esta API conserva toda la data de Pokemon, siendo actualizada por cada lanzamiento nuevo en la franquicia.
 De ella extraigo el name (nombre del pokemon) y el sprites.front_default (sprite, imagen del pokemon) para utilizar en la trivia. Elegí esta API porque es una de las más completas, y me gustó la temática Pokemon para la trivia.
 
-
+Declaración de uso de IA:
+Clara Fernandez Rolon: Utilicé ayuda de la IA Ecosia y la IA Gemini para ayudarme a optimizar el código en algunas funciones y mejoras en el estilo. La usé teniendo en cuenta de que muchas veces ofrece cosas que no vimos, por eso para la lógica prefiero no usarla tanto. Para los estilos si admití algunas características de por ejemplo cursor, que no vimos específicamente, pero me parecieron adecuadas para que el sitio quede más dinámico.
 
 
