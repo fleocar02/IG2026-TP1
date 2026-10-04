@@ -17,8 +17,9 @@ const mensajeGanador = document.querySelector("#mensaje-ganador");
 const instrucciones = document.querySelector("#instrucciones");
 const seccionJuego = document.querySelector("#seccion-juego");
 
-// Generar tirada de dado (1 a 6)
+// Generar numero de dado (1 a 6) 
 function activarDados() {
+
   const tirarDado = () => Math.floor(Math.random() * 6) + 1;
 
   const valorDado1 = tirarDado();
@@ -27,19 +28,29 @@ function activarDados() {
   imgDado1.innerHTML = `<img src="./img/dado-imagen-${valorDado1}.png" alt="Dado ${valorDado1}"/>`;
   imgDado2.innerHTML = `<img src="./img/dado-imagen-${valorDado2}.png" alt="Dado ${valorDado2}"/>`;
 
+  btnTirar.disabled = false;
+
   return [valorDado1, valorDado2];
+ 
 }
 
-// Calcular y mostrar puntajes de jugadores
+// Calcular y mostrar puntajes de jugadores en el DOM
 function calcularPuntaje() {
-  let contenidoHTML = ""; // Limpiar datos
+
+  /*jugadores.forEach((jugador) => {
+  tablaPuntajes.innerHTML += `<p>${jugador.nombre} tiene ${jugador.puntaje} punto/s.</p>`;
+  });
+
+  Escribir un mensaje en el innerHTML dentro del bucle forEach renderizaba el DOM a cada rato */
+
+  let contenidoHTML = "";
   jugadores.forEach((jugador) => {
     contenidoHTML += `<p>${jugador.nombre} tiene ${jugador.puntaje} punto/s.</p>`;
   });
   tablaPuntajes.innerHTML = contenidoHTML;
 }
 
-// Crear input para nombres segun la cantidad de jugadores
+// Crear inputs para nombres segun la cantidad de jugadores
 formCantidad.addEventListener("submit", (e) => {
   e.preventDefault();
   contenedorInputs.innerHTML = "";
@@ -61,15 +72,29 @@ formCantidad.addEventListener("submit", (e) => {
 formNombres.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  const inputs = document.querySelectorAll(".input-nombre");
+
+  // Validar el nombre (solo espacios)
+  let inputVacio = false;
+
+  inputs.forEach((input) => {
+    if (input.value.trim() === "") {
+      inputVacio = true
+    }
+  })
+
+  if(inputVacio){
+    alert("Por favor, ingrese un nombre válido para cada jugador (no se permiten solo espacios).")
+    return;
+  }
+
+
   jugadores = []; // Resetear variables del juego
   turnoActual = 0;
   mensajePuntos.innerHTML = ""; // Limpiar datos de partidas anteriores
   mensajeGanador.innerHTML = "";
   tablaPuntajes.innerHTML = "";
-  imgDado1.innerHTML = "";
-  imgDado2.innerHTML = "";
 
-  const inputs = document.querySelectorAll(".input-nombre");
   inputs.forEach((input) => {
       jugadores.push({
       nombre: input.value.trim(),
@@ -78,26 +103,29 @@ formNombres.addEventListener("submit", (e) => {
     });
 
   instrucciones.classList.add("oculto"); //Ocultar instrucciones
-  formNombres.classList.remove("oculto");
-  seccionJuego.classList.remove("oculto"); // Mostrar juego de dados
+  formNombres.classList.add("oculto"); // Ocultar formulario
+  seccionJuego.classList.remove("oculto"); // Mostrar juego
   
-  calcularPuntaje();
+  calcularPuntaje(); 
 
   btnTirar.disabled = false;
+  
   turnoDiv.innerHTML = `<span>Turno actual: <strong>${jugadores[turnoActual].nombre}</strong></span>`;
 
 });
 
-// Listener de boton para tirar los dados
+// Listener de boton que tira los dados
 btnTirar.addEventListener("click", () => {
+
   const [dado1, dado2] = activarDados();
 
   if (dado1 === dado2) {
     // Si los dados son iguales
-    if (dado1 === 3) {
-      mensajePuntos.innerHTML = `<span>-${jugadores[turnoActual].puntaje}</h2><p>¡Doble tres! Reinicias a 0 puntos.</span>`;
+    if (dado1 === 3 && dado2 === 3) {
+      mensajePuntos.innerHTML = `<h2>-${jugadores[turnoActual].puntaje}</h2><span>¡Doble tres! Reinicias a 0 puntos.</span>`;
       jugadores[turnoActual].puntaje = 0;
-    } else if (dado1 === 6) {
+
+    } else if (dado1 === 6 && dado2 === 6) {
       jugadores[turnoActual].puntaje += 25;
       mensajePuntos.innerHTML = `<h2>+25</h2><span>¡Doble seis!</span>`;
     } else {
