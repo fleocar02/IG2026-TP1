@@ -1,5 +1,5 @@
 function cargarTabla(idTabla, claveLocalStorage) {//Función cargar tabla que recibe el id de cada tabla y las claves de cada dato en localStorage
-    const celdasNombres = document.querySelectorAll(idTabla + " .nombre"); //Recibe las celdas de nombres y puntos de cada tabla y las almacena
+    const celdasNombres = document.querySelectorAll(idTabla + " .nombre"); //Recibe los valores para las celdas de nombres y puntos de cada tabla y las almacena
     const celdasPuntos = document.querySelectorAll(idTabla + " .puntos");
 
     let datosOriginales = JSON.parse(localStorage.getItem(claveLocalStorage)) || [];//Recibe los datos del localStorage, si no, crea un array vacío
