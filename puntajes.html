@@ -21,47 +21,154 @@
     <link rel="stylesheet" href="css/estilos.css" />
     <title>Juegazos 🕹️ Puntajes</title>
   </head>
-  <body>
+  <body class="body-puntajes">
     <div class="container">
       <header>
         <nav class="menu">
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="dados.html">Dados</a></li>
-            <li><a href="trivia.html">Preguntas</a></li>
             <li><a href="cartas.html">Cartas</a></li>
+            <li><a href="trivia.html">Preguntas</a></li>
             <li><a href="puntajes.html">Puntajes</a></li>
             <li><a href="nosotros.html">Sobre nosotros</a></li>
           </ul>
         </nav>
       </header>
 
-      <section class="encabezado">
-        <h1>Puntos</h1>
-      </section>
+      <main>
+        <section class="encabezado">
+          <h1>Puntos</h1>
+        </section>
 
-      <nav class="columnas-puntaje">
-        <div class="card rojo">
-          <h2>🎲 Dados</h2>
-          <p></p>
-        </div>
+        <section class="columnas-puntaje">
+          <div class="card rojo">
+            <h2>🎲 Dados</h2>
+            <table id="tabla-dados">
+              <thead>
+                <tr>
+                  <th>Puesto</th>
+                  <th>Jugador</th>
+                  <th>Puntos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-        <div class="card verde">
-          <h2>❓ Preguntas</h2>
-          <p></p>
-        </div>
+          <div class="card verde">
+            <h2>❓ Preguntas</h2>
+            <table id="tabla-trivia">
+              <thead>
+                <tr>
+                  <th>Puesto</th>
+                  <th>Entrenador</th>
+                  <th>Puntos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-        <div class="card azul">
-          <h2>♣️ Cartas</h2>
-          <p></p>
-        </div>
-      </nav>
+          <div class="card azul">
+            <h2>♣️ Cartas</h2>
+            <table id="tabla-cartas">
+              <thead>
+                <tr>
+                  <th>Puesto</th>
+                  <th>Mascota</th>
+                  <th>Puntos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td class="nombre"></td>
+                  <td class="puntos"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
 
       <footer>
-        <address>Informatica General 2026</address>
+        <address>Informática General 2026. TP Grupo 5. Fabrizio Cárdenas, Marcela Marcolini, Clara Fernández Rolon</address>
       </footer>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="js/puntajes.js"></script>
   </body>
 </html>

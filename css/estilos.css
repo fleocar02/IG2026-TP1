@@ -15,75 +15,46 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.body-index {
+  background-color: rgb(223, 157, 190);
+  background-image: url("../img/fondo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .container {
   background-color: white;
   width: 100%;
-  padding: 2em;
+  padding: 2em 0 0 0;
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
-/*Encabezado*/
+/*Encabezado página principal*/
 .encabezado {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 1em;
 }
 
-.encabezado h1 {
-  font-size: 13em;
+h1 {
+  font-size: 12em;
   font-family: "Bungee Inline", sans-serif;
   text-transform: uppercase;
   margin: 0;
+  text-align: center;
 }
 
-/* Reglas de juego */
-
-.encabezado h2 {
+h2 {
   font-family: "Bungee Inline", sans-serif;
   color: #555;
   text-align: center;
   margin-bottom: 15px;
 }
 
-.instrucciones {
-  max-width: 600px;
-  line-height: 1.6;
-  font-family: "Roboto", sans-serif;
-  color: #333;
-}
-
-.instrucciones ul {
-  list-style: none;
-  padding-left: 0;
-  text-align: left;
-}
-
-.instrucciones li {
-  margin-bottom: 8px;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.instrucciones li::before {
-  content: "✱";
-  color: #ff6b6b;
-  display: inline-block;
-  width: 1em;
-  margin-right: 1rem;
-}
-
-.instrucciones strong {
-  font-size: 20px;
-  color: #555;
-  font-family: "Bungee Inline", sans-serif;
-}
-
 /*Nav de juegos (tarjetas)*/
-
 .columnas {
   display: flex;
   justify-content: center;
@@ -125,9 +96,21 @@ body {
   text-align: justify;
 }
 
+.card p strong {
+  display: block;
+  text-align: center;
+  margin-bottom: 0.6em 0 0 0;
+}
+
 .card p {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.1;
+  text-align: justify;
+  margin: 0.6em 0 1em 0;
   color: #333;
 }
+
+
 
 .btn {
   margin-top: auto;
@@ -165,11 +148,15 @@ body {
 /* Footer */
 
 footer {
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin: 20px;
-  padding: 20px;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0;
+  margin-top: 2em;
   background-color: rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 /* Puntaje */
@@ -180,20 +167,61 @@ footer {
 }
 
 /* ===================================================
-   ESTILOS ESPECÍFICOS: PAGINA DADOS- CINCUENTA
+   ESTILOS ESPECÍFICOS: PAGINA DADOS - CINCUENTA
    =================================================== */
 
 body.body-dados {
   background-color: #ff6b6b;
 }
 
-.juego-container {
+/* Reglas de juego */
+.instrucciones-cincuenta {
+  max-width: 600px;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  display: block;
+  margin: auto;
+}
+
+.instrucciones-cincuenta ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+.instrucciones-cincuenta li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.instrucciones-cincuenta li::before {
+  content: "✱";
+  color: #ff6b6b;
+  display: inline-block;
+  width: 1em;
+  margin-right: 1rem;
+}
+
+.instrucciones-cincuenta strong {
+  font-size: 20px;
+  color: #555;
+  font-family: "Bungee Inline", sans-serif;
+}
+
+.juego-container, 
+#seccion-juego {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
   gap: 1em;
-  margin: 1em;
   width: 100%;
+  padding: 2em;
 }
 
 .form-juego {
@@ -280,7 +308,7 @@ body.body-cartas {
   color: #333;
   text-align: center;
   margin: 0 auto;
-  padding: 1em 0;
+  padding: 1em 0 0 0;
   width: 100%;
 }
 
@@ -288,10 +316,10 @@ body.body-cartas {
 .contenedor-infiltrado h1 {
   font-family: "Bungee Inline", sans-serif;
   text-transform: uppercase;
-  color: #222;
-  margin-top: 0;
+  color: black;
+  margin-top: 0.2em;
   font-size: 11em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.1em;
 }
 
 /* Contenedor de bienvenida e instrucciones */
@@ -523,7 +551,7 @@ body.body-trivia h1 {
   font-size: 11em;
   color: black;
   line-height: 0.85;
-  margin-top: 0.5em;
+  margin-top: 0.3em;
   margin-bottom: 0.2em;
 }
 
@@ -535,19 +563,19 @@ body.body-trivia h6 {
   font-size: 1.2em;
   color: #333;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 /* Clase oculto */
 .oculto {
-  display: none;
+  display: none !important;
 }
 
 /* Mensajes de estado */
 #estado {
   text-align: center;
   font-weight: bold;
-  padding: 10px;
+  padding: 0.6rem;
   margin: 1em auto;
   width: fit-content;
 }
@@ -572,7 +600,7 @@ body.body-trivia h6 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 1rem;
 }
 
 /* Elegir Pokémon */
@@ -581,13 +609,13 @@ body.body-trivia h6 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 140px;
+  width: 8.75rem;
+  height: 8.75rem;
   box-sizing: border-box;
-  border-radius: 16px;
+  border-radius: 1rem;
   background-color: rgba(0, 0, 0, 0.05);
-  border: 2px solid transparent;
-  padding: 10px;
+  border: 0.125rem solid transparent;
+  padding: 0.625rem;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
@@ -602,14 +630,14 @@ body.body-trivia h6 {
 }
 
 .tarjeta-pokemon img {
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  height: 5rem;
   display: block;
 }
 
 .tarjeta-pokemon span {
-  margin-top: 6px;
-  font-size: 0.95em;
+  margin-top: 0.4rem;
+  font-size: 1em;
   text-align: center;
 }
 
@@ -621,7 +649,7 @@ body.body-trivia h6 {
   background-color: rgba(0, 0, 0, 0.03);
   padding: 2em;
   margin: 1.5em auto;
-  max-width: 650px;
+  max-width: 40rem;
   width: 100%;
 }
 
@@ -641,8 +669,8 @@ body.body-trivia h6 {
 
 #pregunta img {
   display: block;
-  margin: 0 auto 12px auto;
-  border-radius: 8px;
+  margin: 0 auto 0.75rem auto;
+  border-radius: 0.5rem;
 }
 
 /* Opciones de respuesta */
@@ -650,12 +678,12 @@ body.body-trivia h6 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 10px;
-  max-width: 450px;
+  gap: 0.6rem;
+  max-width: 28rem;
 }
 
 #opciones button {
-  padding: 14px 20px;
+  padding: 0.9rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.1);
   border: none;
   font-family: "Roboto", sans-serif;
@@ -680,7 +708,7 @@ body.body-trivia h6 {
 
 /* Resultado de la pregunta */
 #resultado {
-  margin-top: 15px;
+  margin-top: 1rem;
   font-weight: bold;
   font-size: 1.1em;
   text-align: center;
@@ -689,9 +717,10 @@ body.body-trivia h6 {
 /* Botones de estado */
 #siguiente,
 #reiniciar,
-#reintentar {
+#reintentar,
+#cambiar-usuario {
   margin-top: 1.5em;
-  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
   background-color: #339af0;
   border: none;
   color: white;
@@ -700,22 +729,290 @@ body.body-trivia h6 {
   font-size: 1em;
   cursor: pointer;
   align-self: center;
-}
-
-#siguiente:hover,
-#reiniciar:hover,
-#reintentar:hover {
-  background-color: #1c7ed6;
+  border-radius: 0.5rem;
 }
 
 /* Pantalla final */
 #final {
   text-align: center;
-  padding: 2em;
+  padding: 2rem;
 }
 
 #puntaje {
   font-size: 1.4em;
   font-weight: bold;
   color: #51cf66;
+}
+
+/* Estilo de las instrucciones */
+
+.instrucciones-trivia {
+  background-color: #ffffff;
+  border-radius: 0.7rem;
+  padding: 1.5rem;
+  margin: 1.2rem auto;
+  width: 100%;
+  max-width: 42rem;
+  box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.08);
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.instrucciones-trivia h2 {
+  font-family: 'Bungee Inline', cursive, sans-serif;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #2b2b2b;
+  font-size: 1.5rem;
+}
+
+.instrucciones-trivia ol {
+  padding-left: 1.7rem;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.7;
+  color: #444444;
+  font-size: 1rem;
+}
+
+.instrucciones-trivia li {
+  margin-bottom: 0.5rem;
+}
+
+/* Estilo para input entrenador */
+
+#entrenador {
+  background-color: #ffffff;
+  border-radius: 0.7rem;
+  padding: 1.5rem;
+  margin: 1.2rem auto;
+  width: 100%;
+  max-width: 40rem;
+  box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.08);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#entrenador h2 {
+  font-family: 'Bungee Inline', cursive, sans-serif;
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  color: #2b2b2b;
+  font-size: 1.5rem;
+}
+
+#entrenador p {
+  font-family: 'Roboto', sans-serif;
+  color: #555555;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+#entrenador div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+#nombre-entrenador {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #dcdcdc;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+#comenzar {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  background-color: #339af0;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Estilos para las tablas de puntajes */
+
+.body-puntajes {
+  background-color: #df912c;
+}
+.body-puntajes .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.columnas-puntaje {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: 0;
+  width: 90%;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.body-puntajes h1 {
+  display: inline-block;
+  font-family: "Bungee Inline", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 10em;
+  color: black;
+  line-height: 0.85;
+  margin-top: 0.3em;
+  margin-bottom: 0.4em;
+}
+
+.body-puntajes .card {
+  flex-shrink: 0; /* Sugerencia de la IA: No podía ensanchar las tarjetas y no sabía por qué, y era por el flex-shrink que es 1 por default en este caso. */
+  width: 100%;
+  max-width: 20rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.08);
+}
+
+.body-puntajes .card table {
+  width: 100%;
+  background-color: #f2f2f2;
+  border-collapse: collapse; /* Sugerencia de la IA: Border collapse para que el encabezado de la tabla quede sin bordes y más lindo */
+  margin-top: 1rem;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+.body-puntajes .card table th {
+  color: #222;
+  font-weight: 700;
+  font-size: 0.8em;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 0.06rem solid #ddd;
+}
+
+.body-puntajes .card.verde table th {
+  background-color: #348141;
+  color: white;
+}
+
+.body-puntajes .card.rojo table th {
+  background-color: #863838;
+  color: white;
+}
+
+.body-puntajes .card.azul table th {
+  background-color: #1b5381;
+  color: white;
+}
+
+.body-puntajes .card table td {
+  padding: 0.5rem 0.6rem;
+  color: #333;
+  font-size: 0.875em;
+  border-bottom: 0.06rem solid #ddd;
+  line-height: 1.25rem;
+  width: 20%;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Estilos para la página Nosotros */
+
+.body-nosotros {
+  background-color: #a36ce0;
+}
+
+.body-nosotros .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.encabezado.sobre-nosotros h1 {
+  display: inline-block;
+  font-family: "Bungee Inline", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 9em;
+  color: black;
+  line-height: 1;
+  margin-top: 0.2em;
+}
+
+.sobre-nosotros {
+  width: 90%;
+  max-width: 55rem;
+  margin: 1.25rem auto 2.5rem auto;
+  text-align: center;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  align-items: center;
+}
+
+.sobre-nosotros h2 {
+  font-size: 1.75em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.sobre-nosotros p {
+  font-size: 1.05em;
+  color: #333;
+  background-color: #ffffff;
+  border-radius: 0.7rem;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 50rem;
+  box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.08);
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.miembros-grupo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 90%;
+  max-width: 70rem;
+  margin: 0 auto 3.125rem auto;
+}
+
+.miembro {
+  max-width: 21rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+}
+
+.foto-grupo {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 0.2rem solid #fff;
+}
+
+.miembro p {
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
 }

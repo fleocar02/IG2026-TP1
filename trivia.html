@@ -19,8 +19,8 @@
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="dados.html">Dados</a></li>
-            <li><a href="trivia.html">Preguntas</a></li>
             <li><a href="cartas.html">Cartas</a></li>
+            <li><a href="trivia.html">Preguntas</a></li>
             <li><a href="puntajes.html">Puntajes</a></li>
             <li><a href="nosotros.html">Sobre nosotros</a></li>
           </ul>
@@ -31,7 +31,17 @@
         <h1>PokeTrivia</h1>
         <p id="estado" class="gris">Iniciando...</p>
 
-        <section id="entrenador" class="oculto">
+        <section id="instrucciones" class="instrucciones-trivia">
+          <h2>¿Cómo jugar?</h2>
+          <ol>
+            <li><strong>Ingresá tu nombre:</strong> Escribí tu apodo de entrenador Pokémon para registrar tu partida.</li>
+            <li><strong>Elegí tu compañero:</strong> Selecciona el Pokémon que más te guste.</li>
+            <li><strong>Respondé las preguntas:</strong> Lee las preguntas tematizadas de tu Pokemon y selecciona la opción que creas correcta.</li>
+            <li><strong>Sumá puntos:</strong> Cada acierto cuenta como 1 punto.</li>
+          </ol>
+        </section>
+
+        <section id="entrenador">
           <h2>¡Bienvenido a tu aventura Pokemon!</h2>
           <p>Ingresá tu nombre de entrenador para jugar la trivia</p>
           <div>
@@ -59,12 +69,13 @@
           <h5>¡Trivia terminada!</h5>
           <p id="puntaje"></p>
           <button id="reiniciar" hidden>Elegir otro Pokémon</button>
+          <button id="cambiar-usuario" type="button">Cambiar de entrenador</button>
         </section>
         <button id="reintentar" type="button" hidden>Intentar nuevamente</button>
       </main>
 
       <footer>
-        <address>Informatica General 2026</address>
+        <address>Informática General 2026. TP Grupo 5. Fabrizio Cárdenas, Marcela Marcolini, Clara Fernández Rolon</address>
       </footer>
     </div>
 

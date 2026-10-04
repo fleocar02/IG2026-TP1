@@ -18,6 +18,8 @@ const inputEntrenador = document.querySelector("#nombre-entrenador"); //Input pa
 const reiniciar = document.querySelector("#reiniciar"); //Botón para reiniciar el juego
 const reintentar = document.querySelector("#reintentar"); //Botón para reintentar cargar los datos en caso de error
 const comenzar = document.querySelector("#comenzar"); //Botón para comenzar luego de ingresar nombre de entrenador
+const cambiarUsuario = document.querySelector("#cambiar-usuario"); //Botón para cambiar nombre de entrenador
+const instrucciones = document.querySelector("#instrucciones"); //Sección de instrucciones de la trivia
 
 // --Declaración de variables para el estado del juego y otras variables globales--
 let todasPreguntas = []; //Almacena el conjunto en su totalidad de preguntas
@@ -50,7 +52,7 @@ async function cargarDatosPokemon() {
     const resultados = []; //Utilizo un array para resultados, ya que de la API obtengo dos datos por pokemon: nombre e imagen (sprite)
 
     estado.className = "gris";
-    estado.textContent = "Cargando Pokémon...";
+    estado.textContent = "Capturando Pokemones...";
     juego.classList.add("oculto");
     final.classList.add("oculto");
     seleccion.classList.add("oculto");
@@ -77,7 +79,6 @@ async function cargarDatosPokemon() {
         }
 
         pokeInfo = resultados;
-        mostrarSeleccionPokemon();
 
     } catch (error) {
         mostrarError(`No se pudo cargar los Pokémon: ${error.message}`);
@@ -247,16 +248,30 @@ function cargarPreguntas() {
 
 // --Lógica del juego--
 
+//Función para cambiar de entrenador luego de terminar una trivia
+function cambiarEntrenador() {
+    inputEntrenador.value = "";
+    entrenador.classList.remove("oculto");
+    instrucciones.classList.remove("oculto");
+    estado.textContent = "";
+    final.classList.add("oculto");
+    juego.classList.add("oculto");
+    reiniciar.hidden = true;
+}
+
+
 function comenzarConNombre() {
     const nombre = inputEntrenador.value;
-    if (nombre === "") {
+    if (nombre === "") {//Alerta en caso de que el usuario no haya ingresado un nombre
         alert("No ingresaste un nombre de entrenador. Ingresá un nombre para continuar.");
         return;
     }
 
     nombreEntrenador = nombre;
     entrenador.classList.add("oculto");
+    instrucciones.classList.add("oculto");
     seleccion.classList.remove("oculto");
+    mostrarSeleccionPokemon();
 }
 
 function mostrarSeleccionPokemon() {
@@ -354,23 +369,23 @@ function responder(eleccion) {
 }
 
 function guardarPuntajeTrivia() {
-    let tablaPuntajes = JSON.parse(localStorage.getItem("puntajesTrivia")) || [];
+    let tablaPuntajes = JSON.parse(localStorage.getItem("puntajesTrivia")) || [];//Si el jugador ya jugó, obtengo sus puntos, si no, creo un array vacío para guardarlos
 
     let encontrado = false;
-    for (let i = 0; i < tablaPuntajes.length && !encontrado; i++) {
+    for (let i = 0; i < tablaPuntajes.length && !encontrado; i++) {//Recorro el array de puntajes para ver si el usuario ya jugó
         if (tablaPuntajes[i].nombre === nombreEntrenador) {
-            tablaPuntajes[i].puntos += correctas;
+            tablaPuntajes[i].puntos += correctas;//Si es así, sumo sus puntos a los que ya tenía
             encontrado = true;
         }
     }
 
-    if (!encontrado) {
+    if (!encontrado) {//Si no, lo agrego a mi array de puntajes
         tablaPuntajes.push({
             nombre: nombreEntrenador,
             puntos: correctas
         });
     }
-    localStorage.setItem("puntajesTrivia", JSON.stringify(tablaPuntajes));
+    localStorage.setItem("puntajesTrivia", JSON.stringify(tablaPuntajes));//Guardo los datos en el localStorage
 }
 
 function avanzar() {
@@ -384,6 +399,7 @@ function avanzar() {
         puntaje.textContent = `Respuestas correctas: ${correctas} de ${pokePreguntas.length}`;
         final.classList.remove("oculto");
         reiniciar.hidden = false;
+        guardarPuntajeTrivia();//Guarda el puntaje del usuario para la tabla
     }
 }
 
@@ -392,6 +408,7 @@ siguiente.addEventListener("click", avanzar);
 reintentar.addEventListener("click", cargarDatosPokemon);
 reiniciar.addEventListener("click", mostrarSeleccionPokemon);
 comenzar.addEventListener("click", comenzarConNombre);
+cambiarUsuario.addEventListener("click", cambiarEntrenador);
 
 // --Primera llamada--
 cargarDatosPokemon();
