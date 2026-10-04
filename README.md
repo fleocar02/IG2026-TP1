@@ -31,7 +31,7 @@ Cuando el doble es válido, suma puntos y el jugador repite el tiro.
 ### 🃏 CARTAS
 
 El Infiltrado, un juego innovador y súper divertido en el que sos un gatito travieso queriendo acceder a una pecera en la casa de las mascotas para llevarse un delicioso pececito dorado, pero te encontrarás con varios obstáculos.
-Objetivo: Sumar entre 8 y 12 puntos para abrir la pecera.
+Objetivo: 12 puntos para abrir la pecera.
 Timer de 10s: El contador se reinicia con cada decisión. Si llega a 0, suena la alarma.
 Acciones de Tirada: Puedes pedir 1 carta, repetir la tirada de 3 o abrir la pecera.
 Alarma: Si te pasas de 12 puntos, pierdes.
@@ -56,6 +56,17 @@ Nuestros 6 archivos HTML (index,dados,cartas,preguntas,puntajes,index) están en
 ### Usadas en Cartas
 
 Para este juego, primero busqué tipo de juegos de cartas. Diseñé un juego que fuese posible sumando puntos pero no tansencillo como un duelo de puntajes. Le busqué instrucciones que se transformaron en misiones.
+
+Tecnologías
+HTML5: Estructura semántica del juego (container, secciones, listas, modals/banners y botones del tablero).
+CSS: con Flexbox (para la alineación de componentes y tarjetas), paleta de colores unificada al site y estilos mediante selectores de clase e identificadores.
+JavaScript: Manejo de la lógica del juego sin librerías externas, manipulación del DOM y eventos del usuario.
+
+Funcionalidades
+Mazo Dinámico con creación de Baraja: Generación automática de cartas con valores y tipos predefinidos, mezcladas aleatoriamente.
+Control de Estado de Juego: Seguimiento en tiempo real de los puntos acumulados, las cartas en mesa y el estado del mazo disponible.
+Creación de Temporizador Regresivo (10s): Contador dinámico gestionado con setInterval() que se reinicia con cada acción y dispara la derrota si llega a cero.
+Mecánica de Selección y Evaluación: Permite robar 1 o 2 cartas, relanzar la tirada o verificar el objetivo de victoria (exactamente 12 puntos).
 
 ### Usadas en Trivia
 
@@ -124,9 +135,8 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 - **`Resultado observado:`** El programa reescribe los datos anteriores, acumulando a los jugadores. Sin posibilidad de volver a jugar porque el boton se encuentra deshabilitado.
 - **`Solución:**`
 
-### 4/10
+### 4/10 Testing
 
-Testing.
 CASO TESTIGO
 Siro 18 años
 
@@ -149,6 +159,10 @@ Aunque perdí al comienzo por el tiempo… Es muy simple y fácil de ganar
 Está buena la tensión pero sería mejor tener que generar sólo 12 puntos.
 
 ---
+
+### 4/10 Debugging
+
+CARTAS - INFILTRADO
 
 ## 📜 Proceso
 
