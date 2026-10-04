@@ -110,8 +110,6 @@ h2 {
   color: #333;
 }
 
-
-
 .btn {
   margin-top: auto;
   padding: 20px;
@@ -157,13 +155,6 @@ footer {
   margin-top: 2em;
   background-color: rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-}
-
-/* Puntaje */
-.columnas-puntaje {
-  display: flex;
-  justify-content: center;
-  padding: 0;
 }
 
 /* ===================================================
@@ -212,7 +203,7 @@ body.body-dados {
 }
 
 /* Seccion oculta */
-.juego-container, 
+.juego-container,
 #seccion-juego {
   display: flex;
   flex-direction: column;
@@ -246,13 +237,46 @@ body.body-dados {
   color: #333;
 }
 
+/* Botones */
+.btn-comenzar {
+  padding: 12px;
+  border: none;
+  color: white;
+  background-color: #339af0;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  align-self: center;
+  transition-duration: 0.4s;
+}
+
+.btn-comenzar:hover {
+  background-color: #0a63ab;
+}
+
+#tirar-dado {
+  padding: 12px;
+  background-color: #51cf66;
+  border: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  align-self: center;
+  transition-duration: 0.4s;
+}
+
+#tirar-dado:hover {
+  background-color: #1b8b2e;
+}
+
 /* Rectángulo contenedor de dados */
 .area-dados {
   background-color: rgba(0, 0, 0, 0.4);
-  padding: 20px;
+  padding: 2em;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 1em;
   margin: 1em;
 }
 
@@ -282,34 +306,59 @@ body.body-dados {
 /* Puntajes de los jugadores */
 #tabla-puntajes {
   padding: 1em;
-  width: 60%;
+  width: 100%;
+}
+
+.contenedor-jugadores-columnas {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap; /*Si son muchos jugadores, bajan de linea*/
+  width: 100%;
+}
+
+/* Estado inactivo de jugador */
+.columna-jugador {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1em;
+  min-width: 2em;
+  flex: 1; /*Reparte el espacio equitativamente*/
   text-align: center;
+  transition: all 0.3s ease; /* Transición al cambiar de turno */
+  border: 3px solid transparent;
 }
 
-#tabla-puntajes p {
-  margin: 8px;
+.columna-jugador h3 {
+  margin: 0;
+  font-family: "Bungee Inline", sans-serif;
   font-size: 1em;
-  border-bottom: 1px rgba(0, 0, 0, 0.1);
-  padding-bottom: 4px;
+  color: #333;
 }
 
-#tabla-puntajes h1 {
+.columna-jugador p {
+  margin: 0;
   font-size: 1em;
-  color: #339af0;
-  margin-top: 15px;
+  font-weight: bold;
 }
 
+/* Estado activo de jugador */
+.jugador-activo {
+  background-color: white;
+  border: 3px solid #333;
+}
 /* Animacion de giro */
-
 .girando {
   animation: giro 0.5s ease-in-out;
 }
 
 @keyframes giro {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
 
 /* ===================================================
    ESTILOS ESPECÍFICOS: PAGINA INFILTRADO CARTAS 
@@ -778,7 +827,7 @@ body.body-trivia h6 {
 }
 
 .instrucciones-trivia h2 {
-  font-family: 'Bungee Inline', cursive, sans-serif;
+  font-family: "Bungee Inline", cursive, sans-serif;
   text-align: center;
   margin-top: 0;
   margin-bottom: 1rem;
@@ -789,7 +838,7 @@ body.body-trivia h6 {
 .instrucciones-trivia ol {
   padding-left: 1.7rem;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.7;
   color: #444444;
   font-size: 1rem;
@@ -814,7 +863,7 @@ body.body-trivia h6 {
 }
 
 #entrenador h2 {
-  font-family: 'Bungee Inline', cursive, sans-serif;
+  font-family: "Bungee Inline", cursive, sans-serif;
   margin-top: 0;
   margin-bottom: 0.65rem;
   color: #2b2b2b;
@@ -822,7 +871,7 @@ body.body-trivia h6 {
 }
 
 #entrenador p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #555555;
   margin-bottom: 1.2rem;
   font-size: 1rem;
@@ -839,7 +888,7 @@ body.body-trivia h6 {
 #nombre-entrenador {
   padding: 0.6rem 1rem;
   font-size: 1rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   border: 1px solid #dcdcdc;
   border-radius: 0.5rem;
   box-sizing: border-box;
@@ -849,7 +898,7 @@ body.body-trivia h6 {
   padding: 0.6rem 1.5rem;
   font-size: 1rem;
   font-weight: 700;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #339af0;
   color: #ffffff;
   border: none;
@@ -906,7 +955,7 @@ body.body-trivia h6 {
   background-color: #f2f2f2;
   border-collapse: collapse; /* Sugerencia de la IA: Border collapse para que el encabezado de la tabla quede sin bordes y más lindo */
   margin-top: 1rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   border-radius: 0.4rem;
   overflow: hidden;
 }
