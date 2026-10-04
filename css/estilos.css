@@ -11,11 +11,15 @@ body {
   padding: 2em;
   display: flex;
   justify-content: center;
+  background-color: lightgray;
+  font-family: "Roboto", sans-serif;
+}
+
+.body-index {
   background-color: rgb(223, 157, 190);
   background-image: url("../img/fondo.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: "Roboto", sans-serif;
 }
 
 .container {
