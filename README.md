@@ -55,6 +55,8 @@ Nuestros 6 archivos HTML (index,dados,cartas,preguntas,puntajes,index) están en
 
 ### Usadas en Cartas
 
+Para este juego, primero busqué tipo de juegos de cartas. Diseñé un juego que fuese posible sumando puntos pero no tansencillo como un duelo de puntajes. Le busqué instrucciones que se transformaron en misiones.
+
 ### Usadas en Trivia
 
 Mi proceso de hacer la trivia fue así: Primero creé las preguntas y fui pensando cómo iba a hacer un juego de preguntas más divertido, y se me ocurrió la idea de dar a elegir 5 pokemones que tengan cada uno 5 preguntas específicas. Me ayudé bastante con los ejemplos vistos en clase sobre APIs y los ejemplos del repo de la cátedra también.
@@ -121,6 +123,30 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 - **`Resultado esperado:`** Vuelve a comenzar la partida desde 0 y el puntaje anterior se guarda en el localStorage.
 - **`Resultado observado:`** El programa reescribe los datos anteriores, acumulando a los jugadores. Sin posibilidad de volver a jugar porque el boton se encuentra deshabilitado.
 - **`Solución:**`
+
+### 4/10
+
+Testing.
+CASO TESTIGO
+Siro 18 años
+
+OPINIÓN GENERAL DEL SITIO
+Muy buenos los colores por cada juego.
+Donde dice: Hola (Tu nombre)…quiero poner mi nombre.
+Mejor que cada rectángulo diga el nombre del juego, en lugar del genérico DADOS, CARTAS..ETC
+
+DADOS
+De 1 solo jugador es aburrido
+A partir de 2 se pone bueno
+Que diga el turno de quién es màs grande
+
+POKETRIVIA
+Muy divertido
+Propuesta, que marque con color la respuesta correcta.
+
+INFILTRADO
+Aunque perdí al comienzo por el tiempo… Es muy simple y fácil de ganar
+Está buena la tensión pero sería mejor tener que generar sólo 12 puntos.
 
 ---
 
