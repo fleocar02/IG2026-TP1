@@ -169,12 +169,12 @@ footer {
 /* ===================================================
    ESTILOS ESPECÍFICOS: PAGINA DADOS - CINCUENTA
    =================================================== */
-
+/* Fondo */
 body.body-dados {
   background-color: #ff6b6b;
 }
 
-/* Reglas de juego */
+/* Bienvenida y reglas de juego */
 .instrucciones-cincuenta {
   max-width: 600px;
   line-height: 1.6;
@@ -211,6 +211,7 @@ body.body-dados {
   font-family: "Bungee Inline", sans-serif;
 }
 
+/* Seccion oculta */
 .juego-container, 
 #seccion-juego {
   display: flex;
@@ -224,6 +225,7 @@ body.body-dados {
   padding: 2em;
 }
 
+/* Formularios */
 .form-juego {
   display: flex;
   align-items: center;
@@ -237,12 +239,14 @@ body.body-dados {
   color: #333;
 }
 
+/* Contador de turnos */
 .turno-box {
   font-size: 1em;
   font-weight: bold;
   color: #333;
 }
 
+/* Rectángulo contenedor de dados */
 .area-dados {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 20px;
@@ -252,11 +256,13 @@ body.body-dados {
   margin: 1em;
 }
 
+/*Imagen dado*/
 .dado-box img {
   width: 160px;
   height: 160px;
 }
 
+/* Mensajes en pantalla */
 #mensaje-puntos {
   text-align: center;
 }
@@ -273,6 +279,7 @@ body.body-dados {
   color: #555;
 }
 
+/* Puntajes de los jugadores */
 #tabla-puntajes {
   padding: 1em;
   width: 60%;
@@ -291,6 +298,18 @@ body.body-dados {
   color: #339af0;
   margin-top: 15px;
 }
+
+/* Animacion de giro */
+
+.girando {
+  animation: giro 0.5s ease-in-out;
+}
+
+@keyframes giro {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 /* ===================================================
    ESTILOS ESPECÍFICOS: PAGINA INFILTRADO CARTAS 
