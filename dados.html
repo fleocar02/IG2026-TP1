@@ -34,7 +34,7 @@
         <h1>Cincuenta</h1>
 
         <!--Article con instrucciones para jugar-->
-        <article class="instrucciones-cincuenta">
+        <article id="instrucciones" class="instrucciones-cincuenta">
           <h2>🎲 Cómo jugar:</h2>
             <p>Pueden jugar desde una hasta seis personas. Todos los jugadores
               empiezan con 0 puntos. Cada jugador debe lanzar los dados en su
@@ -62,34 +62,35 @@
    
         <!--Contenedor del juego-->
         <div class="juego-container">
-        <form action="#" method="get" id="form-jugadores" class="form-juego">
-          <label for="cantidad-jugadores">Cantidad de jugadores (1-6):</label>
-          <input
-            type="number"
-            name="cantidad-jugadores"
-            id="cantidad-jugadores"
-            min="1"
-            max="6"
-            required/>
-          <button type="submit" id="boton-comenzar" class="btn-comenzar">Comenzar Juego</button>
-        </form>
+          <form action="#" method="get" id="form-jugadores" class="form-juego">
+            <label for="cantidad-jugadores">Cantidad de jugadores (1-6):</label>
+            <input
+              type="number"
+              name="cantidad-jugadores"
+              id="cantidad-jugadores"
+              min="1"
+              max="6"
+              required/>
+            <button type="submit" id="boton-comenzar" class="btn-comenzar">Comenzar Juego</button>
+          </form>
 
-        <!--Indicador de turno-->
-        <div id="turno-actual" class="turno-box"></div>
+          <div id="seccion-juego" class="oculto">
+            <!--Indicador de turno-->
+            <div id="turno-actual" class="turno-box"></div>
 
-        <!--Dados area visual-->
-        <div class="area-dados">
-          <div id="img-dado-1" class="dado-box"></div>
-          <div id="img-dado-2" class="dado-box"></div>
+            <!--Dados area visual-->
+            <div class="area-dados">
+              <div id="img-dado-1" class="dado-box"></div>
+              <div id="img-dado-2" class="dado-box"></div>
+            </div>
+
+            <!--Boton para tirar-->
+            <button type="button" id="tirar-dado" disabled>Tirar dado</button> 
+
+            <!--Apartado de puntajes-->
+            <div id="mensaje-puntos"></div>
+            <div id="tabla-puntajes"></div>
         </div>
-
-        <!--Boton para tirar-->
-        <button type="button" id="tirar-dado" disabled>Tirar dado</button> 
-
-        <!--Apartado de puntajes-->
-        <div id="mensaje-puntos"></div>
-        <div id="tabla-puntajes"></div>
-
       </main>
 
       <footer>

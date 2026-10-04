@@ -11,6 +11,8 @@ const tablaPuntajes = document.querySelector("#tabla-puntajes");
 const mensajePuntos = document.querySelector("#mensaje-puntos");
 const imgDado1 = document.querySelector("#img-dado-1");
 const imgDado2 = document.querySelector("#img-dado-2");
+const instrucciones = document.querySelector("#instrucciones");
+const seccionJuego = document.querySelector("#seccion-juego");
 
 // Generar tirada de dado (1 a 6)
 function activarDados() {
@@ -61,6 +63,9 @@ formJugadores.addEventListener("submit", (e) => {
       puntaje: 0,
     });
   }
+
+  instrucciones.classList.add("oculto"); //Ocultar instrucciones
+  seccionJuego.classList.remove("oculto"); // Mostrar juego de dados
 
   calcularPuntaje();
 
