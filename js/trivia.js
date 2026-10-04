@@ -52,7 +52,7 @@ async function cargarDatosPokemon() {
     const resultados = []; //Utilizo un array para resultados, ya que de la API obtengo dos datos por pokemon: nombre e imagen (sprite)
 
     estado.className = "gris";
-    estado.textContent = "Cargando Pokémon...";
+    estado.textContent = "Capturando Pokemones...";
     juego.classList.add("oculto");
     final.classList.add("oculto");
     seleccion.classList.add("oculto");

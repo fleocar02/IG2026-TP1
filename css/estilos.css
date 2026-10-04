@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  padding: 1.9em;
+  padding: 2em;
   display: flex;
   justify-content: center;
   background-color: lightgray;
@@ -25,8 +25,9 @@ body {
 .container {
   background-color: white;
   width: 100%;
-  padding: 2em;
+  padding: 2em 0 0 0;
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -39,7 +40,7 @@ body {
 }
 
 h1 {
-  font-size: 13em;
+  font-size: 12em;
   font-family: "Bungee Inline", sans-serif;
   text-transform: uppercase;
   margin: 0;
@@ -147,11 +148,15 @@ h2 {
 /* Footer */
 
 footer {
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin: 20px;
-  padding: 20px;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0;
+  margin-top: 2em;
   background-color: rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 /* Puntaje */
@@ -303,7 +308,7 @@ body.body-cartas {
   color: #333;
   text-align: center;
   margin: 0 auto;
-  padding: 1em 0;
+  padding: 1em 0 0 0;
   width: 100%;
 }
 
@@ -311,10 +316,10 @@ body.body-cartas {
 .contenedor-infiltrado h1 {
   font-family: "Bungee Inline", sans-serif;
   text-transform: uppercase;
-  color: #222;
-  margin-top: 0;
+  color: black;
+  margin-top: 0.2em;
   font-size: 11em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.1em;
 }
 
 /* Contenedor de bienvenida e instrucciones */
@@ -546,7 +551,7 @@ body.body-trivia h1 {
   font-size: 11em;
   color: black;
   line-height: 0.85;
-  margin-top: 0.5em;
+  margin-top: 0.3em;
   margin-bottom: 0.2em;
 }
 
@@ -838,6 +843,44 @@ body.body-trivia h6 {
 .body-puntajes {
   background-color: #df912c;
 }
+.body-puntajes .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.columnas-puntaje {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: 0;
+  width: 90%;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.body-puntajes h1 {
+  display: inline-block;
+  font-family: "Bungee Inline", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 10em;
+  color: black;
+  line-height: 0.85;
+  margin-top: 0.3em;
+  margin-bottom: 0.4em;
+}
+
+.card {
+  flex-shrink: 0; /* Sugerencia de la IA: No podía ensanchar las tarjetas y no sabía por qué, y era por el flex-shrink que es 1 por default en este caso. */
+  width: 100%;
+  max-width: 20rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.08);
+}
 
 .card table {
   width: 100%;
@@ -879,7 +922,6 @@ body.body-trivia h6 {
   border-bottom: 0.06rem solid #ddd;
   line-height: 1.25rem;
   width: 20%;
-  font-weight: 500;
   text-align: center;
   font-weight: bold;
 }
@@ -890,16 +932,23 @@ body.body-trivia h6 {
   background-color: #a36ce0;
 }
 
+.body-nosotros .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .encabezado.sobre-nosotros h1 {
   display: inline-block;
   font-family: "Bungee Inline", sans-serif;
   text-transform: uppercase;
   text-align: center;
-  font-size: 10em;
+  font-size: 9em;
   color: black;
   line-height: 1;
-  margin-top: 0.5em;
-
+  margin-top: 0.2em;
 }
 
 .sobre-nosotros {
@@ -909,11 +958,26 @@ body.body-trivia h6 {
   text-align: center;
   line-height: 1.6;
   font-family: "Roboto", sans-serif;
+  align-items: center;
 }
 
 .sobre-nosotros h2 {
   font-size: 1.75em;
+  margin-top: 0;
   margin-bottom: 1rem;
+}
+.sobre-nosotros p {
+  font-size: 1.05em;
+  color: #333;
+  background-color: #ffffff;
+  border-radius: 0.7rem;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 50rem;
+  box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.08);
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .miembros-grupo {
