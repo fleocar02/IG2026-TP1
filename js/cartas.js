@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { nombre: "Gatito Infiltrado", valor: 2, icono: "🕵🏻‍♂️🐾" },
     { nombre: "Pececito Dorado", valor: 3, icono: "🐟" },
   ];
-
+  //Declarar variables para el juego
   let mazo = [];
   let cartasMesa = [];
   let puntosMesa = 0;
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let intervaloTimer = null;
   let juegoTerminado = false;
 
-  // Asignar Event Listeners con querySelector
+  //Escuchadores de eventos para los botones
   document.querySelector("#btn-iniciar").onclick = iniciarJuego;
   document.querySelector("#btn-robar-1").onclick = () => pedirCartas(1);
   document.querySelector("#btn-relanzar").onclick = relanzarTirada;
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#btn-huir").onclick = abandonarMision;
   document.querySelector("#btn-reiniciar").onclick = reiniciarJuego;
 
+  // Crea y mezcla el mazo de 16 cartas (4 de cada tipo)
   function crearMazo() {
     let nuevoMazo = [];
     let id = 1;
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return nuevoMazo.sort(() => Math.random() - 0.5);
   }
 
+  //Iniciar o reiniciar la mesa de juego
   function iniciarJuego() {
     mazo = crearMazo();
     cartasMesa = [];
@@ -52,44 +54,61 @@ document.addEventListener("DOMContentLoaded", () => {
     relanzarTirada();
   }
 
+  //Tirar de nuevo 3 cartas desde el mazo
   function relanzarTirada() {
     if (juegoTerminado) return;
+
     if (mazo.length < 3) {
       document.querySelector("#mensaje-estado").innerText =
-        "⚠️ Pocas cartas en el mazo para tirar 3.";
+        "⚠️ No quedan suficientes cartas para tirar 3.";
       return;
     }
+
     cartasMesa = [mazo.pop(), mazo.pop(), mazo.pop()];
     calcularYActualizar();
     reiniciarTimer();
   }
 
+  //Robar 1 o 2 cartas de forma acumulativa
   function pedirCartas(cantidad) {
     if (juegoTerminado) return;
+
     if (mazo.length < cantidad) {
       document.querySelector(
         "#mensaje-estado"
       ).innerText = `⚠️ No hay suficientes cartas (${mazo.length} restantes).`;
       return;
     }
+
     for (let i = 0; i < cantidad; i++) {
       cartasMesa.push(mazo.pop());
     }
+
     calcularYActualizar();
     reiniciarTimer();
   }
 
   function calcularYActualizar() {
-    puntosMesa = cartasMesa.reduce((acc, c) => acc + c.valor, 0);
+    let sumaTotal = 0;
+
+    for (let i = 0; i < cartasMesa.length; i++) {
+      sumaTotal += cartasMesa[i].valor;
+    }
+
+    puntosMesa = sumaTotal;
+
     actualizarInterfaz();
 
+    // Condición de derrota automática al pasarse de 12
     if (puntosMesa > 12) {
       finalizarJuego(
         false,
-        `🚨 ¡ALARMA! Te pasaste de 12 puntos (${puntosMesa} pts). Te atraparon los perros.`
+        `🚨 ¡ALARMA! Sumaste ${puntosMesa} puntos (te pasaste de 12). Te atraparon los perros.`
       );
     }
   }
+
+  //Control del temporizador de 10 segundos
   function reiniciarTimer() {
     clearInterval(intervaloTimer);
     tiempoRestante = 10;
@@ -103,34 +122,51 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(intervaloTimer);
         finalizarJuego(
           false,
-          "🚨 ¡TIEMPO AGOTADO! Se activó la alarma por tardar demasiado."
+          "🚨 ¡TIEMPO AGOTADO! Te congelaste pensando, hiciste ruido y sonó la alarma."
         );
       }
     }, 1000);
   }
+
+  //Intentar abrir la pecera (Victoria solo con 12 exactos)
   function comprobarObjetivo() {
     if (juegoTerminado) return;
-    if (puntosMesa >= 8 && puntosMesa <= 12) {
+
+    if (puntosMesa === 12) {
       finalizarJuego(
         true,
-        `🏆 ¡MISIÓN CUMPLIDA! Lograste ${puntosMesa} puntos y abriste la pecera 🐟✨.`
+        "🏆 ¡MISIÓN CUMPLIDA! Conseguiste exactamente 12 puntos, abriste la pecera y te llevaste el pececito 🐟✨."
       );
-    } else {
+    } else if (puntosMesa < 12) {
       document.querySelector(
         "#mensaje-estado"
-      ).innerText = `⚠️ Tienes ${puntosMesa} pts. Necesitas al menos 8 pts.`;
+      ).innerText = `⚠️ Tienes ${puntosMesa} pts. Necesitas sumar exactamente 12 pts para abrir la pecera.`;
     }
   }
 
+  //Acción: Abandonar voluntariamente
   function abandonarMision() {
     if (juegoTerminado) return;
-    finalizarJuego(false, "🏃‍♂️ Huiste a tiempo sin hacer ruido.");
+    finalizarJuego(
+      false,
+      "🏃‍♂️ Huiste con sigilo. Te fuiste sin el pececito, pero mantienes tus 7 vidas a salvo."
+    );
   }
+
+  //Actualizar textos, alertas y cartas visuales
   function actualizarInterfaz() {
     document.querySelector(
       "#texto-puntaje"
     ).innerText = `Puntos en mesa: ${puntosMesa} / 12 pts`;
     document.querySelector("#contador-mazo").innerText = mazo.length;
+
+    if (puntosMesa < 12) {
+      document.querySelector("#mensaje-estado").innerText =
+        "Te faltan puntos. Ajusta la jugada para llegar a 12 exactos sin pasarte.";
+    } else if (puntosMesa === 12) {
+      document.querySelector("#mensaje-estado").innerText =
+        "¡Tienes 12 puntos exactos! Abre la pecera antes de que venza el tiempo.";
+    }
 
     const contenedorTirada = document.querySelector("#contenedor-tirada");
     contenedorTirada.innerHTML = "";
@@ -138,14 +174,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const div = document.createElement("div");
       div.className = "carta-infiltrado";
       div.innerHTML = `
-          <div class="icono-carta-infiltrado">${carta.icono}</div>
-          <div class="titulo-carta-infiltrado">${carta.nombre}</div>
-          <div class="valor-carta-infiltrado">(${carta.valor} pts)</div>
-        `;
+        <div class="icono-carta-infiltrado">${carta.icono}</div>
+        <div class="titulo-carta-infiltrado">${carta.nombre}</div>
+        <div class="valor-carta-infiltrado">(${carta.valor} pts)</div>
+      `;
       contenedorTirada.appendChild(div);
     });
   }
 
+  // 13. Mostrar resultado final
   function finalizarJuego(esVictoria, mensaje) {
     juegoTerminado = true;
     clearInterval(intervaloTimer);
@@ -154,10 +191,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const textoResultado = document.querySelector("#mensaje-resultado");
 
     textoResultado.innerText = mensaje;
-    textoResultado.style.color = esVictoria ? "#2ecc71" : "#e74c3c";
+    textoResultado.style.color = esVictoria ? "#51cf66" : "#ff6b6b";
     banner.classList.remove("oculto-infiltrado");
   }
 
+  // 14. Volver al menú de bienvenida
   function reiniciarJuego() {
     clearInterval(intervaloTimer);
     document
