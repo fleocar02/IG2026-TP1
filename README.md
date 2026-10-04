@@ -137,24 +137,26 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 
 ### 4/10 Testing
 
-CASO TESTIGO
+#### CASO TESTIGO
 Siro 18 años
 
-OPINIÓN GENERAL DEL SITIO
+#### OPINIÓN GENERAL DEL SITIO
 Muy buenos los colores por cada juego.
 Donde dice: Hola (Tu nombre)…quiero poner mi nombre.
 Mejor que cada rectángulo diga el nombre del juego, en lugar del genérico DADOS, CARTAS..ETC
+Implementado! Se cambió a los nombres de cada juego y se cambió el mensaje de bienvenida.
 
-DADOS
+#### CINCUENTA
 De 1 solo jugador es aburrido
 A partir de 2 se pone bueno
 Que diga el turno de quién es màs grande
 
-POKETRIVIA
+#### POKETRIVIA
 Muy divertido
 Propuesta, que marque con color la respuesta correcta.
+Implementado! Agregué que siempre se responda se muestre la opción correcta, se haya respondido bien o no; en el caso de responder mal, la respuesta elegida se muestra roja.
 
-INFILTRADO
+#### INFILTRADO
 Aunque perdí al comienzo por el tiempo… Es muy simple y fácil de ganar
 Está buena la tensión pero sería mejor tener que generar sólo 12 puntos.
 
