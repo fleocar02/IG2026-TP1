@@ -338,27 +338,32 @@ function mostrarPregunta() {
         const boton = document.createElement("button");
         boton.type = "button";
         boton.textContent = opcion;
-        boton.addEventListener("click", () => responder(opcion));
+        boton.addEventListener("click", () => responder(opcion, boton));
         opciones.append(boton);
     });
 }
 
 //Función responder proporcionada por la cátedra
-function responder(eleccion) {
+function responder(eleccion, botonOpcion) {
     const actual = pokePreguntas[indice];
     const botones = document.querySelectorAll("#opciones button");
 
     //Permite una única respuesta
     botones.forEach((boton) => {
         boton.disabled = true;
+        if (boton.textContent === actual.correcta) {
+        boton.classList.add("correcto");
+    }
     });
 
     //Verifica si es correcta
     if (eleccion === actual.correcta) {
         correctas += 1;
         resultado.textContent = "Correcto";
+        botonOpcion.classList.add("correcto");
     } else {
         resultado.textContent = `Incorrecto. La respuesta era: ${actual.correcta}`;
+        botonOpcion.classList.add("incorrecto");
     }
 
     // Adapta el texto del botón según si es la última pregunta o no

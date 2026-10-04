@@ -1084,3 +1084,19 @@ body.body-trivia h6 {
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
+
+#opciones button.correcto,
+#opciones button.correcto:disabled {
+    background-color: #40a150; 
+    color: #ffffff;
+    border-color: #40a150;
+    opacity: 1;
+}
+
+#opciones button.incorrecto,
+#opciones button.incorrecto:disabled {
+    background-color: #d14545;
+    color: #ffffff;
+    border-color: #d14545;
+    opacity: 1;
+}
