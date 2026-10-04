@@ -9,6 +9,7 @@ const btnComenzar = document.querySelector("#boton-comenzar");
 const btnTirar = document.querySelector("#tirar-dado");
 const tablaPuntajes = document.querySelector("#tabla-puntajes");
 const mensajePuntos = document.querySelector("#mensaje-puntos");
+const mensajeGanador = document.querySelector("#mensaje-ganador");
 const imgDado1 = document.querySelector("#img-dado-1");
 const imgDado2 = document.querySelector("#img-dado-2");
 const instrucciones = document.querySelector("#instrucciones");
@@ -27,7 +28,7 @@ function activarDados() {
   return [valorDado1, valorDado2];
 }
 
-// Tabla de puntajes 
+// Calcular y mostrar puntajes de jugadores
 function calcularPuntaje() {
   let contenidoHTML = ""; // Limpiar datos
   jugadores.forEach((jugador) => {
@@ -40,9 +41,13 @@ function calcularPuntaje() {
 formJugadores.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  jugadores = []; // Limpiar datos
+  jugadores = []; // Resetear variables del juego
   turnoActual = 0;
-  mensajePuntos.innerHTML = "";
+  mensajePuntos.innerHTML = ""; // Limpiar datos de partidas anteriores
+  mensajeGanador.innerHTML = "";
+  tablaPuntajes.innerHTML = "";
+  imgDado1.innerHTML = "";
+  imgDado2.innerHTML = "";
 
   const cantJugadores = Number(
     document.querySelector("#cantidad-jugadores").value,
@@ -71,7 +76,7 @@ formJugadores.addEventListener("submit", (e) => {
 
   btnComenzar.disabled = true;
   btnTirar.disabled = false;
-  turnoDiv.innerHTML = `<p>Turno actual: <strong>${jugadores[turnoActual].nombre}</strong></p>`;
+  turnoDiv.innerHTML = `<span>Turno actual: <strong>${jugadores[turnoActual].nombre}</strong></span>`;
 });
 
 // Listener de boton para tirar los dados
@@ -81,21 +86,24 @@ btnTirar.addEventListener("click", () => {
   if (dado1 === dado2) {
     // Si los dados son iguales
     if (dado1 === 3) {
-      mensajePuntos.innerHTML = `<h2>-${jugadores[turnoActual].puntaje}</h2><p>¡Doble tres! Reinicias a 0 puntos.</p>`;
+      mensajePuntos.innerHTML = `<span>-${jugadores[turnoActual].puntaje}</h2><p>¡Doble tres! Reinicias a 0 puntos.</span>`;
       jugadores[turnoActual].puntaje = 0;
     } else if (dado1 === 6) {
       jugadores[turnoActual].puntaje += 25;
-      mensajePuntos.innerHTML = `<h2>+25</h2><p>¡Doble seis!</p>`;
+      mensajePuntos.innerHTML = `<h2>+25</h2><span>¡Doble seis!</span>`;
     } else {
       jugadores[turnoActual].puntaje += 5;
-      mensajePuntos.innerHTML = `<h2>+5</h2><p>¡Doble!</p>`;
+      mensajePuntos.innerHTML = `<h2>+5</h2><span>¡Doble!</span>`;
     }
 
     calcularPuntaje();
 
     // Verificación de ganador
     if (jugadores[turnoActual].puntaje >= 50) {
-      tablaPuntajes.innerHTML += `<h1>¡${jugadores[turnoActual].nombre} llegó a los 50 puntos y ganó la partida!</h1>`;
+      //Renderizar tabla con puntajes finales
+      calcularPuntaje();
+
+      mensajeGanador.innerHTML += `<h2>¡${jugadores[turnoActual].nombre} llegó a los 50 puntos y ganó la partida!</h2>`;
       btnTirar.disabled = true;
       btnComenzar.disabled = false;
 
@@ -105,8 +113,8 @@ btnTirar.addEventListener("click", () => {
   } else {
     // Si los dados son distintos, pasa el turno
     turnoActual = (turnoActual + 1) % jugadores.length;
-    turnoDiv.innerHTML = `<p>Turno actual: <strong>${jugadores[turnoActual].nombre}</strong></p>`;
-    mensajePuntos.innerHTML = `<p>Dados distintos. Cambio de turno.</p>`;
+    turnoDiv.innerHTML = `<span>Turno actual: <strong>${jugadores[turnoActual].nombre}</strong></span>`;
+    mensajePuntos.innerHTML = `<span>Dados distintos. Cambio de turno.</span>`;
   }
 });
 
