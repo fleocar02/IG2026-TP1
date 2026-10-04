@@ -135,9 +135,8 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 - **`Resultado observado:`** El programa reescribe los datos anteriores, acumulando a los jugadores. Sin posibilidad de volver a jugar porque el boton se encuentra deshabilitado.
 - **`Solución:**`
 
-### 4/10
+### 4/10 Testing
 
-Testing.
 CASO TESTIGO
 Siro 18 años
 
@@ -160,6 +159,10 @@ Aunque perdí al comienzo por el tiempo… Es muy simple y fácil de ganar
 Está buena la tensión pero sería mejor tener que generar sólo 12 puntos.
 
 ---
+
+### 4/10 Debugging
+
+CARTAS - INFILTRADO
 
 ## 📜 Proceso
 
