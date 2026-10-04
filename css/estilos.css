@@ -273,7 +273,7 @@ body.body-dados {
 /* Rectángulo contenedor de dados */
 .area-dados {
   background-color: rgba(0, 0, 0, 0.4);
-  padding: 2em;
+  padding: 3em;
   display: flex;
   justify-content: center;
   gap: 1em;
@@ -324,7 +324,6 @@ body.body-dados {
   min-width: 2em;
   flex: 1; /*Reparte el espacio equitativamente*/
   text-align: center;
-  transition: all 0.3s ease; /* Transición al cambiar de turno */
   border: 3px solid transparent;
 }
 
