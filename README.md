@@ -1,4 +1,5 @@
 # 🕹️ JUEGAZOS
+JUEGAZOS es una plataforma web interactiva desarrollada para la materia Informática General de la UNA (Artes Multimediales) que reúne tres experiencias de juego en una sola página: Cincuenta (azar con dados en partidas multijugador), El Infiltrado (un juego de cartas contra el tiempo) y Poketrivia (un juego de preguntas tematizado alimentado mediante la PokeAPI). El proyecto destaca por una interfaz fluida, maquetación responsiva en HTML5 y CSS3, lógica modular en JavaScript  y persistencia de datos local para el registro general de posiciones.
 
 ## 👥 Integrantes del Grupo
 
@@ -99,7 +100,7 @@ IG2026-TP1/
 
 - **`CSS3:`** Maquetación responsiva basada en Flexbox para la alineación de componentes y tarjetas de navegación. Se diseñó un sistema de estilos modular utilizando una paleta de colores unificada y representativa para cada juego, junto con selectores de clase e identificadores, pseudo-clases (`:hover`, `:disabled`) y animación con @keyframes para la interacción en pantalla.
 
-- **`JavaScript (Vanilla JS):`** Lógica orientada a objetos y funciones modulares sin librerías externas. Implementación de manipulación del DOM en tiempo real, gestión de eventos del usuario (clics, envíos de formulario, pulsaciones de teclas), temporizadores, peticiones asíncronas (`fetch` / `async-await`) a APIs externas y persistencia de datos mediante localStorage.
+- **`JavaScript (JS):`** Lógica orientada a objetos y funciones modulares sin librerías externas. Implementación de manipulación del DOM en tiempo real, gestión de eventos del usuario (clics, envíos de formulario, pulsaciones de teclas), temporizadores, peticiones asíncronas (`fetch` / `async-await`) a APIs externas y persistencia de datos mediante localStorage.
 
 - Menú de navegación global que permite navegar entre los diferentes juegos, la tabla de posiciones y la sección sobre nosotros.
 
