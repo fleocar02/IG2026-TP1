@@ -119,13 +119,61 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 
 ## 💻 Testing & Debugging
 
-### 2.
+### Testing
 
-- **`Condición inicial:`**
-- **`Acción:`**
-- **`Resultado esperado:`**
-- **`Resultado observado:`**
-- **`Solución:**`
+---
+
+#### CASO TESTIGO #2
+Thali 26 años
+
+#### OPINIÓN GENERAL DEL SITIO
+el footer gris queda feo, pónganlo negro o algo asi
+Bienvenidx
+clavá 
+Poketrivia no está justificado
+En el menú de arriba está primero el infiltrado y debería estar Poketrivia
+
+#### CINCUENTA
+Puede haber una frase como "¿Quién cocina esta noche? El que pierda un cincuenta"o "juguemos un cincuenta para decidir tal cosa"
+"se tiran los dados, y:"
+En una primera impresión, el texto de victoria parece desconectado de las instrucciones y pensé que no decía cómo ganar
+
+#### POKETRIVIA
+Se le puede agregar un timer
+
+#### INFILTRADO
+Sumar "entre" 12 puntos entre todas las cartas para abrir la pecera
+está escrito en neutro
+No pidió nombre para el puntaje
+
+---
+
+#### CASO TESTIGO #1
+Siro 18 años
+
+#### OPINIÓN GENERAL DEL SITIO
+Muy buenos los colores por cada juego.
+Donde dice: Hola (Tu nombre)…quiero poner mi nombre.
+Mejor que cada rectángulo diga el nombre del juego, en lugar del genérico DADOS, CARTAS..ETC
+Implementado! Se cambió a los nombres de cada juego y se cambió el mensaje de bienvenida.
+
+#### CINCUENTA
+De 1 solo jugador es aburrido
+A partir de 2 se pone bueno
+Que diga el turno de quién es màs grande
+
+#### POKETRIVIA
+Muy divertido
+Propuesta, que marque con color la respuesta correcta.
+Implementado! Agregué que siempre se responda se muestre la opción correcta, se haya respondido bien o no; en el caso de responder mal, la respuesta elegida se muestra roja.
+
+#### INFILTRADO
+Aunque perdí al comienzo por el tiempo… Es muy simple y fácil de ganar
+Está buena la tensión pero sería mejor tener que generar sólo 12 puntos.
+
+---
+
+### Debugging
 
 ### 1. 29/9
 
@@ -133,44 +181,17 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 - **`Acción:`** Presionar el botón "comenzar juego" después de finalizar una ronda
 - **`Resultado esperado:`** Vuelve a comenzar la partida desde 0 y el puntaje anterior se guarda en el localStorage.
 - **`Resultado observado:`** El programa reescribe los datos anteriores, acumulando a los jugadores. Sin posibilidad de volver a jugar porque el boton se encuentra deshabilitado.
-- **`Solución:**`
-
-### 4/10 Testing
-
-CASO TESTIGO
-Siro 18 años
-
-OPINIÓN GENERAL DEL SITIO
-Muy buenos los colores por cada juego.
-Donde dice: Hola (Tu nombre)…quiero poner mi nombre.
-Mejor que cada rectángulo diga el nombre del juego, en lugar del genérico DADOS, CARTAS..ETC
-
-DADOS
-De 1 solo jugador es aburrido
-A partir de 2 se pone bueno
-Que diga el turno de quién es màs grande
-
-POKETRIVIA
-Muy divertido
-Propuesta, que marque con color la respuesta correcta.
-
-INFILTRADO
-Aunque perdí al comienzo por el tiempo… Es muy simple y fácil de ganar
-Está buena la tensión pero sería mejor tener que generar sólo 12 puntos.
+- **`Solución:**` Sacar los dos eventListeners que estaban dentro del function.
 
 ---
-
-### 4/10 Debugging
-
-CARTAS - INFILTRADO
-
-## 📜 Proceso
 
 ## 🗃️ API utilizada
 
 PokeApi "Todos los datos de Pokémon que necesitarás en un solo lugar, fácilmente accesible a través de una moderna API RESTful gratuita de código abierto."
 Esta API conserva toda la data de Pokemon, siendo actualizada por cada lanzamiento nuevo en la franquicia.
 De ella extraigo el name (nombre del pokemon) y el sprites.front_default (sprite, imagen del pokemon) para utilizar en la trivia. Elegí esta API porque es una de las más completas, y me gustó la temática Pokemon para la trivia.
+
+---
 
 ## 🤖 Declaración de uso de IA
 
@@ -179,6 +200,8 @@ De ella extraigo el name (nombre del pokemon) y el sprites.front_default (sprite
 Utilicé ayuda de la IA Ecosia y la IA Gemini para ayudarme a optimizar el código en algunas funciones y mejoras en el estilo. La usé teniendo en cuenta que muchas veces ofrece cosas que no vimos, por eso para la lógica prefiero no usarla tanto. Para los estilos si admití algunas características de por ejemplo cursor, que no vimos específicamente, pero me parecieron adecuadas para que el sitio quede más dinámico.
 
 #### Fabrizio Cárdenas
+
+Utilicé la IA Gemini como asistente durante el desarrollo del proyecto. En el código JavaScript, la empleé para identificar y corregir errores (listeners de eventos duplicados al reiniciar la partida y manejo de sincronización con el DOM), y para mejorar la lógica del cambio de turnos. En cuanto a HTML y CSS, me ayudó a detectar fallas de semántica y anidamiento, y a diseñar un sistema visual más claro. Agregando resaltado tipográfico, clases para el jugador activo en la tabla de puntajes y animaciones con @keyframes para la interfaz.
 
 #### Marcela Marcolini
 
