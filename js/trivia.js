@@ -134,7 +134,7 @@ function cargarPreguntas() {
         {
             texto: "¿Este aspecto de Jolteon es shiny o no?",
             correcta: "Sí es shiny",
-            opciones: mezclar(["No es shiny", "Sí es shiny", "Jolteon no tiene ese color en ninguna de sus formas", "Es su forma de Alola"]),
+            opciones: mezclar(["No es shiny", "Sí, es shiny", "Jolteon no tiene ese color en ninguna de sus formas", "Es su forma de Alola"]),
             pokemon: "eevee",
             imagen: "img/JolteonS.png" //Uso de IA: Me sugirió agregar un atributo imagen para poder mostrar la imagen de Jolteon sin tener que extraer ese sprite en específico (distinto al de los demás que es el normal)
         },
@@ -232,9 +232,9 @@ function cargarPreguntas() {
             pokemon: "squirtle"
         },
         {
-            texto: "¿Cuál es la distinción visual entre un Squirtle salvaje y un Squirtle del Escuadrón Squirtle? (en el anime): El Escuadrón Squirtle...",
-            correcta: "Lleva lentes",
-            opciones: mezclar(["Lleva lentes", "Son todos shiny", "Son más grandes que un Squirtle común", "Tienen ropa con el escudo de su escuadrón"]),
+            texto: "¿Cuál es la distinción visual entre un Squirtle salvaje y un Squirtle del Escuadrón Squirtle? (en el anime): En el Escuadrón Squirtle...",
+            correcta: "Llevan lentes",
+            opciones: mezclar(["Llevan lentes", "Son todos shiny", "Son más grandes que un Squirtle común", "Tienen ropa con el escudo de su escuadrón"]),
             pokemon: "squirtle"
         },
         {
