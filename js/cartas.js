@@ -34,6 +34,31 @@ document.addEventListener("DOMContentLoaded", () => {
     return nuevoMazo.sort(() => Math.random() - 0.5);
   }
 
+  // Guarda puntaje en localStorage, según mejor tiempo
+  function guardarPuntajeCartas(nombre, puntos, tiempo) {
+    let tablaPuntajes =
+      JSON.parse(localStorage.getItem("puntajesCartas")) || [];
+    let nombreLimpio = nombre ? nombre.trim() : "Infiltrado";
+
+    let jugadorExistente = tablaPuntajes.find((j) => j.nombre === nombreLimpio);
+
+    if (jugadorExistente) {
+      // Si ya existe, actualizamos solo si hizo MEJOR tiempo (menos segundos)
+      if (tiempo < jugadorExistente.tiempo) {
+        jugadorExistente.tiempo = tiempo;
+      }
+    } else {
+      // Si es nuevo, lo agregamos a la tabla
+      tablaPuntajes.push({
+        nombre: nombreLimpio,
+        puntos: puntos, // Siempre será 12
+        tiempo: tiempo,
+      });
+    }
+
+    localStorage.setItem("puntajesCartas", JSON.stringify(tablaPuntajes));
+  }
+
   //Iniciar o reiniciar la mesa de juego
   function iniciarJuego() {
     mazo = crearMazo();
@@ -128,11 +153,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 
-  //Intentar abrir la pecera (Victoria solo con 12 exactos)
+  //Intentar abrir la pecera (Victoria con 12 puntos exactos)
   function comprobarObjetivo() {
     if (juegoTerminado) return;
 
     if (puntosMesa === 12) {
+      let campoNombre = document.querySelector("#input-nombre-jugador");
+      let nombreJugador = campoNombre ? campoNombre.value : "";
+      let tiempoUsado = 10 - tiempoRestante; // Segundos empleados
+
+      // Guardar/Actualizar mejor marca
+      guardarPuntajeCartas(nombreJugador, puntosMesa, tiempoUsado);
+
       finalizarJuego(
         true,
         "🏆 ¡MISIÓN CUMPLIDA! Conseguiste exactamente 12 puntos, abriste la pecera y te llevaste el pececito 🐟✨."
@@ -144,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  //Acción: Abandonar voluntariamente
+  //Abandonar voluntariamente
   function abandonarMision() {
     if (juegoTerminado) return;
     finalizarJuego(
@@ -182,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 13. Mostrar resultado final
+  //Muestra el resultado final
   function finalizarJuego(esVictoria, mensaje) {
     juegoTerminado = true;
     clearInterval(intervaloTimer);
@@ -195,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
     banner.classList.remove("oculto-infiltrado");
   }
 
-  // 14. Volver al menú de bienvenida
+  //Vuelve al menú de bienvenida
   function reiniciarJuego() {
     clearInterval(intervaloTimer);
     document
