@@ -38,6 +38,7 @@
   - [Debugging](#debugging)
 - [🗃️ API utilizada](#️-api-utilizada)
 - [🤖 Declaración de uso de IA](#-declaración-de-uso-de-ia)
+- [🌐 Validación de Código W3C](#-validacion-de-codigo-w3c)
 
 ---
 
@@ -274,3 +275,16 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 
 #### Marcela Marcolini
 - Utilicé la IA Gemini para optimizar la funcionalidad del java script del juego de cartas, me brindó una serie de propuestas que tuve que simplificar, generalmente sugiere el uso de GetElementById para lo que le pido que me proponga las funciones con document.querySelector, también sugiere algunas otras funciones que no hemos visto y no conozco, así que debo repreguntar varias veces y ser muy específica en lo que quiero que use. También la utilicé para trabajar un poco los estilos y para arreglar código css al momento de unificar los estilos de las páginas de dados y poketrivia.
+
+---
+
+## 🌐 Validación de Código W3C
+Para garantizar la calidad del código, el correcto renderizado multiplataforma y la accesibilidad del sitio web, se realizó la verificación y validación sintáctica de todos los documentos HTML5 y hojas de estilo CSS3 utilizando las herramientas oficiales del World Wide Web Consortium (W3C)
+
+- HTML5: [Verificado mediante el W3C Markup Validation Service.](https://validator.w3.org/)
+- CSS3: [Verificado mediante el W3C CSS Validation Service.](https://jigsaw.w3.org/css-validator/)
+
+- ### Resultados del proceso
+- Se corrigieron los errores semánticos y de estructura detectados (tales como anidamientos no válidos, etiquetas redundantes de cierre y la jerarquía de los encabezados `<h1>`-`<h6>`), logrando un marcado limpio y conforme a los estándares actuales.
+- Las hojas de estilo pasaron el proceso de validación sin errores de sintaxis, garantizando el uso correcto de propiedades de Flexbox, pseudo-clases y animaciones @keyframes.
+_Nota: Siguiendo las políticas actuales del W3C, que ya no otorga sellos digitales de validación, la conformidad con el estándar se constata directamente mediante la ejecución exitosa de los validadores sin errores sintácticos reportados._
