@@ -119,25 +119,36 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 
 ## 💻 Testing & Debugging
 
-### 2.
+### Testing
 
-- **`Condición inicial:`**
-- **`Acción:`**
-- **`Resultado esperado:`**
-- **`Resultado observado:`**
-- **`Solución:**`
+---
 
-### 1. 29/9
+#### CASO TESTIGO #2
+Thali 26 años
 
-- **`Condición inicial:`** El juego se termina y todos los jugadores tienen su puntaje final
-- **`Acción:`** Presionar el botón "comenzar juego" después de finalizar una ronda
-- **`Resultado esperado:`** Vuelve a comenzar la partida desde 0 y el puntaje anterior se guarda en el localStorage.
-- **`Resultado observado:`** El programa reescribe los datos anteriores, acumulando a los jugadores. Sin posibilidad de volver a jugar porque el boton se encuentra deshabilitado.
-- **`Solución:**`
+#### OPINIÓN GENERAL DEL SITIO
+el footer gris queda feo, pónganlo negro o algo asi
+Bienvenidx
+clavá 
+Poketrivia no está justificado
+En el menú de arriba está primero el infiltrado y debería estar Poketrivia
 
-### 4/10 Testing
+#### CINCUENTA
+Puede haber una frase como "¿Quién cocina esta noche? El que pierda un cincuenta"o "juguemos un cincuenta para decidir tal cosa"
+"se tiran los dados, y:"
+En una primera impresión, el texto de victoria parece desconectado de las instrucciones y pensé que no decía cómo ganar
 
-#### CASO TESTIGO
+#### POKETRIVIA
+Se le puede agregar un timer
+
+#### INFILTRADO
+Sumar "entre" 12 puntos entre todas las cartas para abrir la pecera
+está escrito en neutro
+No pidió nombre para el puntaje
+
+---
+
+#### CASO TESTIGO #1
 Siro 18 años
 
 #### OPINIÓN GENERAL DEL SITIO
@@ -162,17 +173,25 @@ Está buena la tensión pero sería mejor tener que generar sólo 12 puntos.
 
 ---
 
-### 4/10 Debugging
+### Debugging
 
-CARTAS - INFILTRADO
+### 1. 29/9
 
-## 📜 Proceso
+- **`Condición inicial:`** El juego se termina y todos los jugadores tienen su puntaje final
+- **`Acción:`** Presionar el botón "comenzar juego" después de finalizar una ronda
+- **`Resultado esperado:`** Vuelve a comenzar la partida desde 0 y el puntaje anterior se guarda en el localStorage.
+- **`Resultado observado:`** El programa reescribe los datos anteriores, acumulando a los jugadores. Sin posibilidad de volver a jugar porque el boton se encuentra deshabilitado.
+- **`Solución:**` Sacar los dos eventListeners que estaban dentro del function.
+
+---
 
 ## 🗃️ API utilizada
 
 PokeApi "Todos los datos de Pokémon que necesitarás en un solo lugar, fácilmente accesible a través de una moderna API RESTful gratuita de código abierto."
 Esta API conserva toda la data de Pokemon, siendo actualizada por cada lanzamiento nuevo en la franquicia.
 De ella extraigo el name (nombre del pokemon) y el sprites.front_default (sprite, imagen del pokemon) para utilizar en la trivia. Elegí esta API porque es una de las más completas, y me gustó la temática Pokemon para la trivia.
+
+---
 
 ## 🤖 Declaración de uso de IA
 
@@ -182,7 +201,7 @@ Utilicé ayuda de la IA Ecosia y la IA Gemini para ayudarme a optimizar el códi
 
 #### Fabrizio Cárdenas
 
-Utilicé la IA Gemini como asistente durante el desarrollo del proyecto. En el código JavaScript, la empleé para identificar y corregir errores críticos (como listeners de eventos duplicados al reiniciar la partida y el manejo de sincronización con el DOM), así como para mejorar la lógica del cambio de turnos. En cuanto a HTML y CSS, me ayudó a detectar fallas de semántica y anidamiento, y a diseñar un sistema visual más claro para el contenedor del turno actual (agregando resaltado tipográfico, clases dinámicas para el jugador activo en la tabla de puntajes y animaciones con @keyframes para dinamizar la interfaz).
+Utilicé la IA Gemini como asistente durante el desarrollo del proyecto. En el código JavaScript, la empleé para identificar y corregir errores (listeners de eventos duplicados al reiniciar la partida y manejo de sincronización con el DOM), y para mejorar la lógica del cambio de turnos. En cuanto a HTML y CSS, me ayudó a detectar fallas de semántica y anidamiento, y a diseñar un sistema visual más claro. Agregando resaltado tipográfico, clases para el jugador activo en la tabla de puntajes y animaciones con @keyframes para la interfaz.
 
 #### Marcela Marcolini
 
