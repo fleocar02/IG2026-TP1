@@ -46,26 +46,26 @@
 ### 🎲 DADOS
 El Cincuenta, juego clásico de dados que todos hemos jugado con amigos o familia.
 Pueden jugar desde una hasta seis personas. Todos los jugadores empiezan con 0 puntos. Cada jugador debe lanzar los dados en su turno y automáticamente sumar a la puntuación cuando sale un doble (dos dados iguales). Tirá los dados, y:
-Si son diferentes (ej: 3 y 4): Tira el próximo jugador sin sumar nada.
-Si son dobles 1, 2, 4 o 5: Se suman 5 puntos.
-Si son doble 6: Se suman 25 puntos.
-Si son doble 3: Se castiga reiniciando la puntuación a cero.
-Cuando el doble es válido, suma puntos y el jugador repite el tiro.
+- Si son diferentes (ej: 3 y 4): Tira el próximo jugador sin sumar nada.
+- Si son dobles 1, 2, 4 o 5: Se suman 5 puntos.
+- Si son doble 6: Se suman 25 puntos.
+- Si son doble 3: Se castiga reiniciando la puntuación a cero.
+- Cuando el doble es válido, suma puntos y el jugador repite el tiro.
 
 ### 🃏 CARTAS
 El Infiltrado, un juego innovador y súper divertido en el que sos un gatito travieso queriendo acceder a una pecera en la casa de las mascotas para llevarse un delicioso pececito dorado, pero te encontrarás con varios obstáculos.
-Objetivo: 12 puntos para abrir la pecera.
-Timer de 10s: El contador se reinicia con cada decisión. Si llega a 0, suena la alarma.
-Acciones de Tirada: Puedes pedir 1 carta, repetir la tirada de 3 o abrir la pecera.
-Alarma: Si te pasas de 12 puntos, pierdes.
-Abandonar: Huye a tiempo si presientes que vas a fallar.
+- Objetivo: 12 puntos para abrir la pecera.
+- Timer de 10s: El contador se reinicia con cada decisión. Si llega a 0, suena la alarma.
+- Acciones de Tirada: Puedes pedir 1 carta, repetir la tirada de 3 o abrir la pecera.
+- Alarma: Si te pasas de 12 puntos, pierdes.
+- Abandonar: Huye a tiempo si presientes que vas a fallar.
 
 ### ❓ PREGUNTAS
 Una trivia divertida de Pokemon, la cual cuenta con 5 preguntas particulares segun el Pokemon que más te guste y elijas al principio.
-Ingresá tu nombre: Escribí tu apodo de entrenador Pokémon para registrar tu partida.
-Elegí tu compañero: Selecciona el Pokémon que más te guste.
-Respondé las preguntas: Lee las preguntas tematizadas de tu Pokemon y selecciona la opción que creas correcta.
-Sumá puntos: Cada acierto cuenta como 1 punto.
+- Ingresá tu nombre: Escribí tu apodo de entrenador Pokémon para registrar tu partida.
+- Elegí tu compañero: Selecciona el Pokémon que más te guste.
+- Respondé las preguntas: Lee las preguntas tematizadas de tu Pokemon y selecciona la opción que creas correcta.
+- Sumá puntos: Cada acierto cuenta como 1 punto.
 
 ---
 
@@ -93,6 +93,8 @@ IG2026-TP1/
 ---
 
 ## 🛠️ Tecnologías y Funcionalidades
+
+
 
 ### Usadas en Dados
 
@@ -164,57 +166,60 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 ## 💻 Testing & Debugging
 
 ### Testing
-
----
-
+```text
 #### CASO TESTIGO #2
-Thali 26 años
+- Thali 26 años
 
 #### OPINIÓN GENERAL DEL SITIO
-el footer gris queda feo, pónganlo negro o algo asi
-Bienvenidx
-clavá 
-Poketrivia no está justificado
-En el menú de arriba está primero el infiltrado y debería estar Poketrivia
+- El footer gris queda feo, pónganlo negro o algo asi
+- Poner Bienvenidx
+- Cambiar "clavá" 
+- Poketrivia no está justificado
+- En el menú de arriba está primero el infiltrado y debería estar Poketrivia
 
 #### CINCUENTA
-Puede haber una frase como "¿Quién cocina esta noche? El que pierda un cincuenta"o "juguemos un cincuenta para decidir tal cosa"
-"se tiran los dados, y:"
-En una primera impresión, el texto de victoria parece desconectado de las instrucciones y pensé que no decía cómo ganar
+- Puede haber una frase como "¿Quién cocina esta noche? El que pierda un cincuenta" o "juguemos un cincuenta para decidir tal cosa"
+- "se tiran los dados, y:"
+- En una primera impresión, el texto de victoria parece desconectado y pensé que no decía cómo ganar
 
 #### POKETRIVIA
-Se le puede agregar un timer
+- Se le puede agregar un timer
 
 #### INFILTRADO
-Sumar "entre" 12 puntos entre todas las cartas para abrir la pecera
-está escrito en neutro
-No pidió nombre para el puntaje
+- Sumar "entre" 12 puntos entre todas las cartas para abrir la pecera
+- Las instrucciones están escritas en neutro mientras que los otros juegos en criollo
+- No pidió nombre para el puntaje
+
+#### SOBRE NOSOTROS
+- No entendí si la información debe ser de los desarrolladores o del sitio. En la sección de "El grupo" no hablan del grupo, el texto es sobre el sitio.
+```
 
 ---
 
+```text
 #### CASO TESTIGO #1
-Siro 18 años
+- Siro 18 años
 
 #### OPINIÓN GENERAL DEL SITIO
-Muy buenos los colores por cada juego.
-Donde dice: Hola (Tu nombre)…quiero poner mi nombre.
-Mejor que cada rectángulo diga el nombre del juego, en lugar del genérico DADOS, CARTAS..ETC
-Implementado! Se cambió a los nombres de cada juego y se cambió el mensaje de bienvenida.
+- Muy buenos los colores por cada juego.
+- Donde dice: Hola (Tu nombre)…quiero poner mi nombre.
+- Mejor que cada rectángulo diga el nombre del juego, en lugar del genérico DADOS, CARTAS..ETC
+- Implementado! Se cambió a los nombres de cada juego y se cambió el mensaje de bienvenida.
 
 #### CINCUENTA
-De 1 solo jugador es aburrido
-A partir de 2 se pone bueno
-Que diga el turno de quién es màs grande
+- De 1 solo jugador es aburrido
+- A partir de 2 se pone bueno
+- Que diga el turno de quién es màs grande
 
 #### POKETRIVIA
-Muy divertido
-Propuesta, que marque con color la respuesta correcta.
-Implementado! Agregué que siempre se responda se muestre la opción correcta, se haya respondido bien o no; en el caso de responder mal, la respuesta elegida se muestra roja.
+- Muy divertido
+- Propuesta, que marque con color la respuesta correcta.
+- Implementado! Agregué que siempre se responda se muestre la opción correcta, se haya respondido bien o no; en el caso de responder mal, la respuesta elegida se muestra roja.
 
 #### INFILTRADO
-Aunque perdí al comienzo por el tiempo… Es muy simple y fácil de ganar
-Está buena la tensión pero sería mejor tener que generar sólo 12 puntos.
-
+- Aunque perdí al comienzo por el tiempo… Es muy simple y fácil de ganar
+- Está buena la tensión pero sería mejor tener que generar sólo 12 puntos.
+```
 ---
 
 ### Debugging
@@ -231,19 +236,19 @@ Está buena la tensión pero sería mejor tener que generar sólo 12 puntos.
 
 ## 🗃️ API utilizada
 
-PokeApi "Todos los datos de Pokémon que necesitarás en un solo lugar, fácilmente accesible a través de una moderna API RESTful gratuita de código abierto."
-Esta API conserva toda la data de Pokemon, siendo actualizada por cada lanzamiento nuevo en la franquicia.
-De ella extraigo el name (nombre del pokemon) y el sprites.front_default (sprite, imagen del pokemon) para utilizar en la trivia. Elegí esta API porque es una de las más completas, y me gustó la temática Pokemon para la trivia.
+- PokeApi "Todos los datos de Pokémon que necesitarás en un solo lugar, fácilmente accesible a través de una moderna API RESTful gratuita de código abierto."
+- Esta API conserva toda la data de Pokemon, siendo actualizada por cada lanzamiento nuevo en la franquicia.
+- De ella extraigo el name (nombre del pokemon) y el sprites.front_default (sprite, imagen del pokemon) para utilizar en la trivia. Elegí esta API porque es una de las más completas, y me gustó la temática Pokemon para la trivia.
 
 ---
 
 ## 🤖 Declaración de uso de IA
 
 #### Clara Fernandez Rolon
-Utilicé ayuda de la IA Ecosia y la IA Gemini para ayudarme a optimizar el código en algunas funciones y mejoras en el estilo. La usé teniendo en cuenta que muchas veces ofrece cosas que no vimos, por eso para la lógica prefiero no usarla tanto. Para los estilos si admití algunas características de por ejemplo cursor, que no vimos específicamente, pero me parecieron adecuadas para que el sitio quede más dinámico.
+- Utilicé ayuda de la IA Ecosia y la IA Gemini para ayudarme a optimizar el código en algunas funciones y mejoras en el estilo. La usé teniendo en cuenta que muchas veces ofrece cosas que no vimos, por eso para la lógica prefiero no usarla tanto. Para los estilos si admití algunas características de por ejemplo cursor, que no vimos específicamente, pero me parecieron adecuadas para que el sitio quede más dinámico.
 
 #### Fabrizio Cárdenas
-Utilicé la IA Gemini como asistente durante el desarrollo del proyecto. En el código JavaScript, la empleé para identificar y corregir errores (listeners de eventos duplicados al reiniciar la partida y manejo de sincronización con el DOM), y para mejorar la lógica del cambio de turnos. En cuanto a HTML y CSS, me ayudó a detectar fallas de semántica y anidamiento, y a diseñar un sistema visual más claro. Agregando resaltado tipográfico, clases para el jugador activo en la tabla de puntajes y animaciones con @keyframes para la interfaz.
+- Utilicé la IA Gemini como asistente durante el desarrollo del proyecto. En el código JavaScript, la empleé para identificar y corregir errores (listeners de eventos duplicados al reiniciar la partida y manejo de sincronización con el DOM), y para mejorar la lógica del cambio de turnos. En cuanto a HTML y CSS, me ayudó a detectar fallas de semántica y anidamiento, y a diseñar un sistema visual más claro. Agregando resaltado tipográfico, clases para el jugador activo en la tabla de puntajes y animaciones con @keyframes para la interfaz.
 
 #### Marcela Marcolini
-Utilicé la IA Gemini para optimizar la funcionalidad del java script del juego de cartas, me brindó una serie de propuestas que tuve que simplificar, generalmente sugiere el uso de GetElementById para lo que le pido que me proponga las funciones con document.querySelector, también sugiere algunas otras funciones que no hemos visto y no conozco, así que debo repreguntar varias veces y ser muy específica en lo que quiero que use. También la utilicé para trabajar un poco los estilos y para arreglar código css al momento de unificar los estilos de las páginas de dados y poketrivia.
+- Utilicé la IA Gemini para optimizar la funcionalidad del java script del juego de cartas, me brindó una serie de propuestas que tuve que simplificar, generalmente sugiere el uso de GetElementById para lo que le pido que me proponga las funciones con document.querySelector, también sugiere algunas otras funciones que no hemos visto y no conozco, así que debo repreguntar varias veces y ser muy específica en lo que quiero que use. También la utilicé para trabajar un poco los estilos y para arreglar código css al momento de unificar los estilos de las páginas de dados y poketrivia.
