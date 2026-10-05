@@ -72,6 +72,7 @@ h2 {
   text-align: center;
   padding: 2em;
   width: 30%;
+  border-radius: 1em;
 }
 
 .rojo {
@@ -117,10 +118,12 @@ h2 {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  border-radius: 0.3em;
 }
 
 .btn:hover {
   background-color: rgba(0, 0, 0, 0.4);
+  transition-duration: 0.4s;
 }
 
 /* Clase oculto */
@@ -135,6 +138,7 @@ h2 {
   justify-content: center;
   gap: 15px;
   list-style: none;
+
 }
 
 .menu a {
@@ -142,6 +146,8 @@ h2 {
   background-color: rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: #333;
+        border-radius: 0.3em;
+
 }
 
 .menu a:hover {
@@ -312,7 +318,7 @@ body.body-dados {
 .dado-box img {
   width: 160px;
   height: 160px;
-  border-radius: 0.9em;
+  border-radius: 1em;
 }
 
 /* Mensajes en pantalla */
