@@ -147,16 +147,20 @@ h2 {
 
 footer {
   width: 100%;
+  background-color: #171816;
+  color: rgba(255, 255, 255, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px 0;
   margin: 0;
   margin-top: 2em;
-  background-color: rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
+footer address {
+  font-weight: bold;
+}
 /* ===================================================
    ESTILOS ESPECÍFICOS: PAGINA DADOS - CINCUENTA
    =================================================== */
