@@ -603,6 +603,55 @@ body.body-cartas {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Contenedor del campo de ingreso */
+.contenedor-infiltrado.campo-jugador-infiltrado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 15px 0;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Etiqueta / Label */
+.campo-jugador-infiltrado label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #209a04;
+  letter-spacing: 0.5px;
+}
+
+/* Campo de texto / Input */
+.campo-jugador-infiltrado input[type="text"] {
+  width: 40%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #171816;
+  background-color: #eefdee;
+  border: 2px solid #129a0a;
+  border-radius: 8px;
+  outline: none;
+  text-align: center;
+  transition: all 0.25s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Estado de foco (al hacer clic o escribir) */
+.campo-jugador-infiltrado input[type="text"]:focus {
+  border-color: #24cc40;
+  box-shadow: 0 0 8px rgba(81, 207, 102, 0.4),
+    inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  background-color: #f1fff4;
+}
+
+/* Estilo para el placeholder */
+.campo-jugador-infiltrado input[type="text"]::placeholder {
+  color: #7a7a9a;
+  font-style: italic;
+}
+
 /* ========================
    ESTILOS DE LA POKETRIVIA
    ======================== */
