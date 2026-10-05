@@ -65,7 +65,7 @@ formCantidad.addEventListener("submit", (e) => {
   contenedorInputs.innerHTML = "";
 
   const cantJugadores = Number(
-    document.querySelector("#cantidad-jugadores").value,
+    document.querySelector("#cantidad-jugadores").value
   );
 
   for (let i = 1; i < cantJugadores + 1; i++) {
@@ -95,7 +95,7 @@ formNombres.addEventListener("submit", (e) => {
 
   if (inputVacio) {
     alert(
-      "Por favor, ingrese un nombre válido para cada jugador (no se permiten solo espacios).",
+      "Por favor, ingrese un nombre válido para cada jugador (no se permiten solo espacios)."
     );
     return;
   }
