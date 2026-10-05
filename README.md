@@ -38,7 +38,7 @@
   - [Debugging](#debugging)
 - [🗃️ API utilizada](#️-api-utilizada)
 - [🤖 Declaración de uso de IA](#-declaración-de-uso-de-ia)
-- [🌐 Validación de Código W3C](#-validacion-de-codigo-w3c)
+- [🌐 Validación de Código](#-validacion-de-codigo)
 
 ---
 
@@ -284,7 +284,7 @@ Para garantizar la calidad del código, el correcto renderizado multiplataforma 
 - HTML5: [Verificado mediante el W3C Markup Validation Service.](https://validator.w3.org/)
 - CSS3: [Verificado mediante el W3C CSS Validation Service.](https://jigsaw.w3.org/css-validator/)
 
-- ### Resultados del proceso
+### Resultados del proceso
 - Se corrigieron los errores semánticos y de estructura detectados (tales como anidamientos no válidos, etiquetas redundantes de cierre y la jerarquía de los encabezados `<h1>`-`<h6>`), logrando un marcado limpio y conforme a los estándares actuales.
 - Las hojas de estilo pasaron el proceso de validación sin errores de sintaxis, garantizando el uso correcto de propiedades de Flexbox, pseudo-clases y animaciones @keyframes.
 _Nota: Siguiendo las políticas actuales del W3C, que ya no otorga sellos digitales de validación, la conformidad con el estándar se constata directamente mediante la ejecución exitosa de los validadores sin errores sintácticos reportados._
