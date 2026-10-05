@@ -45,8 +45,7 @@
 
 ### 🎲 DADOS
 El Cincuenta, juego clásico de dados que todos hemos jugado con amigos o familia.
-Pueden jugar desde una hasta seis personas. Todos los jugadores empiezan con 0 puntos. Cada jugador debe lanzar los dados en su turno y automáticamente sumar a la puntuación cuando sale un doble (dos dados iguales)
-
+Pueden jugar desde una hasta seis personas. Todos los jugadores empiezan con 0 puntos. Cada jugador debe lanzar los dados en su turno y automáticamente sumar a la puntuación cuando sale un doble (dos dados iguales). Tirá los dados, y:
 Si son diferentes (ej: 3 y 4): Tira el próximo jugador sin sumar nada.
 Si son dobles 1, 2, 4 o 5: Se suman 5 puntos.
 Si son doble 6: Se suman 25 puntos.
@@ -79,9 +78,9 @@ IG2026-TP1/
 ├── img                    # Contiene las imágenes usadas para el juego de dados, el de trivia y la página nosotros.html
 ├── js/
 │   ├── puntajes.js        # Procesamiento del puntaje en todos los juegos
-│   ├── dados.js           # Lógica y eventos del juego Cincuenta
-│   ├── cartas.js          # Lógica del juego El Infiltrado (si está en archivo externo)
-│   └── trivia.js          # Lógica de la Poketrivia (si está en archivo externo)
+│   ├── dados.js           # Lógica del juego Cincuenta
+│   ├── cartas.js          # Lógica del juego El Infiltrado
+│   └── trivia.js          # Lógica de la Poketrivia
 ├── index.html             # Página de Inicio
 ├── dados.html             # Vista principal del juego Cincuenta
 ├── trivia.html            # Vista de la Poketrivia
@@ -224,7 +223,7 @@ Está buena la tensión pero sería mejor tener que generar sólo 12 puntos.
 - **`Acción:`** Presionar el botón "comenzar juego" después de finalizar una ronda
 - **`Resultado esperado:`** Vuelve a comenzar la partida desde 0 y el puntaje anterior se guarda en el localStorage.
 - **`Resultado observado:`** El programa reescribe los datos anteriores, acumulando a los jugadores. Sin posibilidad de volver a jugar porque el boton se encuentra deshabilitado.
-- **`Solución:**` Sacar los dos eventListeners que estaban dentro del function.
+- **`Solución:`** Sacar los dos eventListeners que estaban dentro del function.
 
 ---
 
