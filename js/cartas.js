@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 
-  //Intentar abrir la pecera (Victoria solo con 12 puntos exactos)
+  //Intentar abrir la pecera (Victoria con 12 puntos exactos)
   function comprobarObjetivo() {
     if (juegoTerminado) return;
 
