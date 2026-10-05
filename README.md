@@ -13,12 +13,37 @@
 - UNA Artes Multimediales
 - Valeria Drelichman | Pedro Paleo | Leonardo Nadel | Norma Morales
 
-  ***
+---
+
+# 🗺️ Índice de Contenidos
+
+- [🕹️ JUEGAZOS](#️-juegazos)
+  - [👥 Integrantes del Grupo](#-integrantes-del-grupo)
+  - [📚 Datos de la Materia](#-datos-de-la-materia)
+- [📜 Instrucciones de Juego](#-instrucciones-de-juego)
+  - [🎲 DADOS](#-dados)
+  - [🃏 CARTAS](#-cartas)
+  - [❓ PREGUNTAS](#-preguntas)
+- [📁 Organización de Archivos y Carpetas](#-organización-de-archivos-y-carpetas)
+- [🛠️ Tecnologías y Funcionalidades](#️-tecnologías-y-funcionalidades)
+  - [Usadas en Dados](#usadas-en-dados)
+  - [Usadas en Cartas](#usadas-en-cartas)
+  - [Usadas en Trivia](#usadas-en-trivia)
+  - [Usadas en Puntajes](#usadas-en-puntajes)
+- [📝 Etiquetas de Commits](#-etiquetas-de-commits)
+- [💻 Testing & Debugging](#-testing--debugging)
+  - [Testing](#testing)
+    - [CASO TESTIGO #1](#caso-testigo-1)
+    - [CASO TESTIGO #2](#caso-testigo-2)
+  - [Debugging](#debugging)
+- [🗃️ API utilizada](#️-api-utilizada)
+- [🤖 Declaración de uso de IA](#-declaración-de-uso-de-ia)
+
+---
 
 ## 📜 Instrucciones de Juego
 
 ### 🎲 DADOS
-
 El Cincuenta, juego clásico de dados que todos hemos jugado con amigos o familia.
 Pueden jugar desde una hasta seis personas. Todos los jugadores empiezan con 0 puntos. Cada jugador debe lanzar los dados en su turno y automáticamente sumar a la puntuación cuando sale un doble (dos dados iguales)
 
@@ -29,7 +54,6 @@ Si son doble 3: Se castiga reiniciando la puntuación a cero.
 Cuando el doble es válido, suma puntos y el jugador repite el tiro.
 
 ### 🃏 CARTAS
-
 El Infiltrado, un juego innovador y súper divertido en el que sos un gatito travieso queriendo acceder a una pecera en la casa de las mascotas para llevarse un delicioso pececito dorado, pero te encontrarás con varios obstáculos.
 Objetivo: 12 puntos para abrir la pecera.
 Timer de 10s: El contador se reinicia con cada decisión. Si llega a 0, suena la alarma.
@@ -38,23 +62,41 @@ Alarma: Si te pasas de 12 puntos, pierdes.
 Abandonar: Huye a tiempo si presientes que vas a fallar.
 
 ### ❓ PREGUNTAS
-
 Una trivia divertida de Pokemon, la cual cuenta con 5 preguntas particulares segun el Pokemon que más te guste y elijas al principio.
 Ingresá tu nombre: Escribí tu apodo de entrenador Pokémon para registrar tu partida.
 Elegí tu compañero: Selecciona el Pokémon que más te guste.
 Respondé las preguntas: Lee las preguntas tematizadas de tu Pokemon y selecciona la opción que creas correcta.
 Sumá puntos: Cada acierto cuenta como 1 punto.
 
+---
+
 ## 📁 Organización de Archivos y Carpetas
 
-Nuestros 6 archivos HTML (index,dados,cartas,preguntas,puntajes,index) están en el root del repositorio, junto con el README. Luego contamos con 3 carpetas: css (contiene un único archivo estilos.css con los estilos de la página), js (con 4 archivos js que manejan la lógica y el procesamiento de datos de nuestros juegos (cartas,dados,puntajes,trivia)) y por último la carpeta img (contiene las imágenes usadas para el juego de dados, el de trivia y las que usamos para la página nosotros).
+IG2026-TP1/
+├── css/
+│   └── estilos.css        # Estilos globales y específicos (Dados, Cartas, Trivia)
+├── img                    # Contiene las imágenes usadas para el juego de dados, el de trivia y la página nosotros.html
+├── js/
+│   ├── puntajes.js        # Procesamiento del puntaje en todos los juegos
+│   ├── dados.js           # Lógica y eventos del juego Cincuenta
+│   ├── cartas.js          # Lógica del juego El Infiltrado (si está en archivo externo)
+│   └── trivia.js          # Lógica de la Poketrivia (si está en archivo externo)
+├── index.html             # Página de Inicio
+├── dados.html             # Vista principal del juego Cincuenta
+├── trivia.html            # Vista de la Poketrivia
+├── cartas.html            # Vista del juego El Infiltrado
+├── puntajes.html          # Tabla general de posiciones
+└── nosotros.html          # Sección Sobre Nosotros / El grupo
+
+---
 
 ## 🛠️ Tecnologías y Funcionalidades
 
 ### Usadas en Dados
 
-### Usadas en Cartas
+---
 
+### Usadas en Cartas
 Para este juego, primero busqué tipo de juegos de cartas. Diseñé un juego que fuese posible sumando puntos pero no tansencillo como un duelo de puntajes. Le busqué instrucciones que se transformaron en misiones.
 
 Tecnologías
@@ -68,8 +110,9 @@ Control de Estado de Juego: Seguimiento en tiempo real de los puntos acumulados,
 Creación de Temporizador Regresivo (10s): Contador dinámico gestionado con setInterval() que se reinicia con cada acción y dispara la derrota si llega a cero.
 Mecánica de Selección y Evaluación: Permite robar 1 o 2 cartas, relanzar la tirada o verificar el objetivo de victoria (exactamente 12 puntos).
 
-### Usadas en Trivia
+---
 
+### Usadas en Trivia
 Mi proceso de hacer la trivia fue así: Primero creé las preguntas y fui pensando cómo iba a hacer un juego de preguntas más divertido, y se me ocurrió la idea de dar a elegir 5 pokemones que tengan cada uno 5 preguntas específicas. Me ayudé bastante con los ejemplos vistos en clase sobre APIs y los ejemplos del repo de la cátedra también.
 Mi juego cuenta con 4 estados:
 
@@ -81,14 +124,12 @@ Mi juego cuenta con 4 estados:
 Mi archivo JS tiene las siguientes funciones:
 
 #### Funciones de utilidad
-
 mezclar : mezcla las opciones de las preguntas
 mostrarError : en caso de que haya un problema en la solicitud a la API
 cargarDatosPokemon : hace la solicitud a la API con try y devuelve un array (pokeInfo) con nombre e imagen del pokemon, en caso de que no haya ningún error
 cargarPreguntas : carga las 25 preguntas
 
 #### Funciones para el juego principal
-
 cambiarEntrenador : oculta y muestra ciertos estados y permite ingresar un nombre de usuario nuevo
 comenzarConNombre : procesa el input del nombre y en caso de que no se ingrese ninguno, tira una alerta
 mostrarSeleccionPokemon : crea dinámicamente un botón con el sprite extraído de la API para cada pokemon, el cual ejecuta la función iniciarJuego
@@ -99,12 +140,13 @@ guardarPuntajeTrivia : busca si el jugador ya tiene un puntaje guardado dentro d
 avanzar : evalúa si es la última pregunta o no, si es así, muestra la pantalla final con puntaje y guarda los puntajes de la trivia ejecutando la función anteriormente mencionada
 
 ### Usadas en Puntajes
-
 Generamos la tabla en HTML y la llenamos con JS, usando dos funciones:
 cargarTabla : a esta función le dimos muchas vueltas, intentamos con un solo for y solo 3 resultados, luego con un for dentro de un while, pero después de mucho pensar y ayuda de la IA para optimizar, llegamos a esta función.
 Esta recibe el id de la tabla y la clave del localStorage (por ejemplo, puntajesTrivia), luego recibe los valores para las celdas y los almacena en dos constantes. Luego crea una copia de los puntajes existentes en un array con forEach, para luego ir comparándolos en otro for, con una variable por fuera (indiceMayor), que va almacenando el índice del array original que tenga mayor puntaje; a medida que lo va encontrando, lo va sacando del array de copia, así no vuelve a iterar sobre ese puntaje.
 mostrarTodasLasTablas : ejecuta la función cargarTabla sobre las tres tablas de puntajes
 Al final ejectura la función mostrarTodasLasTablas
+
+---
 
 ## 📝 Etiquetas de Commits
 
@@ -196,13 +238,10 @@ De ella extraigo el name (nombre del pokemon) y el sprites.front_default (sprite
 ## 🤖 Declaración de uso de IA
 
 #### Clara Fernandez Rolon
-
 Utilicé ayuda de la IA Ecosia y la IA Gemini para ayudarme a optimizar el código en algunas funciones y mejoras en el estilo. La usé teniendo en cuenta que muchas veces ofrece cosas que no vimos, por eso para la lógica prefiero no usarla tanto. Para los estilos si admití algunas características de por ejemplo cursor, que no vimos específicamente, pero me parecieron adecuadas para que el sitio quede más dinámico.
 
 #### Fabrizio Cárdenas
-
 Utilicé la IA Gemini como asistente durante el desarrollo del proyecto. En el código JavaScript, la empleé para identificar y corregir errores (listeners de eventos duplicados al reiniciar la partida y manejo de sincronización con el DOM), y para mejorar la lógica del cambio de turnos. En cuanto a HTML y CSS, me ayudó a detectar fallas de semántica y anidamiento, y a diseñar un sistema visual más claro. Agregando resaltado tipográfico, clases para el jugador activo en la tabla de puntajes y animaciones con @keyframes para la interfaz.
 
 #### Marcela Marcolini
-
 Utilicé la IA Gemini para optimizar la funcionalidad del java script del juego de cartas, me brindó una serie de propuestas que tuve que simplificar, generalmente sugiere el uso de GetElementById para lo que le pido que me proponga las funciones con document.querySelector, también sugiere algunas otras funciones que no hemos visto y no conozco, así que debo repreguntar varias veces y ser muy específica en lo que quiero que use. También la utilicé para trabajar un poco los estilos y para arreglar código css al momento de unificar los estilos de las páginas de dados y poketrivia.
