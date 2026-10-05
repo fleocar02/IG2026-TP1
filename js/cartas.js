@@ -34,6 +34,21 @@ document.addEventListener("DOMContentLoaded", () => {
     return nuevoMazo.sort(() => Math.random() - 0.5);
   }
 
+  //Guardar el registro en localStorage con la clave 'puntajesCartas'
+  function guardarPuntajeCartas(nombreJugador, puntos, tiempoSegundos) {
+    let datosOriginales =
+      JSON.parse(localStorage.getItem("puntajesCartas")) || [];
+
+    let nuevoRegistro = {
+      nombre: nombreJugador ? nombreJugador.trim() : "Infiltrado",
+      puntos: puntos,
+      tiempo: tiempoSegundos,
+    };
+
+    datosOriginales.push(nuevoRegistro);
+    localStorage.setItem("puntajesCartas", JSON.stringify(datosOriginales));
+  }
+
   //Iniciar o reiniciar la mesa de juego
   function iniciarJuego() {
     mazo = crearMazo();
