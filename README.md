@@ -128,26 +128,26 @@ Mi juego cuenta con 4 estados:
 Mi archivo JS tiene las siguientes funciones:
 
 #### Funciones de utilidad
-mezclar : mezcla las opciones de las preguntas
-mostrarError : en caso de que haya un problema en la solicitud a la API
-cargarDatosPokemon : hace la solicitud a la API con try y devuelve un array (pokeInfo) con nombre e imagen del pokemon, en caso de que no haya ningún error
+mezclar : mezcla las opciones de las preguntas  
+mostrarError : en caso de que haya un problema en la solicitud a la API  
+cargarDatosPokemon : hace la solicitud a la API con try y devuelve un array (pokeInfo) con nombre e imagen del pokemon, en caso de que no haya ningún error  
 cargarPreguntas : carga las 25 preguntas
 
 #### Funciones para el juego principal
-cambiarEntrenador : oculta y muestra ciertos estados y permite ingresar un nombre de usuario nuevo
-comenzarConNombre : procesa el input del nombre y en caso de que no se ingrese ninguno, tira una alerta
-mostrarSeleccionPokemon : crea dinámicamente un botón con el sprite extraído de la API para cada pokemon, el cual ejecuta la función iniciarJuego
-iniciarJuego : recibe el nombre de un pokemon, ejecuta la funcion cargarPreguntas, la cual dentro de cada array de pregunta tiene entre sus claves la de pokemon, que esta función utiliza para filtrar de qué pokemon es cada pregunta. También reinicia las variables de control y ejecuta mostrarPregunta
-mostrarPregunta : muestra cada pregunta, de a una sola, y con ayuda de un bucle busca dentro de pokeInfo la imagen para el pokemon correspondiente, luego genera botones dinámicamente para cada respuesta, los cuales al clickearlos ejecutan la función responder
-responder : deshabilita el resto de botones y evalúa si la elección es correcta, si lo es, se suma a la variable correctas, si no, muestra con texto cuál era la correcta. También adapta el texto del botón 'siguiente', dependiendo si es la última pregunta o no
-guardarPuntajeTrivia : busca si el jugador ya tiene un puntaje guardado dentro del localStorage (puntajesTrivia), si es así, lo guarda en una variable tablaPuntajes, si no, crea un array vacío en esta. Luego, sumo sus puntajes con un bucle for. Si no lo encontró, pushea sus resultados nuevos a un array con claves nombre y puntos; luego los guarda en el localStorage
+cambiarEntrenador : oculta y muestra ciertos estados y permite ingresar un nombre de usuario nuevo  
+comenzarConNombre : procesa el input del nombre y en caso de que no se ingrese ninguno, tira una alerta  
+mostrarSeleccionPokemon : crea dinámicamente un botón con el sprite extraído de la API para cada pokemon, el cual ejecuta la función iniciarJuego  
+iniciarJuego : recibe el nombre de un pokemon, ejecuta la funcion cargarPreguntas, la cual dentro de cada array de pregunta tiene entre sus claves la de pokemon, que esta función utiliza para filtrar de qué pokemon es cada pregunta. También reinicia las variables de control y ejecuta mostrarPregunta  
+mostrarPregunta : muestra cada pregunta, de a una sola, y con ayuda de un bucle busca dentro de pokeInfo la imagen para el pokemon correspondiente, luego genera botones dinámicamente para cada respuesta, los cuales al clickearlos ejecutan la función responder  
+responder : deshabilita el resto de botones y evalúa si la elección es correcta, si lo es, se suma a la variable correctas, si no, muestra con texto cuál era la correcta. También adapta el texto del botón 'siguiente', dependiendo si es la última pregunta o no  
+guardarPuntajeTrivia : busca si el jugador ya tiene un puntaje guardado dentro del localStorage (puntajesTrivia), si es así, lo guarda en una variable tablaPuntajes, si no, crea un array vacío en esta. Luego, sumo sus puntajes con un bucle for. Si no lo encontró, pushea sus resultados nuevos a un array con claves nombre y puntos; luego los guarda en el localStorage  
 avanzar : evalúa si es la última pregunta o no, si es así, muestra la pantalla final con puntaje y guarda los puntajes de la trivia ejecutando la función anteriormente mencionada
 
 ### Usadas en Puntajes
-Generamos la tabla en HTML y la llenamos con JS, usando dos funciones:
-cargarTabla : a esta función le dimos muchas vueltas, intentamos con un solo for y solo 3 resultados, luego con un for dentro de un while, pero después de mucho pensar y ayuda de la IA para optimizar, llegamos a esta función.
-Esta recibe el id de la tabla y la clave del localStorage (por ejemplo, puntajesTrivia), luego recibe los valores para las celdas y los almacena en dos constantes. Luego crea una copia de los puntajes existentes en un array con forEach, para luego ir comparándolos en otro for, con una variable por fuera (indiceMayor), que va almacenando el índice del array original que tenga mayor puntaje; a medida que lo va encontrando, lo va sacando del array de copia, así no vuelve a iterar sobre ese puntaje.
-mostrarTodasLasTablas : ejecuta la función cargarTabla sobre las tres tablas de puntajes
+Generamos la tabla en HTML y la llenamos con JS, usando dos funciones:  
+cargarTabla : a esta función le dimos muchas vueltas, intentamos con un solo for y solo 3 resultados, luego con un for dentro de un while, pero después de mucho pensar y ayuda de la IA para optimizar, llegamos a esta función.  
+Esta recibe el id de la tabla y la clave del localStorage (por ejemplo, puntajesTrivia), luego recibe los valores para las celdas y los almacena en dos constantes. Luego crea una copia de los puntajes existentes en un array con forEach, para luego ir comparándolos en otro for, con una variable por fuera (indiceMayor), que va almacenando el índice del array original que tenga mayor puntaje; a medida que lo va encontrando, lo va sacando del array de copia, así no vuelve a iterar sobre ese puntaje.  
+mostrarTodasLasTablas : ejecuta la función cargarTabla sobre las tres tablas de puntajes  
 Al final ejectura la función mostrarTodasLasTablas
 
 ---
@@ -166,6 +166,29 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 ## 💻 Testing & Debugging
 
 ### Testing
+```text
+#### CASO TESTIGO #3
+- Sele 21 años
+
+#### OPINIÓN GENERAL DEL SITIO
+- Amigable a la vista y fácil de entender que es un sitio de juegos
+- Me gustó mucho la fuente principal
+
+#### CINCUENTA
+- Me gustó, cuando jugué sola me pareció bastante fácil, pero después probamos jugar de a dos y cambió la dificultad
+- Me gusta la animación de los dados
+
+#### POKETRIVIA
+- Muy divertido, las preguntas son difíciles si no conocés de Pokemon
+- Me gustan las fotos de los Pokemones y que puedas elegir
+
+#### INFILTRADO
+- Me encantó la temática de mascotas y gatitos
+- Es medio difícil las primeras rondas hasta que le cazas la onda
+```
+
+---
+
 ```text
 #### CASO TESTIGO #2
 - Thali 26 años
@@ -224,7 +247,7 @@ Para mantener un historial de cambios ordenado, todos los mensajes de commit deb
 
 ### Debugging
 
-### 1. 29/9
+### 1. 29/9 Dados
 
 - **`Condición inicial:`** El juego se termina y todos los jugadores tienen su puntaje final
 - **`Acción:`** Presionar el botón "comenzar juego" después de finalizar una ronda
