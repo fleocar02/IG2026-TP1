@@ -86,7 +86,9 @@ IG2026-TP1/
 ├── trivia.html            # Vista de la Poketrivia
 ├── cartas.html            # Vista del juego El Infiltrado
 ├── puntajes.html          # Tabla general de posiciones
-└── nosotros.html          # Sección Sobre Nosotros / El grupo
+└── nosotros.html          # Información sobre nosotros
+└── README.md              # Documentación
+
 ```
 ---
 
