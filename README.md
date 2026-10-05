@@ -72,6 +72,7 @@ Sumá puntos: Cada acierto cuenta como 1 punto.
 
 ## 📁 Organización de Archivos y Carpetas
 
+```text
 IG2026-TP1/
 ├── css/
 │   └── estilos.css        # Estilos globales y específicos (Dados, Cartas, Trivia)
@@ -87,7 +88,7 @@ IG2026-TP1/
 ├── cartas.html            # Vista del juego El Infiltrado
 ├── puntajes.html          # Tabla general de posiciones
 └── nosotros.html          # Sección Sobre Nosotros / El grupo
-
+```
 ---
 
 ## 🛠️ Tecnologías y Funcionalidades
